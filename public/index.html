@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>appoliceosint.com</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg'); /* ✅ Replace with your actual image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+            border-bottom: 2px solid #8B0000;
+            background-color: transparent !important; /* ✅ Removed background */
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            text-decoration: underline;
+        }
+
+        header h3 {
+            font-size: 1em;
+            font-weight: bold;
+            color: red;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            min-height: 70vh;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            background-color: white; /* ✅ Semi-transparent form background */
+            padding: 20px;
+            border: 5px solid #303225;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            font-size: 1.2em;
+            color: black;
+        }
+
+        form h4 {
+            text-align: center;
+            color: #2c3763;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #231d1d;
+            font-size: 1em;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .login-btn,
+        .reset-btn {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 6px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #181b1f;
+        }
+
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+            border: 1px solid #181b1f;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .reset-btn:hover {
+            background-color: #c82333;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #100e2c;
+            font-weight: bold;
+            border-top: 2px solid #8B0000;
+            position: relative;
+            text-align: center;
+            color: #fff;
+         }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-left,
+        .logo-right {
+            width: 95px;
+            height: 90px;
+        }
+
+        .login-heading {
+            flex: 1;
+            text-align: center;
+            font-size: 1.5em;
+            color: black;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+    <h2>(Open Source Intelligence Platform)</h2>
+    <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1.2em;">
+        <h3><strong>Welcome to Andhra Pradesh Police- Here, you can find your latest open source intelligence tools!</strong></h3>
+    </marquee>
+</header>
+
+<main>
+    <form>
+        <div class="logo-container">
+            <img src="Appolice-Logo.png" alt="AP Police Logo" class="logo-left">
+            <h4 class="login-heading">User Login..!</h4>
+            <img src="Prism-Logo.jpeg" alt="Prismosint Logo" class="logo-right">
+        </div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <div class="button-group">
+            <button type="submit" class="login-btn">Login</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+        <div id="error-message" class="error-message"></div>
+    </form>
+</main>
+
+<footer>
+    <strong>PRISM@2025-Police Research Institute for Systems Modernaisation, All Rights Reserved..!</strong>
+</footer>
+
+<script>
+async function loginUser(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMsg = document.getElementById("error-message");
+
+    try {
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            sessionStorage.setItem("loggedIn", "true");
+            window.location.href = "dashboard.html"; // ✅ Open dashboard if login OK
+        } else {
+            errorMsg.textContent = "❌ " + data.message;
+            errorMsg.style.display = "block";
+            setTimeout(() => errorMsg.style.display = "none", 3000);
+        }
+    } catch (error) {
+        errorMsg.textContent = "❌ Server error. Please try again later.";
+        errorMsg.style.display = "block";
+        console.error("Login error:", error);
+    }
+}
+
+// ✅ Attach to the form correctly
+document.querySelector("form").addEventListener("submit", loginUser);
+</script>
+
+</body>
+</html>

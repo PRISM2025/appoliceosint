@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>appoliceosint.com</title>
+  <style>
+            * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 3px;
+            color: #fff;
+            background-color: #100e2c;
+            border-bottom: 2px solid #8B0000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin: none;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: underline;
+        }
+        header h3 {
+            font-size: 1em;
+            font-weight: bold;
+            color: red;
+            margin: none;
+        }
+.marquee-wrapper {
+  display: block;
+  overflow: hidden;
+}
+
+.marquee-wrapper h3 {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+.profile-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #f3efef;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.dropdown {
+  display:none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 100px;
+  z-index: 100;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  flex-direction: column;
+}
+
+.profile-container:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+  color: brown;
+}
+.container {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      background-image: url('background.jpg');
+    }
+.box {
+  background-color: whitesmoke;
+  border: 5px solid #3e2727;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-width: 250px;
+  max-width: 320px;
+  width: auto;
+  min-height: 70px;
+  flex: 1 1 auto;
+  margin: 10px;
+}
+.box:hover {
+  transform: scale(1.02);
+  transition: 0.2s ease-in-out;
+}
+    .box h2 {
+      font-size: 18px;
+      color: #222;
+      padding: 6px;
+      text-align: center;
+      text-decoration: underline;
+    }
+    .box h3 {
+      font-size: 15px;
+      color: #d01124;
+      text-align: left;
+      text-decoration: underline;
+      padding: 6px;
+    }
+
+    .box ol {
+      padding: 2px;
+      margin-left: 20px;
+      text-align: left;
+    }
+
+    .box li {
+      font-size: 14px;
+      text-align: left;
+      padding: 2px;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      text-align: left;
+    }
+
+    a.visited { color: #6a1b9a; }
+    a:hover { cursor: pointer; color:brown; text-decoration: underline; }
+    a.active { color: green; text-decoration: underline; }
+      p {
+        font-size: 15px;
+        font-weight: bold;
+        font-style:normal;
+        color: rgb(24, 57, 51);
+        text-align:justify;
+        font-family:'Times New Roman', Times, serif;
+        letter-spacing: normal;
+        padding:10px;
+      }
+      p:hover {
+        cursor: pointer;
+        color: rgb(213, 14, 14);
+        transform: scale(1.00);
+        transition: 0.2s ease-in-out;
+      }
+        footer {
+            padding: 20px;
+            background-color: #100e2c;
+            font-weight: bold;
+            border-top: 2px solid #8B0000;
+            position: relative;
+            text-align: center;
+            color: #fff;
+            
+        }
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  </style>
+</head>
+
+<body>
+    <header>
+  <div class="profile-container" style="position: absolute; top: 10px; left: 20px;">
+    <div class="profile-icon">
+      <img src="Prism-Logo.jpeg" alt="profile">
+    </div>
+  </div>
+      <h1>OPEN SOURCE INTELLIGENCE PLATFORM</h1>
+      <h2>(ANDHRAPRADESH POLICE DEPARTMENT)</h2>
+      <marquee behavior="scroll" direction="left" style="font-size: 1.2em;">
+  <h3>(PRISM - Police Research Institute for Systems Modernisation)</h3></marquee> 
+  <div class="profile-container" style="position: absolute; top: 10px; right:20px">
+  <div class="profile-wrapper" onclick="toggleDropdown(event)">
+  <div class="profile-icon">
+  <img src="Appolice-Logo.png" alt="profile">
+  </div>
+  <div class="dropdown" id="dropdownMenu">
+  <a href="index.html" onclick="logout()">Logout</a>
+  </div>
+  </div>
+</div>
+</header>
+
+      <main> 
+    <div class="container">
+    <div class="box">
+      <h2>CRAWLING-SCRAPING</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Crawling & Scraping tools help law enforcement extract and analyze public web data for cybercrime detection and threat monitoring.</p>
+      <h3>Web Scrapers</h3>
+      <ol>
+        <li><a href="https://scrapegraphai.com">ScrapeGraphAI</a></li>
+      </ol>
+      </div>
+
+      <div class="box">
+      <h2>BREACH DATA</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Breach Data tools help law enforcement identify leaked credentials and compromised data to prevent cyber threats and investigate digital crimes.</p>
+      <h3>Credential Leaks</h3>
+      <ol>
+        <li><a href="https://hashmob.net">Hashmob.net</a></li>
+        <li><a href="https://www.proxynova.com">ProxyNova.com</a></li>
+        <li><a href="https://leakpeek.com">Leakpeek.com</a></li>
+        <li><a href="https://osintleak.com">OSINTLeak.com</a></li>
+        <li><a href="https://leak-lookup.com">Leak-Lookup.com</a></li>
+      </ol>
+       </div>
+
+    <div class="box">
+      <h2>DIGITAL COMMUNICATION INTELLIGENCE</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Digital Communication Intelligence tools help law enforcement analyze call records, messages, and metadata to trace suspects and uncover criminal networks.</p>
+      <h3>Telegram</h3>
+      <ol>
+        <li><a href="https://groupda.com">Groupda</a></li>
+        <li><a href="https://in.tgstat.com">Tgstat.com</a></li>
+      </ol>
+      <h3>WhatsApp</h3>
+      <ol>
+        <li><a href="https://whatsanalyze-80665.web.app">WhatsAppAnalyzer.com</a></li>
+      </ol>
+      <h3>Skype</h3>
+      <ol>
+        <li><a href="https://www.vedbex.com">Phone2Skype</a></li>
+      </ol>
+    </div>
+
+    <div class="box">
+         <h2>BUCKET SEARCH</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Bucket Search tools help law enforcement discover exposed cloud storage (like AWS S3) to identify leaked sensitive data and misconfigured assets.</p>
+      <ol>
+        <li><a href="https://osint.sh/buckets">OSINT.sh</a></li>
+      </ol>
+      <h2>IMAGE INTELLIGENCE</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Image Intelligence tools help law enforcement analyze photos for hidden data, faces, objects, and locations to extract critical investigative evidence.</p>
+      <ol>
+        <li><a href="https://www.faceseek.online">FaceSeek.online</a></li>
+        <li><a href="https://www.upscale.media">Upscale.media</a></li>
+      </ol>
+      </div>
+
+      <div class="box">
+      <h2>PHONE INTELLIGENCE</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Phone Intelligence tools help law enforcement analyze call data, device info, and geolocation to trace suspects and uncover criminal connections.</p>
+      <h3>Phone Number Lookup</h3>
+      <ol>
+        <li><a href="https://whocalld.com">WhocallId.com</a></li>
+      </ol>
+      <h2>EMAIL INTELLIGENCE</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Email Intelligence tools help law enforcement trace email origins, analyze headers, and detect phishing or fraud to support cybercrime investigations.</p>
+      <h3>Email Info</h3>
+      <ol>
+        <li><a href="https://tracefind.info">Tracefind.info</a></li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>GENERAL OSINT</h2>
+            <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> General OSINT tools help law enforcement gather and analyze publicly available information from the internet to support investigations and threat assessments.</p>
+      <h3>Public Data</h3>
+      <ol>
+        <li><a href="https://www.gitsearchai.com">GitSearchAI</a></li>
+        <li><a href="https://cyscan.io">Cyber URL Scanner</a></li>
+      </ol>
+      <h3>Data Intelligence</h3>
+      <ol>
+        <li><a href="https://website.informer.com">Website Informer</a></li>
+      </ol>
+      <h3>Multi-Tool Platform</h3>
+      <ol>
+        <li><a href="https://osintportal.com">The OSINT Portal</a></li>
+        <li><a href="https://www.deepfind.me">Deepfind.me</a></li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>SOCIAL MEDIA INTELLIGENCE</h2>
+            <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Social Media Intelligence tools help law enforcement monitor and analyze public posts, profiles, and activities to detect threats, track suspects, and gather investigative leads.</p>
+      <h3>Instagram</h3>
+      <ol>
+        <li><a href="https://instrack.app">Instrack.app</a></li>
+      </ol>
+      <h3>Twitter</h3>
+      <ol>
+        <li><a href="https://archive.twitter-trending.com">Geocode.xyz</a></li>
+      </ol>
+      <h3>YouTube</h3>
+      <ol>
+        <li><a href="https://ytbcomments.com">YouTube Comment Finder</a></li>
+      </ol>
+      <h3>Misc</h3>
+      <ol>
+        <li><a href="https://socialblade.com">Socialblade.com</a></li>
+        <li><a href="https://exportcomments.com">ExportComments.com</a></li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>WEB OSINT</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Web OSINT tools help law enforcement collect and analyze data from websites, forums, and blogs to uncover threats, suspects, and criminal activity online.</p>
+      <ol>
+        <li><a href="https://web-check.xyz">Web-check.xyz</a></li>
+      </ol>
+      <h2>DARK WEB</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Dark Web tools help law enforcement monitor hidden networks for illegal activities, leaked data, and criminal marketplaces to support covert investigations.</p>
+      <h3>Onion Directories</h3>
+      <ol>
+        <li><a href="https://darkwebdaily.live">Dark Web Daily</a></li>
+      </ol>
+    </div>
+
+    <div class="box">
+      <h2>GEO INTELLIGENCE</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Geo Intelligence tools help law enforcement track locations, map movements, and analyze geospatial data to support surveillance and crime mapping.</p>
+      <h3>Geolocation</h3>
+      <ol>
+        <li><a href="https://www.ip2location.com">IP2Location</a></li>
+        <li><a href="https://chatgpt.com">GeoGuesser GPT</a></li>
+      </ol>
+
+      <h2>DOMAIN INTELLIGENCE</h2>
+      <p><strong style="color: #d01124; text-decoration: underline;">USES:</strong> Domain Intelligence tools help law enforcement investigate websites, track domain ownership, and detect malicious infrastructure used in cybercrimes.</p>
+      <h3>DNS Lookup</h3>
+      <ol>
+        <li><a href="https://dnslytics.com">dnslytics.com</a></li>
+      </ol>
+      <h3>Subdomain Finder</h3>
+      <ol>
+        <li><a href="https://subdomainfinder.c99.nl">SubdomainFinder.com</a></li>
+      </ol>
+    </div>
+    </div>
+  </main>
+
+<footer>PRISM@2025-Police Reasearch Institute of Systems Modernisation, All Rights Reserved.</footer>
+    
+<script>
+  window.onload = function () {
+    // Secure all links to open in a new tab
+    document.querySelectorAll('a[href]').forEach(link => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    // Check login status — block access if not logged in
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      alert("❌ Access Denied. Please login first.");
+      window.location.href = "index.html";
+      return;
+    }
+
+    // Strong back navigation block
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.pushState(null, null, location.href);
+    };
+
+    // Logout clears session and allows login page access
+    window.logout = function () {
+      sessionStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    };
+
+    // Toggle dropdown function
+    window.toggleDropdown = function (event) {
+      event.stopPropagation();
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    };
+
+    // Close dropdown on any other click
+    window.addEventListener("click", function () {
+      const dropdown = document.getElementById("dropdownMenu");
+      if (dropdown) dropdown.style.display = "none";
+    });
+  };
+</script>
+</body>
+</html>
