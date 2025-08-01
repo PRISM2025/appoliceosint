@@ -2,211 +2,292 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>appoliceosint.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prismappolice.com</title>
   <style>
-            * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        html, body {
-            height: 100%;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            display: flex;
-            flex-direction: column;
-        }
+html, body {
+    height: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex;
+    flex-direction: column;
+}
 
-        header {
-            text-align: center;
-            padding: 3px;
-            color: #fff;
-            background-color: #100e2c;
-            border-bottom: 2px solid #8B0000;
-        }
+header {
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    background-color: #100e2c;
+    border-bottom: 2px solid #8B0000;
+}
+header h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff;
+}
 
-        header h1 {
-            font-size: 2.5em;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        header h2 {
-            font-size: 1.5em;
-            margin: none;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: underline;
-        }
-        header h3 {
-            font-size: 1em;
-            font-weight: bold;
-            color: red;
-            margin: none;
-        }
+header h2 {
+    font-size: 1.5em;
+    margin: none;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+}
+header h3 {
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    margin: none;
+}
 .marquee-wrapper {
-  display: block;
-  overflow: hidden;
+    display: block;
+    overflow: hidden;
 }
 
 .marquee-wrapper h3 {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 10s linear infinite;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
 }
 .profile-container {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 .profile-wrapper {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .profile-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  border: 3px solid #f3efef;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid #f3efef;
 }
 
 .profile-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 .dropdown {
-  display:none;
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  min-width: 100px;
-  z-index: 100;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-  flex-direction: column;
+    display:none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 100px;
+    z-index: 100;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    flex-direction: column;
 }
 
 .profile-container:hover .dropdown {
-  display: flex;
+    display: flex;
 }
 
 .dropdown a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
 }
 
 .dropdown a:hover {
-  background-color: #f0f0f0;
-  color: brown;
+    background-color: #f0f0f0;
+    color: brown;
 }
+
 .container {
-      flex: 1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 30px;
-      background-image: url('background.jpg');
-    }
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background-image: url('background.jpg');
+}
 .box {
-  background-color: whitesmoke;
-  border: 5px solid #3e2727;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  min-width: 250px;
-  max-width: 320px;
-  width: auto;
-  min-height: 70px;
-  flex: 1 1 auto;
-  margin: 10px;
+    background-color: whitesmoke;
+    border: 5px solid #3e2727;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-width: 250px;
+    max-width: 320px;
+    width: auto;
+    min-height: 70px;
+    flex: 1 1 auto;
+    margin: 10px;
 }
 .box:hover {
-  transform: scale(1.02);
-  transition: 0.2s ease-in-out;
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
 }
-    .box h2 {
-      font-size: 18px;
-      color: #222;
-      padding: 6px;
-      text-align: center;
-      text-decoration: underline;
+.box h2 {
+    font-size: 18px;
+    color: #222;
+    padding: 6px;
+    text-align: center;
+    text-decoration: underline;
+}
+.box h3 {
+    font-size: 15px;
+    color: #d01124;
+    text-align: left;
+    text-decoration: underline;
+    padding: 6px;
+}
+
+.box ol {
+    padding: 2px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.box li {
+    font-size: 14px;
+    text-align: left;
+    padding: 2px;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+    text-align: left;
+}
+
+a.visited { color: #6a1b9a; }
+a:hover { cursor: pointer; color:brown; text-decoration: underline; }
+a.active { color: green; text-decoration: underline; }
+p {
+    font-size: 15px;
+    font-weight: bold;
+    font-style:normal;
+    color: rgb(24, 57, 51);
+    text-align:justify;
+    font-family:'Times New Roman', Times, serif;
+    letter-spacing: normal;
+    padding:10px;
+}
+p:hover {
+    cursor: pointer;
+    color: rgb(213, 14, 14);
+    transform: scale(1.00);
+    transition: 0.2s ease-in-out;
+}
+footer {
+    padding: 20px;
+    background-color: #100e2c;
+    font-weight: bold;
+    border-top: 2px solid #8B0000;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+/* === RESPONSIVE MEDIA QUERIES START HERE === */
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
+
+    .box {
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .profile-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.3em;
+    }
+
+    header h3 {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .box {
+        min-width: 90%;
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .profile-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .dropdown {
+        min-width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box h2,
     .box h3 {
-      font-size: 15px;
-      color: #d01124;
-      text-align: left;
-      text-decoration: underline;
-      padding: 6px;
+        font-size: 16px;
     }
 
-    .box ol {
-      padding: 2px;
-      margin-left: 20px;
-      text-align: left;
+    .box li,
+    p {
+        font-size: 14px;
     }
 
-    .box li {
-      font-size: 14px;
-      text-align: left;
-      padding: 2px;
+    footer {
+        font-size: 13px;
+        padding: 15px;
     }
 
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-      text-align: left;
+    .profile-container {
+        top: 5px;
+        right: 10px;
     }
 
-    a.visited { color: #6a1b9a; }
-    a:hover { cursor: pointer; color:brown; text-decoration: underline; }
-    a.active { color: green; text-decoration: underline; }
-      p {
-        font-size: 15px;
-        font-weight: bold;
-        font-style:normal;
-        color: rgb(24, 57, 51);
-        text-align:justify;
-        font-family:'Times New Roman', Times, serif;
-        letter-spacing: normal;
-        padding:10px;
-      }
-      p:hover {
-        cursor: pointer;
-        color: rgb(213, 14, 14);
-        transform: scale(1.00);
-        transition: 0.2s ease-in-out;
-      }
-        footer {
-            padding: 20px;
-            background-color: #100e2c;
-            font-weight: bold;
-            border-top: 2px solid #8B0000;
-            position: relative;
-            text-align: center;
-            color: #fff;
-            
-        }
-@media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .profile-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dropdown a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
 }
-  </style>
+</style>
 </head>
 
 <body>
@@ -232,8 +313,35 @@
 </div>
 </header>
 
-      <main> 
+    <main> 
     <div class="container">
+      <div class="box">
+        <h2>Best OSINT Tools for Law Enforcement & Cyber Intelligence.</h2>
+        <p style="padding-left: 15px; text-align: justify;" >Here is the list of top OSINT (Open Source Intelligence) tools with their official links</p>
+        <ol>
+        <li><a href="https://www.talkwalker.com/blog/best-osint-tools">Talkwalker</a></li>
+        <li><a href="https://www.maltego.com/">Maltego.com</a></li>
+        <li><a href="https://www.shodan.io/">Shodan.io</a></li>
+        <li><a href="https://emailrep.io/">Emailrep.io</a></li>
+        <li><a href="https://exif.tools/">Exiftool</a></li>
+        <li><a href="https://osintframework.com/">OSINTframework</a></li>
+        <li><a href="https://www.osint.industries/">OSINT.Industries</a></li>
+        <li><a href="https://intelx.io/">Intelligence.x</a></li>
+        <li><a href="https://www.liferaftinc.com/navigator/">liferaft</a></li>
+        <li><a href="https://www.paliscope.com/">Paliscope</a></li>
+        <li><a href="https://www.babelstreet.com/">Babelstreet</a></li>
+        <li><a href="https://www.opensanctions.org/">opesanctions</a></li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>Thrinethra.vercel.app</h2>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Thrinethra is an open-source OSINT tool that streamlines intelligence gathering from multiple digital sources.
+It helps law enforcement analyze, track, and visualize threat data for better decision-making.</p>
+      <ol>
+        <li><a href="https://thrinethra.vercel.app/">Thrinethra.vercel.app</a></li>
+      </ol>
+      </div>
     <div class="box">
       <h2>CRAWLING-SCRAPING</h2>
       <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Crawling & Scraping tools help law enforcement extract and analyze public web data for cybercrime detection and threat monitoring.</p>
@@ -324,7 +432,7 @@
 
     <div class="box">
       <h2>SOCIAL MEDIA INTELLIGENCE</h2>
-            <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Social Media Intelligence tools help law enforcement monitor and analyze public posts, profiles, and activities to detect threats, track suspects, and gather investigative leads.</p>
+      <p><strong style="color:#d01124; text-decoration: underline;">USES:</strong> Social Media Intelligence tools help law enforcement monitor and analyze public posts, profiles, and activities to detect threats, track suspects, and gather investigative leads.</p>
       <h3>Instagram</h3>
       <ol>
         <li><a href="https://instrack.app">Instrack.app</a></li>
@@ -342,6 +450,8 @@
         <li><a href="https://socialblade.com">Socialblade.com</a></li>
         <li><a href="https://exportcomments.com">ExportComments.com</a></li>
       </ol>
+      <h3>Talk Walker</h3>
+      <li><a href="https://www.talkwalker.com/blog/best-osint-tools">TalkWalker.com</a></li>
     </div>
 
     <div class="box">
@@ -381,7 +491,9 @@
     </div>
   </main>
 
-<footer>PRISM@2025-Police Reasearch Institute of Systems Modernisation, All Rights Reserved.</footer>
+<footer><p>PRISM@2025-Police Reasearch Institute of Systems Modernisation.</p>
+  <p>Andrapradesh Police Department.</p>
+  <p>All Rights Reserved.</p></footer>
     
 <script>
   window.onload = function () {

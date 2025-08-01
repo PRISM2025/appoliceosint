@@ -1,216 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>appoliceosint.com</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>prismappolice.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Add this -->
 
-        html, body {
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg'); /* ✅ Replace with your actual image path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: white;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            text-align: center;
-            padding: 10px;
-            color: #fff;
-            border-bottom: 2px solid #8B0000;
-            background-color: transparent !important; /* ✅ Removed background */
-        }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-        }
+    header {
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      border-bottom: 2px solid #8B0000;
+    }
 
-        header h2 {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: white;
-            text-decoration: underline;
-        }
+    header h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
 
-        header h3 {
-            font-size: 1em;
-            font-weight: bold;
-            color: red;
-        }
+    header h2 {
+      font-size: 1.5em;
+      text-decoration: underline;
+      font-weight: bold;
+    }
 
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            min-height: 70vh;
-        }
+    header h3 {
+      font-size: 1.2em;
+      color: rgb(250, 6, 6);
+      font-weight: bold;
+    }
 
-        form {
-            width: 100%;
-            max-width: 600px;
-            background-color: white; /* ✅ Semi-transparent form background */
-            padding: 20px;
-            border: 5px solid #303225;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            font-size: 1.2em;
-            color: black;
-        }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 70vh;
+    }
 
-        form h4 {
-            text-align: center;
-            color: #2c3763;
-            font-size: 2em;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+    form {
+      width: 95%;
+      max-width: 600px;
+      background-color: white;
+      padding: 20px;
+      border: 5px solid #303225;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      font-size: 1em;
+      color: black;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #111;
-        }
+    form h2 {
+      text-align: center;
+      color: #2c3763;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #231d1d;
-            font-size: 1em;
-        }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #111;
+    }
 
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-        }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 2px solid #231d1d;
+      font-size: 1em;
+    }
 
-        .login-btn,
-        .reset-btn {
-            padding: 10px;
-            font-size: 1em;
-            border-radius: 6px;
-            cursor: pointer;
-            flex: 1;
-        }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        .login-btn {
-            background-color: #007bff;
-            color: white;
-            border: 1px solid #181b1f;
-        }
+    .login-btn,
+    .reset-btn {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      flex: 1;
+      min-width: 120px;
+    }
 
-        .reset-btn {
-            background-color: #dc3545;
-            color: white;
-            border: 1px solid #181b1f;
-        }
+    .login-btn {
+      background-color: #007bff;
+      color: white;
+      border: 1px solid #181b1f;
+    }
 
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
+    .reset-btn {
+      background-color: #dc3545;
+      color: white;
+      border: 1px solid #181b1f;
+    }
 
-        .reset-btn:hover {
-            background-color: #c82333;
-        }
+    .login-btn:hover {
+      background-color: #0056b3;
+    }
 
-        .error-message {
-            color: red;
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
+    .reset-btn:hover {
+      background-color: #c82333;
+    }
 
-        footer {
-            padding: 20px;
-            background-color: #100e2c;
-            font-weight: bold;
-            border-top: 2px solid #8B0000;
-            position: relative;
-            text-align: center;
-            color: #fff;
-         }
+    .error-message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
 
-        .logo-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+    footer {
+      padding: 10px;
+      font-weight: bold;
+      border-top: 2px solid #8B0000;
+      text-align: center;
+      color: #fff;
+    }
 
-        .logo-left,
-        .logo-right {
-            width: 95px;
-            height: 90px;
-        }
+    .logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
 
-        .login-heading {
-            flex: 1;
-            text-align: center;
-            font-size: 1.5em;
-            color: black;
-            font-weight: bold;
-        }
+    .logo-left,
+    .logo-right {
+      width: 80px;
+      height: auto;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    .login-heading {
+      flex: 1;
+      text-align: center;
+      font-size: 1.3em;
+      color: black;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      header h2 {
+        font-size: 1em;
+      }
+
+      .login-heading {
+        font-size: 1.1em;
+        margin-top: 10px;
+      }
+
+      .logo-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .logo-left,
+      .logo-right {
+        width: 70px;
+      }
+
+      form {
+        padding: 15px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
 <header>
-    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
-    <h2>(Open Source Intelligence Platform)</h2>
-    <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1.2em;">
-        <h3><strong>Welcome to Andhra Pradesh Police- Here, you can find your latest open source intelligence tools!</strong></h3>
-    </marquee>
+  <h1>ANDHRAPRADESH POLICE DEPARTMENT</h1>
+  <h2>(Open Source Intelligence Tools Platform)</h2>
+  <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1em;">
+    <h3><strong>(Welcome to Andhra Pradesh Police - Find your latest open source intelligence tools!)</strong></h3>
+  </marquee>
 </header>
 
 <main>
-    <form>
-        <div class="logo-container">
-            <img src="Appolice-Logo.png" alt="AP Police Logo" class="logo-left">
-            <h4 class="login-heading">User Login..!</h4>
-            <img src="Prism-Logo.jpeg" alt="Prismosint Logo" class="logo-right">
-        </div>
+  <form>
+    <div class="logo-container">
+      <img src="Appolice-Logo.png" alt="AP Police Logo" class="logo-left">
+      <h2 class="login-heading" style="font-size: 2em;">User Login..!</h2>
+      <img src="Prism-Logo.jpeg" alt="Prismosint Logo" class="logo-right">
+    </div>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username">
+    <label for="username" style="font-size: 1.5em;">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter your username">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password">
+    <label for="password" style="font-size: 1.5em;">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password">
 
-        <div class="button-group">
-            <button type="submit" class="login-btn">Login</button>
-            <button type="reset" class="reset-btn">Reset</button>
-        </div>
+    <div class="button-group">
+      <button type="submit" class="login-btn">Login</button>
+      <button type="reset" class="reset-btn">Reset</button>
+    </div>
 
-        <div id="error-message" class="error-message"></div>
-    </form>
+    <div id="error-message" class="error-message"></div>
+  </form>
 </main>
 
 <footer>
-    <strong>PRISM@2025-Police Research Institute for Systems Modernaisation, All Rights Reserved..!</strong>
+<p>PRISM@2025 - Police Research Institute for Systems Modernisation.</p>
+          <p>Andhrapradesh Police Department.</p>
+          <p>All Rights Reserved..!</p>
 </footer>
 
 <script>
-async function loginUser(event) {
+  async function loginUser(event) {
     event.preventDefault();
 
     const username = document.getElementById("username").value.trim();
@@ -218,31 +246,30 @@ async function loginUser(event) {
     const errorMsg = document.getElementById("error-message");
 
     try {
-        const response = await fetch("/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password })
-        });
+      const response = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (data.success) {
-            sessionStorage.setItem("loggedIn", "true");
-            window.location.href = "dashboard.html"; // ✅ Open dashboard if login OK
-        } else {
-            errorMsg.textContent = "❌ " + data.message;
-            errorMsg.style.display = "block";
-            setTimeout(() => errorMsg.style.display = "none", 3000);
-        }
-    } catch (error) {
-        errorMsg.textContent = "❌ Server error. Please try again later.";
+      if (data.success) {
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "❌ " + data.message;
         errorMsg.style.display = "block";
-        console.error("Login error:", error);
+        setTimeout(() => errorMsg.style.display = "none", 3000);
+      }
+    } catch (error) {
+      errorMsg.textContent = "❌ Server error. Please try again later.";
+      errorMsg.style.display = "block";
+      console.error("Login error:", error);
     }
-}
+  }
 
-// ✅ Attach to the form correctly
-document.querySelector("form").addEventListener("submit", loginUser);
+  document.querySelector("form").addEventListener("submit", loginUser);
 </script>
 
 </body>
