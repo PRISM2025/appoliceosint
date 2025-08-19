@@ -6,13 +6,13 @@
 
 html, body {
   height: 100%;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
-  background-image:url(bacground_image.webp);
+  background-image: url(bacground_image.webp);
 }
 
 header {
@@ -25,12 +25,13 @@ header {
 header h1,
 header h2,
 header h3 {
-  word-wrap: break-word;   /* ✅ Prevents text overflow on small screens */
+  word-wrap: break-word;
 }
 
 header h1 {
-  font-size: 2.5em;
+  font-size: clamp(1.3em, 4vw, 2.5em); /* ✅ Responsive size */
   font-weight: bold;
+  white-space: nowrap;                /* ✅ Force single line */
 }
 
 header h2 {
@@ -51,7 +52,7 @@ main {
   align-items: center;
   padding: 20px;
   min-height: 60vh;
-  flex-direction: column;   /* ✅ Keeps content stacked nicely on smaller screens */
+  flex-direction: column;
 }
 
 form {
@@ -105,7 +106,7 @@ input[type="password"] {
   cursor: pointer;
   flex: 1;
   min-width: 120px;
-  transition: background-color 0.3s ease;   /* ✅ Smooth hover effect */
+  transition: background-color 0.3s ease;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -145,12 +146,13 @@ footer {
   color: #fff;
 }
 
+/* ✅ Logos + Heading Layout */
 .logo-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap; /* ✅ Prevents wrapping */
 }
 
 .logo-left,
@@ -170,7 +172,7 @@ footer {
 /* Mobile phones (up to 600px) */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   header h2 {
@@ -178,18 +180,16 @@ footer {
   }
 
   .login-heading {
-    font-size: 1.1em;
-    margin-top: 10px;
+    font-size: 1em;
   }
 
   .logo-container {
-    flex-direction: column;
-    gap: 10px;
+    gap: 8px; /* ✅ Smaller gap but still in one line */
   }
 
   .logo-left,
   .logo-right {
-    width: 60px;
+    width: 50px;
   }
 
   form {

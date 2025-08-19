@@ -287,14 +287,29 @@ footer p {
     }
 }
 
-/* Mobile Phones */
-@media (max-width: 480px) {
-    header h1 { font-size: 1.6em; }
-    header h2 { font-size: 1.1em; }
-    header h3 { font-size: 0.9em; }
+/* ==========================
+   📱 Mobile Phones (≤600px)
+   ========================== */
+@media (max-width: 600px) {
+    header h1 { 
+        font-size: 1.4em; 
+        line-height: 1.2em;
+    }
+    header h2 { 
+        font-size: 1.05em; 
+    }
+    header h3 { 
+        font-size: 0.9em; 
+    }
 
-    .box h2, .box h3 { font-size: 16px; }
-    .box li, p { font-size: 14px; }
+    .box h2, 
+    .box h3 { 
+        font-size: 15px; 
+    }
+    .box li, 
+    p { 
+        font-size: 13.5px; 
+    }
 
     .container {
         padding: 12px;
@@ -304,6 +319,10 @@ footer p {
     /* ✅ Profile centered below headings */
     .profile-container {
         margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* prevent overlap */
     }
 
     .profile-icon {
