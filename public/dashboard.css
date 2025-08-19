@@ -287,42 +287,23 @@ footer p {
     }
 }
 
-/* ==========================
-   📱 Mobile Phones (≤600px)
-   ========================== */
+/* Mobile Phones */
 @media (max-width: 600px) {
-    header h1 { 
-        font-size: 1.4em; 
-        line-height: 1.2em;
-    }
-    header h2 { 
-        font-size: 1.05em; 
-    }
-    header h3 { 
-        font-size: 0.9em; 
-    }
+    header h1 { font-size: 1em; }
+    header h2 { font-size: 0.8em; }
+    header h3 { font-size: 0.8em; }
 
-    .box h2, 
-    .box h3 { 
-        font-size: 15px; 
-    }
-    .box li, 
-    p { 
-        font-size: 13.5px; 
-    }
+    .box h2, .box h3 { font-size: 16px; }
+    .box li, p { font-size: 14px; }
 
     .container {
-        padding: 12px;
-        gap: 12px;
+        padding: 10px;
+        gap: 10px;
     }
 
     /* ✅ Profile centered below headings */
     .profile-container {
         margin-top: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative; /* prevent overlap */
     }
 
     .profile-icon {
@@ -333,5 +314,8 @@ footer p {
     .dropdown a {
         padding: 8px 10px;
         font-size: 13px;
+    }
+    .dropdown {
+        min-width: 80px;
     }
 }
