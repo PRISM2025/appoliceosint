@@ -4,204 +4,13 @@
   <meta charset="UTF-8">
   <title>prismappolice.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Add this -->
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-    }
-
-    header {
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-      border-bottom: 2px solid #8B0000;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      font-weight: bold;
-    }
-
-    header h2 {
-      font-size: 1.5em;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-
-    header h3 {
-      font-size: 1.2em;
-      color: rgb(250, 6, 6);
-      font-weight: bold;
-    }
-
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      min-height: 70vh;
-    }
-
-    form {
-      width: 95%;
-      max-width: 600px;
-      background-color: white;
-      padding: 20px;
-      border: 5px solid #303225;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      font-size: 1em;
-      color: black;
-    }
-
-    form h2 {
-      text-align: center;
-      color: #2c3763;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #111;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      border: 2px solid #231d1d;
-      font-size: 1em;
-    }
-
-    .button-group {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .login-btn,
-    .reset-btn {
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-      flex: 1;
-      min-width: 120px;
-    }
-
-    .login-btn {
-      background-color: #007bff;
-      color: white;
-      border: 1px solid #181b1f;
-    }
-
-    .reset-btn {
-      background-color: #dc3545;
-      color: white;
-      border: 1px solid #181b1f;
-    }
-
-    .login-btn:hover {
-      background-color: #0056b3;
-    }
-
-    .reset-btn:hover {
-      background-color: #c82333;
-    }
-
-    .error-message {
-      color: red;
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 0.9em;
-    }
-
-    footer {
-      padding: 10px;
-      font-weight: bold;
-      border-top: 2px solid #8B0000;
-      text-align: center;
-      color: #fff;
-    }
-
-    .logo-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-
-    .logo-left,
-    .logo-right {
-      width: 80px;
-      height: auto;
-    }
-
-    .login-heading {
-      flex: 1;
-      text-align: center;
-      font-size: 1.3em;
-      color: black;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-      }
-
-      header h2 {
-        font-size: 1em;
-      }
-
-      .login-heading {
-        font-size: 1.1em;
-        margin-top: 10px;
-      }
-
-      .logo-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .logo-left,
-      .logo-right {
-        width: 70px;
-      }
-
-      form {
-        padding: 15px;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
 <header>
-  <h1>ANDHRAPRADESH POLICE DEPARTMENT</h1>
+  <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
   <h2>(Open Source Intelligence Platform)</h2>
   <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1em;">
     <h3><strong>(Welcome to Andhra Pradesh Police - Find your latest open source intelligence tools!)</strong></h3>
@@ -233,44 +42,46 @@
 
 <footer>
 <p>PRISM@2025 - Police Research Institute for Systems Modernisation.</p>
-          <p>Andhrapradesh Police Department.</p>
+          <p>Andhra Pradesh Police Department.</p>
           <p>All Rights Reserved..!</p>
 </footer>
 
-<script>
-  async function loginUser(event) {
-    event.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const errorMsg = document.getElementById("error-message");
+  <script>
+    async function loginUser(event) {
+      event.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:3000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-message");
 
-      const data = await response.json();
+      try {
+        // ✅ Use relative path so it works on localhost & Render
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
 
-      if (data.success) {
-        sessionStorage.setItem("loggedIn", "true");
-        window.location.href = "dashboard.html";
-      } else {
-        errorMsg.textContent = "❌ " + data.message;
+        const data = await response.json();
+
+        if (data.success) {
+          sessionStorage.setItem("loggedIn", "true");
+          window.location.href = "dashboard.html";
+        } else {
+          errorMsg.textContent = "❌ " + data.message;
+          errorMsg.style.display = "block";
+          setTimeout(() => errorMsg.style.display = "none", 3000);
+        }
+      } catch (error) {
+        errorMsg.textContent = "❌ Server error. Please try again later.";
         errorMsg.style.display = "block";
-        setTimeout(() => errorMsg.style.display = "none", 3000);
+        console.error("Login error:", error);
       }
-    } catch (error) {
-      errorMsg.textContent = "❌ Server error. Please try again later.";
-      errorMsg.style.display = "block";
-      console.error("Login error:", error);
     }
-  }
 
-  document.querySelector("form").addEventListener("submit", loginUser);
-</script>
+    document.getElementById("loginForm").addEventListener("submit", loginUser);
+  </script>
 
 </body>
 </html>

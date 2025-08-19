@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  background-image:url(bacground_image.webp);
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  border-bottom: 2px solid #8B0000;
+}
+
+header h1,
+header h2,
+header h3 {
+  word-wrap: break-word;   /* ✅ Prevents text overflow on small screens */
+}
+
+header h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+header h2 {
+  font-size: 1.5em;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+header h3 {
+  font-size: 1.2em;
+  color: rgb(250, 6, 6);
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 60vh;
+  flex-direction: column;   /* ✅ Keeps content stacked nicely on smaller screens */
+}
+
+form {
+  width: 95%;
+  max-width: 600px;
+  background-color: whitesmoke;
+  padding: 20px;
+  border: 5px solid #303225;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  font-size: 1em;
+  color: black;
+}
+
+form h2 {
+  text-align: center;
+  color: #2c3763;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #111;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #231d1d;
+  font-size: 1em;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.login-btn,
+.reset-btn {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 120px;
+  transition: background-color 0.3s ease;   /* ✅ Smooth hover effect */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #181b1f;
+}
+
+.reset-btn {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #181b1f;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.reset-btn:hover {
+  background-color: #c82333;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+footer {
+  padding: 10px;
+  font-weight: bold;
+  border-top: 2px solid #8B0000;
+  text-align: center;
+  color: #fff;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-left,
+.logo-right {
+  width: 80px;
+  height: auto;
+}
+
+.login-heading {
+  flex: 1;
+  text-align: center;
+  font-size: 1.3em;
+  color: black;
+  font-weight: bold;
+}
+
+/* Mobile phones (up to 600px) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  .login-heading {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-left,
+  .logo-right {
+    width: 60px;
+  }
+
+  form {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .login-btn, .reset-btn {
+    font-size: 0.9em;
+    min-width: 100px;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header h2 {
+    font-size: 1.3em;
+  }
+
+  .login-heading {
+    font-size: 1.2em;
+  }
+
+  .logo-left,
+  .logo-right {
+    width: 70px;
+  }
+
+  form {
+    max-width: 500px;
+    font-size: 1em;
+  }
+}
+
+/* Laptops (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header h2 {
+    font-size: 1.4em;
+  }
+
+  .login-heading {
+    font-size: 1.3em;
+  }
+
+  form {
+    max-width: 550px;
+  }
+}
+
+/* Desktops (1201px and above) */
+@media (min-width: 1201px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header h2 {
+    font-size: 1.5em;
+  }
+
+  .login-heading {
+    font-size: 1.4em;
+  }
+
+  form {
+    max-width: 600px;
+  }
+}

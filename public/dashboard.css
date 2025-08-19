@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    text-align: center;
+    padding: 8px;
+    color: #fff;
+    background-color: #100e2c;
+    border-bottom: 2px solid #8B0000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #fff;
+    word-wrap: break-word;   /* ✅ Prevents text overflow */
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+}
+
+header h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+}
+
+.marquee-wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+.marquee-wrapper h3 {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.profile-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid #f3efef;
+    transition: transform 0.2s ease-in-out;   /* ✅ Smooth hover effect */
+}
+
+.profile-icon:hover {
+    transform: scale(1.05);
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 120px;
+    z-index: 100;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    flex-direction: column;
+}
+
+.profile-container:hover .dropdown {
+    display: flex;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0;
+    color: brown;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    background-color: whitesmoke;
+    border: 5px solid #3e2727;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    min-width: 250px;
+    max-width: 320px;
+    width: auto;
+    min-height: 70px;
+    flex: 1 1 auto;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.03);
+}
+
+.box h2 {
+    font-size: 18px;
+    color: #222;
+    padding: 6px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.box h3 {
+    font-size: 15px;
+    color: #d01124;
+    text-align: left;
+    text-decoration: underline;
+    padding: 6px;
+}
+
+.box ol {
+    padding: 2px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.box li {
+    font-size: 14px;
+    text-align: left;
+    padding: 2px;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+    text-align: left;
+}
+
+a.visited { color: #6a1b9a; }
+a:hover { cursor: pointer; color:brown; text-decoration: underline; }
+a.active { color: green; text-decoration: underline; }
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(24, 57, 51);
+    text-align: justify;
+    padding: 10px;
+}
+
+p:hover {
+    cursor: pointer;
+    color: rgb(213, 14, 14);
+}
+
+footer {
+    padding: 10px;
+    background-color: #100e2c;
+    font-weight: bold;
+    border-top: 2px solid #8B0000;
+    text-align: center;
+    color: #fff;
+}
+
+footer p {
+    color: #FFF;
+    text-align: center;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* ==========================
+   ✅ RESPONSIVE MEDIA QUERIES
+   ========================== */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .box {
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .profile-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    header h1 { font-size: 2em; }
+    header h2 { font-size: 1.3em; }
+    header h3 { font-size: 1em; }
+
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .box {
+        min-width: 90%;
+        max-width: 100%;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* ✅ Profile inside header, not overlapping */
+    .profile-container {
+        position: relative;
+        top: unset;
+        right: unset;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .dropdown {
+        min-width: 100px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    header h1 { font-size: 1.6em; }
+    header h2 { font-size: 1.1em; }
+    header h3 { font-size: 0.9em; }
+
+    .box h2, .box h3 { font-size: 16px; }
+    .box li, p { font-size: 14px; }
+
+    .container {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    /* ✅ Profile centered below headings */
+    .profile-container {
+        margin-top: 8px;
+    }
+
+    .profile-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dropdown a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
