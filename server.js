@@ -1,40 +1,46 @@
 const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const fs = require("fs");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files from /public
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
 
-// Load users from users.json
-const users = JSON.parse(fs.readFileSync("./users.json", "utf8"));
+// Login route
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
 
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    const userMatch = users.find(user =>
-        user.username.trim() === username.trim() &&
-        user.password.trim() === password.trim()
+  fs.readFile(path.join(__dirname, "users.json"), "utf-8", (err, data) => {
+    if (err) {
+      console.error("Error reading users.json:", err);
+      return res.status(500).json({ success: false, message: "Server error" });
+    }
+
+    let users;
+    try {
+      users = JSON.parse(data);
+    } catch (parseErr) {
+      console.error("Error parsing users.json:", parseErr);
+      return res.status(500).json({ success: false, message: "Invalid user data" });
+    }
+
+    const user = users.find(
+      (u) => u.username === username && u.password === password
     );
 
-    if (userMatch) {
-        res.status(200).json({ success: true, message: "✅ Login successful" });
+    if (user) {
+      res.json({ success: true });
     } else {
-        res.status(401).json({ success: false, message: "❌ Invalid credentials" });
+      res.json({ success: false, message: "Invalid credentials" });
     }
-});
-
-// Optional fallback to index.html for SPA
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running at http://localhost:${PORT}`);
 });

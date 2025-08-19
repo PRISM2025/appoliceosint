@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>prismappolice.com</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Add this -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
 </head>
 
@@ -18,7 +18,8 @@
 </header>
 
 <main>
-  <form>
+  <!-- ✅ Only ONE form -->
+  <form id="loginForm">
     <div class="logo-container">
       <img src="Appolice-Logo.png" alt="AP Police Logo" class="logo-left">
       <h2 class="login-heading" style="font-size: 2em;">User Login..!</h2>
@@ -26,62 +27,58 @@
     </div>
 
     <label for="username" style="font-size: 1.5em;">Username:</label>
-    <input type="text" id="username" name="username" placeholder="Enter your username">
+    <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
     <label for="password" style="font-size: 1.5em;">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Enter your password">
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
     <div class="button-group">
       <button type="submit" class="login-btn">Login</button>
       <button type="reset" class="reset-btn">Reset</button>
     </div>
 
-    <div id="error-message" class="error-message"></div>
+    <!-- ✅ Error message -->
+    <div id="error-message" class="error-message" style="color:red; display:none;"></div>
   </form>
 </main>
 
 <footer>
-<p>PRISM@2025 - Police Research Institute for Systems Modernisation.</p>
-          <p>Andhra Pradesh Police Department.</p>
-          <p>All Rights Reserved..!</p>
+  <p>PRISM@2025 - Police Research Institute for Systems Modernisation.</p>
+  <p>Andhra Pradesh Police Department.</p>
+  <p>All Rights Reserved..!</p>
 </footer>
 
+<!-- ✅ Login Script -->
+<script>
+  async function loginUser(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMsg = document.getElementById("error-message");
 
-  <script>
-    async function loginUser(event) {
-      event.preventDefault();
+    try {
+      const response = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
 
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const errorMsg = document.getElementById("error-message");
+      const data = await response.json();
 
-      try {
-        // ✅ Use relative path so it works on localhost & Render
-        const response = await fetch("/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password })
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          sessionStorage.setItem("loggedIn", "true");
-          window.location.href = "dashboard.html";
-        } else {
-          errorMsg.textContent = "❌ " + data.message;
-          errorMsg.style.display = "block";
-          setTimeout(() => errorMsg.style.display = "none", 3000);
-        }
-      } catch (error) {
-        errorMsg.textContent = "❌ Server error. Please try again later.";
+      if (data.success) {
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "dashboard.html"; // ✅ redirect to dashboard
+      } else {
+        errorMsg.textContent = "❌ " + data.message;
         errorMsg.style.display = "block";
-        console.error("Login error:", error);
       }
+    } catch (error) {
+      errorMsg.textContent = "❌ Server error!";
+      errorMsg.style.display = "block";
     }
+  }
 
-    document.getElementById("loginForm").addEventListener("submit", loginUser);
-  </script>
-
+  document.getElementById("loginForm").addEventListener("submit", loginUser);
+</script>
 </body>
 </html>
