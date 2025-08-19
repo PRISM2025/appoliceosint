@@ -289,33 +289,48 @@ footer p {
 
 /* Mobile Phones */
 @media (max-width: 600px) {
-    header h1 { font-size: 1em; }
-    header h2 { font-size: 0.8em; }
-    header h3 { font-size: 0.8em; }
-
-    .box h2, .box h3 { font-size: 16px; }
-    .box li, p { font-size: 14px; }
-
-    .container {
-        padding: 10px;
-        gap: 10px;
+    header {
+        padding: 8px;
+        text-align: center;
     }
 
-    /* ✅ Profile centered below headings */
+    header h1, 
+    header h2, 
+    header h3 {
+        display: block;
+        word-wrap: break-word;   /* ✅ Allows long words to break */
+        overflow-wrap: break-word; 
+        white-space: normal;     /* ✅ Prevents text from going off-screen */
+        text-align: center;
+        line-height: 1.3em;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    header h2 {
+        font-size: 1em;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+
+    header h3 {
+        font-size: 0.9em;
+        margin-top: 3px;
+    }
+
+    /* ✅ Profile icons go below text */
     .profile-container {
-        margin-top: 8px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .profile-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .dropdown a {
-        padding: 8px 10px;
-        font-size: 13px;
-    }
-    .dropdown {
-        min-width: 80px;
+        width: 50px;
+        height: 50px;
     }
 }
