@@ -15,6 +15,7 @@ html, body {
   background-image: url(bacground_image.webp);
 }
 
+/* ================= Header ================= */
 header {
   text-align: center;
   padding: 10px;
@@ -29,23 +30,24 @@ header h3 {
 }
 
 header h1 {
-  font-size: clamp(1.3em, 4vw, 2.5em); /* ✅ Responsive size */
+  font-size: clamp(1.3rem, 4vw, 2.5rem); /* ✅ responsive */
   font-weight: bold;
-  white-space: nowrap;                /* ✅ Force single line */
+  white-space: nowrap;
 }
 
 header h2 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   text-decoration: underline;
   font-weight: bold;
 }
 
 header h3 {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: rgb(250, 6, 6);
   font-weight: bold;
 }
 
+/* ================= Main ================= */
 main {
   display: flex;
   justify-content: center;
@@ -63,7 +65,7 @@ form {
   border: 5px solid #303225;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  font-size: 1em;
+  font-size: 1rem;
   color: black;
 }
 
@@ -88,7 +90,7 @@ input[type="password"] {
   border-radius: 10px;
   margin-bottom: 20px;
   border: 2px solid #231d1d;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .button-group {
@@ -101,7 +103,7 @@ input[type="password"] {
 .login-btn,
 .reset-btn {
   padding: 10px;
-  font-size: 1em;
+  font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
   flex: 1;
@@ -135,7 +137,7 @@ input[type="password"] {
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 footer {
@@ -146,13 +148,13 @@ footer {
   color: #fff;
 }
 
-/* ✅ Logos + Heading Layout */
+/* ================= Logos + Heading ================= */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  flex-wrap: nowrap; /* ✅ Prevents wrapping */
+  flex-wrap: nowrap;
 }
 
 .logo-left,
@@ -164,27 +166,29 @@ footer {
 .login-heading {
   flex: 1;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.4rem;  /* ✅ Base desktop size */
   color: black;
   font-weight: bold;
 }
 
-/* Mobile phones (up to 600px) */
+/* ================= Media Queries ================= */
+
+/* Mobile (up to 600px) */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 1em;
+    font-size: 1rem;   /* ✅ smaller */
   }
 
   header h2 {
-    font-size: 0.8em;
+    font-size: 0.9rem;
   }
 
   .login-heading {
-    font-size: 0.5em;
+    font-size: 1rem;  /* ✅ properly scaled */
   }
 
   .logo-container {
-    gap: 8px; /* ✅ Smaller gap but still in one line */
+    gap: 8px;
   }
 
   .logo-left,
@@ -194,17 +198,17 @@ footer {
 
   form {
     padding: 12px;
-    font-size: 0.9em;
+    font-size: 0.9rem;
   }
 
   input[type="text"],
   input[type="password"] {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding: 8px;
   }
 
   .login-btn, .reset-btn {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     min-width: 100px;
   }
 }
@@ -212,15 +216,15 @@ footer {
 /* Tablets (601px to 900px) */
 @media (min-width: 601px) and (max-width: 900px) {
   header h1 {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   header h2 {
-    font-size: 1.3em;
+    font-size: 1.3rem;
   }
 
   .login-heading {
-    font-size: 1em;
+    font-size: 1.2rem;
   }
 
   .logo-left,
@@ -230,22 +234,22 @@ footer {
 
   form {
     max-width: 500px;
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 
 /* Laptops (901px to 1200px) */
 @media (min-width: 901px) and (max-width: 1200px) {
   header h1 {
-    font-size: 2.2em;
+    font-size: 2.2rem;
   }
 
   header h2 {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
 
   .login-heading {
-    font-size: 1em;
+    font-size: 1.3rem;
   }
 
   form {
@@ -256,15 +260,15 @@ footer {
 /* Desktops (1201px and above) */
 @media (min-width: 1201px) {
   header h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 
   header h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .login-heading {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
 
   form {
