@@ -203,18 +203,33 @@ p:hover {
 }
 
 footer {
-    padding: 10px;
-    background-color: #100e2c;
-    font-weight: bold;
-    border-top: 2px solid #8B0000;
-    text-align: center;
-    color: #fff;
+  padding: 18px 10px 14px 10px;
+  background-color: #100e2c;
+  font-weight: bold;
+  border-top: 2px solid #8B0000;
+  text-align: center;
+  color: #cbf72d;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
+
 footer p {
-    color: #FFF;
-    text-align: center;
-    padding: 5px;
-    margin: 2px;
+  color: #abf518;
+  text-align: center;
+  padding: 5px 0;
+  margin: 2px 0;
+  font-size: 1rem;
+}
+
+footer address {
+  display: block;
+  font-style: normal;
+  color: #f9f9f9;
+  background: none;
+  margin: 6px 0 8px 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* ==========================
@@ -240,20 +255,34 @@ footer p {
 
 /* Tablets (Portrait) */
 @media (max-width: 768px) {
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
+    footer {
+        padding: 18px 10px 14px 10px;
+        background-color: #100e2c;
+        font-weight: bold;
+        border-top: 2px solid #8B0000;
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
     }
-    header h1 { font-size: 2rem; }
-    header h2 { font-size: 1.3rem; }
-    header h3 { font-size: 1rem; }
+    footer p {
+        color: #FFF;
+        text-align: center;
+        padding: 5px 0;
+        margin: 2px 0;
+        font-size: 1rem;
+    }
+    footer address {
+        display: block;
+        font-style: normal;
+        color: #dcec2d;
+        background: none;
+        margin: 6px 0 8px 0;
+        padding: 0;
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
 
-    .container {
-        padding: 15px;
-        gap: 15px;
-    }
     .box {
         min-width: 90%;
         max-width: 100%;
