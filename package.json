@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PRISM2025/prismappoliceosint.git"
+    "url": "git+https://github.com/PRISM2025/appoliceosint.git"
   },
   "keywords": ["osint", "police", "intelligence", "andhra-pradesh", "prism"],
   "author": "PRISM - Police Research Institute of Systems Modernisation",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PRISM2025/prismappoliceosint/issues"
+    "url": "https://github.com/PRISM2025/appoliceosint/issues"
   },
-  "homepage": "https://github.com/PRISM2025/prismappoliceosint#readme",
+  "homepage": "https://github.com/PRISM2025/appoliceosint#readme",
   "description": ""
 }
