@@ -25,7 +25,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem; /* ✅ rem for consistent scaling */
+    font-size: 3.2rem; /* ✅ rem for consistent scaling */
     margin-top: 8px;
     font-weight: bold;
     color: #fff;
@@ -34,7 +34,7 @@ header h1 {
 }
 
 header h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #fff;
     text-decoration: underline;
@@ -406,7 +406,7 @@ marquee h3 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 3px 10px rgba(0, 0, 0, 0.1);
     padding: 0;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -429,7 +429,7 @@ marquee h3 {
 }
 
 .container-header h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin: 0;
     font-weight: 700;
     text-transform: uppercase;
@@ -437,13 +437,13 @@ marquee h3 {
 }
 
 .container-content {
-    padding: 20px;
+    padding: 25px;
     counter-reset: section-counter;
 }
 
 .container-content h2 {
     color: #d01124;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 18px 0 10px 0;
     padding-bottom: 6px;
     border-bottom: 2px solid #d01124;
