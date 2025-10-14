@@ -70,6 +70,8 @@
 
       if (data.success) {
         sessionStorage.setItem("loggedIn", "true");
+        localStorage.setItem("loggedIn", "true"); // Backup in localStorage
+        console.log("Login successful, redirecting to dashboard");
         window.location.href = "dashboard.html"; // ✅ redirect to dashboard
       } else {
         errorMsg.textContent = "❌ " + data.message;
