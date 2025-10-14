@@ -13,6 +13,8 @@ html, body {
   background-attachment: fixed;
   color: white;
   background-image: url(bacground_image.webp);
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================= Header ================= */
@@ -53,7 +55,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-height: 60vh;
+  flex: 1;
   flex-direction: column;
 }
 
