@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prismappolice.com</title>
+  <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="factcheck.css">
 </head>
 
@@ -16,8 +17,9 @@
   </div>
       <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
       <h2>(Open Source Intelligence Tools Platform)</h2>
-      <marquee behavior="scroll" direction="left" style="font-size: 1.2em;">
-  <h3>(PRISM - Police Research Institute for Systems Modernisation)</h3></marquee> 
+      <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+</div> 
   <div class="profile-container" style="position: absolute; top: 10px; right:20px">
   <div class="profile-wrapper" onclick="toggleDropdown(event)">
   <div class="profile-icon">
@@ -38,19 +40,19 @@
             <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
           </li>
           <li class="nav-item">
-            <a href="dashboard.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
           </li>
           <li class="nav-item">
             <a href="factcheck.html" class="nav-link active" data-section="factcheck">✅ Fact Check Tools</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">📱 Social Media Tools</a>
+            <a href="social-media.html" class="nav-link">📱 Social Media Tools</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">🌐 Domain Intel Tools</a>
+            <a href="domain-intel.html" class="nav-link">🌐 Domain Intel Tools</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">🔒 Breach Data Tools</a>
+            <a href="breach-data.html" class="nav-link">🔒 Breach Data Tools</a>
           </li>
         </ul>
         <div class="hamburger">
@@ -61,136 +63,135 @@
       </div>
     </nav>
 
-    <main>
-      <div class="container">
-        <div class="unified-container">
-          <div class="container-header">
-            <h1>Fact Check Tools</h1>
-          </div>
-          <div class="container-content">
+    <main> 
+    <div class="container">
+      <div class="unified-container">
+        <div class="container-header">
+          <h1>FACT CHECK TOOLS</h1>
+        </div>
+        <div class="container-content">
+          <h2>1. MONITORING MISINFORMATION TOOLS</h2>
+          <p><strong>USES:</strong> These tools help monitor and identify misinformation, fake news, and false narratives across digital platforms.</p>
+          <ol>
+            <li><a href="https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en">Google Fact Check Explorer</a></li>
+            <li><a href="https://pro.x.com/i/premium_sign_up?referring_page=pro">Tweetdeck/(X-Twitter)</a></li>
+          </ol>
 
-            <h2>1. Monitoring Misinformation Tools</h2>
-            <p><strong>USES:</strong> These tools help monitor and identify misinformation, fake news, and false narratives across digital platforms.</p>
-            <ol>
-              <li><a href="https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en">Google Fact Check Explorer</a></li>
-              <li><a href="https://pro.x.com/i/premium_sign_up?referring_page=pro">Tweetdeck/(X-Twitter)</a></li>
-            </ol>
+          <h2>2. FACIAL RECOGNITION TOOLS</h2>
+          <p><strong>USES:</strong> Facial recognition tools help identify individuals in images and verify identity claims in fact-checking investigations.</p>
+          <ol>
+            <li><a href="https://facecheck.id/">Facecheck</a></li>
+            <li><a href="https://pimeyes.com/en">Pimeyes</a></li>
+          </ol>
 
-            <h2>2. Facial Recognition Tools</h2>
-            <p><strong>USES:</strong> Facial recognition tools help identify individuals in images and verify identity claims in fact-checking investigations.</p>
-            <ol>
-              <li><a href="https://facecheck.id/">Facecheck</a></li>
-              <li><a href="https://pimeyes.com/en">Pimeyes</a></li>
-            </ol>
+          <h2>3. ERROR LEVEL ANALYSIS TOOLS</h2>
+          <p><strong>USES:</strong> Error level analysis tools help detect image manipulation and editing by analyzing compression artifacts and inconsistencies.</p>
+          <ol>
+            <li><a href="https://29a.ch/photo-forensics/#error-level-analysis">Forensically</a></li>
+            <li><a href="https://fotoforensics.com/">Fotoforensics</a></li>
+          </ol>
 
-            <h2>3. Error Level Analysis Tools</h2>
-            <p><strong>USES:</strong> Error level analysis tools help detect image manipulation and editing by analyzing compression artifacts and inconsistencies.</p>
-            <ol>
-              <li><a href="https://29a.ch/photo-forensics/#error-level-analysis">Forensically</a></li>
-              <li><a href="https://fotoforensics.com/">Fotoforensics</a></li>
-            </ol>
+          <h2>4. CHRONOLOCATION TOOLS</h2>
+          <p><strong>USES:</strong> Chronolocation tools help verify when images or videos were taken by analyzing shadows, sun position, and time-based data.</p>
+          <ol>
+            <li><a href="https://www.timeanddate.com/worldclock/">Time and Date</a></li>
+            <li><a href="https://shademap.app/@34.19922,77.31836,17.71507z,1759376344763t,0b,0p,0m!1759366015562!1759408547446,qMzQuMTk5OTAzODA5MDEwNzU2LCA3Ny4zMTkwNzc5MDYwNDcx!34.1999!77.31908">Shadow Map</a></li>
+            <li><a href="https://www.suncalc.org/#/34.1998,77.3191,3/2025.10.02/01:46/1/1">Suncalc</a></li>
+          </ol>
 
-            <h2>4. Chronolocation Tools</h2>
-            <p><strong>USES:</strong> Chronolocation tools help verify when images or videos were taken by analyzing shadows, sun position, and time-based data.</p>
-            <ol>
-              <li><a href="https://www.timeanddate.com/worldclock/">Time and Date</a></li>
-              <li><a href="https://shademap.app/@34.19922,77.31836,17.71507z,1759376344763t,0b,0p,0m!1759366015562!1759408547446,qMzQuMTk5OTAzODA5MDEwNzU2LCA3Ny4zMTkwNzc5MDYwNDcx!34.1999!77.31908">Shadow Map</a></li>
-              <li><a href="https://www.suncalc.org/#/34.1998,77.3191,3/2025.10.02/01:46/1/1">Suncalc</a></li>
-            </ol>
+          <h2>5. METADATA EXTRACTION TOOLS</h2>
+          <p><strong>USES:</strong> Metadata extraction tools help analyze hidden data in images and files to verify authenticity and gather investigative evidence.</p>
+          <ol>
+            <li><a href="https://exifeditor.io/#google_vignette/">Exifeditor</a></li>
+            <li><a href="https://exif.tools/">Exif.tool</a></li>
+            <li><a href="https://www.metadata2go.com/">Metadata2go</a></li>
+          </ol>
 
-            <h2>5. Metadata Extraction Tools</h2>
-            <p><strong>USES:</strong> Metadata extraction tools help analyze hidden data in images and files to verify authenticity and gather investigative evidence.</p>
-            <ol>
-              <li><a href="https://exifeditor.io/#google_vignette/">Exifeditor</a></li>
-              <li><a href="https://exif.tools/">Exif.tool</a></li>
-              <li><a href="https://www.metadata2go.com/">Metadata2go</a></li>
-            </ol>
+          <h2>6. RECOVER DELETED CONTENT</h2>
+          <p><strong>USES:</strong> Content recovery tools help access deleted or modified web content to track changes and verify historical information.</p>
+          <ol>
+            <li><a href="https://www.waybackmachine.org/">Wayback Machine</a></li>
+            <li><a href="https://archive.is/">Archive.is</a></li>
+            <li><a href="https://www.cachedview.com/">CachedView</a></li>
+            <li><a href="https://ghostarchive.org/">Ghostarchive</a></li>
+          </ol>
 
-            <h2>6. Recover Deleted Content</h2>
-            <p><strong>USES:</strong> Content recovery tools help access deleted or modified web content to track changes and verify historical information.</p>
-            <ol>
-              <li><a href="https://www.waybackmachine.org/">Wayback Machine</a></li>
-              <li><a href="https://archive.is/">Archive.is</a></li>
-              <li><a href="https://www.cachedview.com/">CachedView</a></li>
-              <li><a href="https://ghostarchive.org/">Ghostarchive</a></li>
-            </ol>
+          <h2>7. AI CONTENT GENERATION TOOLS</h2>
+          <p><strong>USES:</strong> AI content generation tools help create test content and analyze patterns to better understand how AI-generated content appears.</p>
+          <ol>
+            <li><a href="https://aistudio.google.com/?model=gemini-2.5-flash-image-preview">Gemini-2.5</a></li>
+            <li><a href="https://gemini.google.com/app">Gemini</a></li>
+            <li><a href="https://notebooklm.google.com/?pli=1">NotebookLM</a></li>
+            <li><a href="https://chat.openai.com/chat">ChatGPT</a></li>
+            <li><a href="https://www.perplexity.ai/">Perplexity AI</a></li>
+          </ol>
 
-            <h2>7. AI Content Generation Tools</h2>
-            <p><strong>USES:</strong> AI content generation tools help create test content and analyze patterns to better understand how AI-generated content appears.</p>
-            <ol>
-              <li><a href="https://aistudio.google.com/?model=gemini-2.5-flash-image-preview">Gemini-2.5</a></li>
-              <li><a href="https://gemini.google.com/app">Gemini</a></li>
-              <li><a href="https://notebooklm.google.com/?pli=1">NotebookLM</a></li>
-              <li><a href="https://chat.openai.com/chat">ChatGPT</a></li>
-              <li><a href="https://www.perplexity.ai/">Perplexity AI</a></li>
-            </ol>
+          <h2>8. VISUAL VERIFICATION TOOLS</h2>
+          <p><strong>USES:</strong> Visual verification tools help authenticate images and videos, detect manipulation, and verify the authenticity of visual content.</p>
+          <ol>
+            <li><a href="https://www.invid-project.eu/tools-and-services/invid-verification-plugin/">InVid Verification Plugin</a></li>
+            <li><a href="https://www.amnesty.org/en/latest/research/2019/03/introducing-youtube-data-viewer-a-new-tool-to-help-verify-user-generated-videos/">YouTube Data Viewer</a></li>
+            <li><a href="https://lens.google/#cta-section">Google Lens</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en">Search by Image</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/sider-chat-with-all-ai-gp/difoiogjjojoaoomphldepapgpbgkhkb">Sider-Chat</a></li>
+          </ol>
 
-            <h2>8. Visual Verification Tools</h2>
-            <p><strong>USES:</strong> Visual verification tools help authenticate images and videos, detect manipulation, and verify the authenticity of visual content.</p>
-            <ol>
-              <li><a href="https://www.invid-project.eu/tools-and-services/invid-verification-plugin/">InVid Verification Plugin</a></li>
-              <li><a href="https://www.amnesty.org/en/latest/research/2019/03/introducing-youtube-data-viewer-a-new-tool-to-help-verify-user-generated-videos/">YouTube Data Viewer</a></li>
-              <li><a href="https://lens.google/#cta-section">Google Lens</a></li>
-              <li><a href="https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en">Search by Image</a></li>
-              <li><a href="https://chromewebstore.google.com/detail/sider-chat-with-all-ai-gp/difoiogjjojoaoomphldepapgpbgkhkb">Sider-Chat</a></li>
-            </ol>
+          <h2>9. QUICK HELP TOOLS</h2>
+          <p><strong>USES:</strong> Quick help tools provide utilities for downloading, editing, and processing content for verification purposes.</p>
+          <ol>
+            <li><a href="https://fdown.net/">Facebook Video Downloader</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/x-twitter-video-downloade/akmdionenlnfcipmdhbhcnkighafmdha?utm_source=item-share-cb">X Video Downloader</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/turbo-downloader-for-inst/cpgaheeihidjmolbakklolchdplenjai?hl=en">Instagram Video Downloader</a></li>
+            <li><a href="https://findyoutubevideo.thetechrobo.ca/">YouTube Video Finder</a></li>
+            <li><a href="https://www.remove.bg/">Remove Bg</a></li>
+            <li><a href="https://cleanup.pictures/">Cleanup Pictures</a></li>
+            <li><a href="https://www.awesomescreenshot.com/">Screen Recorder</a></li>
+          </ol>
 
-            <h2>9. Quick Help Tools</h2>
-            <p><strong>USES:</strong> Quick help tools provide utilities for downloading, editing, and processing content for verification purposes.</p>
-            <ol>
-              <li><a href="https://fdown.net/">Facebook Video Downloader</a></li>
-              <li><a href="https://chromewebstore.google.com/detail/x-twitter-video-downloade/akmdionenlnfcipmdhbhcnkighafmdha?utm_source=item-share-cb">X Video Downloader</a></li>
-              <li><a href="https://chromewebstore.google.com/detail/turbo-downloader-for-inst/cpgaheeihidjmolbakklolchdplenjai?hl=en">Instagram Video Downloader</a></li>
-              <li><a href="https://findyoutubevideo.thetechrobo.ca/">YouTube Video Finder</a></li>
-              <li><a href="https://www.remove.bg/">Remove Bg</a></li>
-              <li><a href="https://cleanup.pictures/">Cleanup Pictures</a></li>
-              <li><a href="https://www.awesomescreenshot.com/">Screen Recorder</a></li>
-            </ol>
+          <h2>10. GEOLOCATION TOOLS</h2>
+          <p><strong>USES:</strong> Geolocation tools help verify the location where images or videos were taken to confirm or debunk location-based claims.</p>
+          <ol>
+            <li><a href="https://www.google.com/intl/en_in/earth/about/versions/">Google Earth Pro</a></li>
+            <li><a href="https://www.google.com/maps">Google Maps</a></li>
+            <li><a href="https://www.bing.com/maps">Bing Maps</a></li>
+            <li><a href="https://www.openstreetmap.org">OpenStreetMap</a></li>
+            <li><a href="https://www.instantstreetview.com/">Instant Street View</a></li>
+            <li><a href="https://inteltechniques.com/tools/Location.html">Maps Search Tool</a></li>
+            <li><a href="https://wikimapia.org/#lang=en&lat=13.083300&lon=80.283300&z=12&m=w">Wiki Maps</a></li>
+            <li><a href="https://picarta.ai/">Picarta</a></li>
+          </ol>
 
-            <h2>10. Geolocation Tools</h2>
-            <p><strong>USES:</strong> Geolocation tools help verify the location where images or videos were taken to confirm or debunk location-based claims.</p>
-            <ol>
-              <li><a href="https://www.google.com/intl/en_in/earth/about/versions/">Google Earth Pro</a></li>
-              <li><a href="https://www.google.com/maps">Google Maps</a></li>
-              <li><a href="https://www.bing.com/maps">Bing Maps</a></li>
-              <li><a href="https://www.openstreetmap.org">OpenStreetMap</a></li>
-              <li><a href="https://www.instantstreetview.com/">Instant Street View</a></li>
-              <li><a href="https://inteltechniques.com/tools/Location.html">Maps Search Tool</a></li>
-              <li><a href="https://wikimapia.org/#lang=en&lat=13.083300&lon=80.283300&z=12&m=w">Wiki Maps</a></li>
-              <li><a href="https://picarta.ai/">Picarta</a></li>
-            </ol>
+          <h2>11. SOCIAL MEDIA SEARCH TOOLS</h2>
+          <p><strong>USES:</strong> Social media search tools help track the origin and spread of content across different platforms for verification purposes.</p>
+          <ol>
+            <li><a href="https://graph.tips/beta/">Graph</a></li>
+            <li><a href="https://whopostedwhat.com/">Whopostedwhat</a></li>
+            <li><a href="https://findidfb.com/">FindMyFbID</a></li>
+            <li><a href="https://webmii.com/">Webmii</a></li>
+            <li><a href="https://www.mention.com/en/">Mention</a></li>
+            <li><a href="https://mattw.io/youtube-geofind/location?location=48.2100,2.2800&doSearch=true/">MW Geofind</a></li>
+            <li><a href="https://www.tofler.in/">Tofler</a></li>
+            <li><a href="https://www.zaubacorp.com/">Zaubacorp</a></li>
+            <li><a href="https://instahunt.huntintel.io/">Instahunt</a></li>
+          </ol>
 
-            <h2>11. Social Media Search Tools</h2>
-            <p><strong>USES:</strong> Social media search tools help track the origin and spread of content across different platforms for verification purposes.</p>
-            <ol>
-              <li><a href="https://graph.tips/beta/">Graph</a></li>
-              <li><a href="https://whopostedwhat.com/">Whopostedwhat</a></li>
-              <li><a href="https://findidfb.com/">FindMyFbID</a></li>
-              <li><a href="https://webmii.com/">Webmii</a></li>
-              <li><a href="https://www.mention.com/en/">Mention</a></li>
-              <li><a href="https://mattw.io/youtube-geofind/location?location=48.2100,2.2800&doSearch=true/">MW Geofind</a></li>
-              <li><a href="https://www.tofler.in/">Tofler</a></li>
-              <li><a href="https://www.zaubacorp.com/">Zaubacorp</a></li>
-              <li><a href="https://instahunt.huntintel.io/">Instahunt</a></li>
-            </ol>
-
-            <h2>12. AI Detection Tools</h2>
-            <p><strong>USES:</strong> AI detection tools help identify artificially generated content including deepfakes, AI-generated images, and synthetic media.</p>
-            <ol>
-              <li><a href="https://hivemoderation.com/ai-generated-content-detection">Hive Moderation</a></li>
-              <li><a href="https://isitai.com/">IsitAI?</a></li>
-              <li><a href="https://wasitai.com/">WasitAI?</a></li>
-              <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/login?next=%2Fubmdfl%2Fdeep-o-meter%2Fhome_login/">DEEPFAKE-O-METER</a></li>
-              <li><a href="https://sightengine.com/detect-ai-generated-images">SightengineAI</a></li>
-              <li><a href="https://www.aiornot.com/">Optic AI or NOT</a></li>
-              <li><a href="https://www.hiya.com/products/deepfake-voice-detector">Deepfake Voice Detector</a></li>
-              <li><a href="https://detect.resemble.ai/">ResembleAI</a></li>
-              <li><a href="https://lenso.ai/en">Lenso.ai</a></li>
-            </ol>
-          </div>
+          <h2>12. AI DETECTION TOOLS</h2>
+          <p><strong>USES:</strong> AI detection tools help identify artificially generated content including deepfakes, AI-generated images, and synthetic media.</p>
+          <ol>
+            <li><a href="https://hivemoderation.com/ai-generated-content-detection">Hive Moderation</a></li>
+            <li><a href="https://isitai.com/">IsitAI?</a></li>
+            <li><a href="https://wasitai.com/">WasitAI?</a></li>
+            <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/login?next=%2Fubmdfl%2Fdeep-o-meter%2Fhome_login/">DEEPFAKE-O-METER</a></li>
+            <li><a href="https://sightengine.com/detect-ai-generated-images">SightengineAI</a></li>
+            <li><a href="https://www.aiornot.com/">Optic AI or NOT</a></li>
+            <li><a href="https://www.hiya.com/products/deepfake-voice-detector">Deepfake Voice Detector</a></li>
+            <li><a href="https://detect.resemble.ai/">ResembleAI</a></li>
+            <li><a href="https://lenso.ai/en">Lenso.ai</a></li>
+          </ol>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
 <footer>
   <address>
