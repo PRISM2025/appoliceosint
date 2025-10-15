@@ -42,16 +42,16 @@
             <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
           </li>
           <li class="nav-item">
-            <a href="factcheck.html" class="nav-link">✅ Fact Check Tools</a>
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
           </li>
           <li class="nav-item">
-            <a href="social-media.html" class="nav-link">📱 Social Media Tools</a>
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
           </li>
           <li class="nav-item">
-            <a href="domain-intel.html" class="nav-link">🌐 Domain Intel Tools</a>
+            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
           </li>
           <li class="nav-item">
-            <a href="breach-data.html" class="nav-link active">🔒 Breach Data Tools</a>
+            <a href="breach-data.html" class="nav-link active" data-section="breach-data">🔒 Breach Data Tools</a>
           </li>
         </ul>
         <div class="hamburger">
@@ -270,6 +270,34 @@
       const dropdown = document.getElementById('dropdownMenu');
       dropdown.style.display = 'none';
     });
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for breach data page
+    setActiveNavLink('breach-data');
 
     // Hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
