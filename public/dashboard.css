@@ -478,6 +478,7 @@ marquee h3 {
     text-align: center;
     padding: 15px;
     border-bottom: 3px solid #d01124;
+    border-radius: 15px 15px 0 0;
 }
 
 .container-header h1 {
