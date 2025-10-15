@@ -465,7 +465,6 @@ marquee h3 {
     position: relative;
     backdrop-filter: blur(8px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto;
 }
 
 .unified-container:hover {
@@ -480,8 +479,6 @@ marquee h3 {
     padding: 15px;
     border-bottom: 3px solid #d01124;
     border-radius: 15px 15px 0 0;
-    position: relative;
-    z-index: 1;
 }
 
 .container-header h1 {
@@ -1146,7 +1143,17 @@ footer address {
     flex-direction: column;
 }
 
-/* Duplicate container-header removed - using main definition above */
+.container-header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
 
 .container-content {
     flex: 1;
