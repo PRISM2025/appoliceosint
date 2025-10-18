@@ -20,13 +20,8 @@
     <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
 </div>
   <div class="profile-container" style="position: absolute; top: 10px; right:20px">
-  <div class="profile-wrapper" onclick="toggleDropdown(event)">
   <div class="profile-icon">
   <img src="Appolice-Logo.png" alt="profile">
-  </div>
-  <div class="dropdown" id="dropdownMenu">
-  <a href="index.html" onclick="logout()">Logout</a>
-  </div>
   </div>
 </div>
 </header>
@@ -52,6 +47,9 @@
           </li>
           <li class="nav-item">
             <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
           </li>
         </ul>
         <div class="hamburger">
@@ -99,7 +97,33 @@
                 </div>
               </div>
               
-              <div class="mission-statement">
+              <!-- Visitor Statistics Section -->
+            <div class="visitor-stats-section" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+              <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📊 Live Visitor Analytics</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                  <div style="font-size: 2.2em; font-weight: bold; color: #4CAF50; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="total-visitors-dashboard">Loading...</div>
+                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Total Site Visits</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                  <div style="font-size: 2.2em; font-weight: bold; color: #2196F3; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="unique-visitors-dashboard">Loading...</div>
+                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                  <div style="font-size: 2.2em; font-weight: bold; color: #FF9800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-visitors-dashboard">Loading...</div>
+                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                  <div style="font-size: 2.2em; font-weight: bold; color: #E91E63; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-unique-dashboard">Loading...</div>
+                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+                </div>
+              </div>
+              <div style="text-align: center; margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                🔄 Auto-refreshes every 30 seconds
+              </div>
+            </div>
+
+            <div class="mission-statement">
                 <p><strong>Whether you're conducting investigations, performing background checks, or gathering intelligence, our OSINT Tools Platform is here to support your efforts in maintaining public safety and security.</strong></p>
               </div>
 
@@ -186,6 +210,31 @@
     
     console.log("Dashboard - Access granted");
 
+    // Load visitor statistics for dashboard
+    async function loadDashboardVisitorStats() {
+      try {
+        const response = await fetch('/api/visitor-stats');
+        const stats = await response.json();
+        
+        // Update the dashboard display elements
+        document.getElementById('total-visitors-dashboard').textContent = stats.totalVisitors.toLocaleString();
+        document.getElementById('unique-visitors-dashboard').textContent = stats.uniqueVisitors.toLocaleString();
+        document.getElementById('today-visitors-dashboard').textContent = stats.todayVisitors.toLocaleString();
+        document.getElementById('today-unique-dashboard').textContent = stats.todayUniqueVisitors.toLocaleString();
+      } catch (error) {
+        console.error('Error loading visitor stats:', error);
+        // Show fallback values
+        document.getElementById('total-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('unique-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('today-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('today-unique-dashboard').textContent = 'N/A';
+      }
+    }
+
+    // Load stats immediately and then refresh every 30 seconds
+    loadDashboardVisitorStats();
+    setInterval(loadDashboardVisitorStats, 30000);
+
     // Strong back navigation block
     history.pushState(null, null, location.href);
     window.onpopstate = function () {
@@ -199,29 +248,6 @@
       console.log("User logged out - cleared all storage");
       window.location.href = "index.html";
     };
-
-    // Toggle dropdown function
-    window.toggleDropdown = function (event) {
-      event.stopPropagation();
-      console.log("Toggle dropdown clicked");
-      const dropdown = document.getElementById("dropdownMenu");
-      console.log("Dropdown element:", dropdown);
-      
-      if (dropdown) {
-        const currentDisplay = dropdown.style.display;
-        const newDisplay = currentDisplay === "block" ? "none" : "block";
-        dropdown.style.display = newDisplay;
-        console.log("Changed dropdown display from", currentDisplay, "to", newDisplay);
-      } else {
-        console.error("Dropdown element not found!");
-      }
-    };
-
-    // Close dropdown on any other click
-    window.addEventListener("click", function () {
-      const dropdown = document.getElementById("dropdownMenu");
-      if (dropdown) dropdown.style.display = "none";
-    });
 
     // Navigation active state management
     function setActiveNavLink(section) {

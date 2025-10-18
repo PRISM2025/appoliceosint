@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Update - PRISM OSINT</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .update-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .update-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    .update-header h2 {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+      font-size: 1.1em;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+      background: white;
+      color: #333;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 10px 0;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+    
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .message {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    
+    .back-to-login {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-to-login a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .back-to-login a:hover {
+      text-decoration: underline;
+    }
+    
+    .security-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border-left: 4px solid #667eea;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .update-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .update-option {
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .update-option:hover {
+      border-color: #667eea;
+      background: #f0f8ff;
+    }
+    
+    .update-option.selected {
+      border-color: #667eea;
+      background: #667eea;
+      color: white;
+    }
+    
+    .loading {
+      display: none;
+      text-align: center;
+      color: #667eea;
+      margin: 20px 0;
+    }
+    
+    .loading.show {
+      display: block;
+    }
+    
+    @media (max-width: 600px) {
+      .update-container {
+        margin: 20px auto;
+        padding: 20px;
+        width: 95%;
+      }
+      
+      .update-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      
+      .form-group label {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+    <h2>(Open Source Intelligence Tools Platform)</h2>
+    <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1em;">
+      <h3><strong>Account Update - Security Question Verification</strong></h3>
+    </marquee>
+  </header>
+
+  <main>
+    <div class="update-container">
+      <div class="update-header">
+        <h2>🔄 Update Account</h2>
+        <p>Update your username or password using security question verification</p>
+      </div>
+
+      <div class="security-info">
+        <strong>🔐 Secure Update:</strong> We'll verify your identity using your security question or current password before allowing any changes.
+      </div>
+
+      <form id="account-update-form">
+        <div class="form-group">
+          <label for="current-username">Current Username:</label>
+          <input type="text" id="current-username" name="currentUsername" placeholder="Enter your current username" required>
+        </div>
+
+        <div class="form-group" id="security-question-display" style="display: none;">
+          <label id="security-question-text">Security Question:</label>
+          <input type="text" id="security-answer" name="securityAnswer" placeholder="Enter your answer" required>
+        </div>
+
+        <div class="form-group" id="current-password-display" style="display: none;">
+          <label for="current-password-verify">Current Password:</label>
+          <input type="password" id="current-password-verify" name="currentPasswordVerify" placeholder="Enter your current password" required>
+          <div class="password-requirements">
+            Since your account doesn't have a security question, please enter your current password to verify your identity.
+          </div>
+        </div>
+
+        <div class="update-options" id="update-options" style="display: none;">
+          <div class="update-option" onclick="toggleUpdateOption('username')">
+            <strong>📝 Update Username</strong>
+            <p>Change your login username</p>
+          </div>
+          <div class="update-option" onclick="toggleUpdateOption('password')">
+            <strong>🔒 Update Password</strong>
+            <p>Change your login password</p>
+          </div>
+        </div>
+
+        <div class="form-group" id="new-username-group" style="display: none;">
+          <label for="new-username">New Username:</label>
+          <input type="text" id="new-username" name="newUsername" placeholder="Enter new username">
+        </div>
+
+        <div class="form-group" id="new-password-group" style="display: none;">
+          <label for="new-password">New Password:</label>
+          <input type="password" id="new-password" name="newPassword" placeholder="Enter new password (min 8 characters)">
+        </div>
+
+        <div class="form-group" id="confirm-password-group" style="display: none;">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm new password">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="verify-btn" onclick="verifyUsername()">Verify Username</button>
+        <button type="submit" class="btn btn-primary" id="update-btn" style="display: none;" disabled>Update Account</button>
+      </form>
+
+      <!-- Messages -->
+      <div id="message-container"></div>
+      
+      <!-- Loading Indicator -->
+      <div class="loading" id="loading">
+        <p>🔄 Processing your request...</p>
+      </div>
+
+      <div class="back-to-login">
+        <a href="index.html">← Back to Login</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <address>
+      Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+      Contact: +91-8523817999.<br>
+      Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+    </address>
+    <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let securityQuestion = null;
+    let usePasswordAuth = false;
+    let updateOptions = {
+      username: false,
+      password: false
+    };
+
+    // Show message function
+    function showMessage(message, type = 'info') {
+      const container = document.getElementById('message-container');
+      container.innerHTML = `<div class="message ${type}">${message}</div>`;
+      
+      if (type === 'success') {
+        setTimeout(() => {
+          container.innerHTML = '';
+        }, 5000);
+      }
+    }
+
+    // Show loading function
+    function showLoading(show = true) {
+      const loading = document.getElementById('loading');
+      if (show) {
+        loading.classList.add('show');
+      } else {
+        loading.classList.remove('show');
+      }
+    }
+
+    // Verify username and get security question
+    async function verifyUsername() {
+      const username = document.getElementById('current-username').value.trim();
+      
+      if (!username) {
+        showMessage('Please enter your current username', 'error');
+        return;
+      }
+
+      showLoading(true);
+      
+      try {
+        const response = await fetch('/api/password-reset/check-user', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username })
+        });
+
+        const data = await response.json();
+        showLoading(false);
+
+        if (data.success) {
+          usePasswordAuth = false;
+          securityQuestion = data.question;
+          document.getElementById('security-question-text').textContent = data.question;
+          document.getElementById('security-question-display').style.display = 'block';
+          document.getElementById('current-password-display').style.display = 'none';
+          document.getElementById('update-options').style.display = 'grid';
+          document.getElementById('verify-btn').style.display = 'none';
+          document.getElementById('update-btn').style.display = 'block';
+          showMessage('Username verified. Please answer your security question and select what to update.', 'success');
+        } else if (data.noSecurityQuestion && data.canUsePasswordAuth) {
+          usePasswordAuth = true;
+          document.getElementById('security-question-display').style.display = 'none';
+          document.getElementById('current-password-display').style.display = 'block';
+          document.getElementById('update-options').style.display = 'grid';
+          document.getElementById('verify-btn').style.display = 'none';
+          document.getElementById('update-btn').style.display = 'block';
+          showMessage('Username verified. Please enter your current password and select what to update.', 'info');
+        } else {
+          showMessage(data.message, 'error');
+        }
+      } catch (error) {
+        showLoading(false);
+        showMessage('Network error. Please try again.', 'error');
+      }
+    }
+
+    // Toggle update options
+    function toggleUpdateOption(option) {
+      updateOptions[option] = !updateOptions[option];
+      
+      const optionEl = document.querySelector(`.update-option:nth-child(${option === 'username' ? '1' : '2'})`);
+      const usernameGroup = document.getElementById('new-username-group');
+      const passwordGroup = document.getElementById('new-password-group');
+      const confirmPasswordGroup = document.getElementById('confirm-password-group');
+      const updateBtn = document.getElementById('update-btn');
+      
+      if (updateOptions[option]) {
+        optionEl.classList.add('selected');
+      } else {
+        optionEl.classList.remove('selected');
+      }
+      
+      // Show/hide form groups
+      usernameGroup.style.display = updateOptions.username ? 'block' : 'none';
+      passwordGroup.style.display = updateOptions.password ? 'block' : 'none';
+      confirmPasswordGroup.style.display = updateOptions.password ? 'block' : 'none';
+      
+      // Enable/disable update button
+      updateBtn.disabled = !updateOptions.username && !updateOptions.password;
+      
+      // Clear form fields when deselecting
+      if (!updateOptions.username) {
+        document.getElementById('new-username').value = '';
+      }
+      if (!updateOptions.password) {
+        document.getElementById('new-password').value = '';
+        document.getElementById('confirm-password').value = '';
+      }
+    }
+
+    // Account update form submission
+    document.getElementById('account-update-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const currentUsername = document.getElementById('current-username').value.trim();
+      const newUsername = updateOptions.username ? document.getElementById('new-username').value.trim() : null;
+      const newPassword = updateOptions.password ? document.getElementById('new-password').value : null;
+      const confirmPassword = updateOptions.password ? document.getElementById('confirm-password').value : null;
+
+      if (!currentUsername) {
+        showMessage('Please enter your current username', 'error');
+        return;
+      }
+
+      // Validation based on authentication method
+      if (usePasswordAuth) {
+        const currentPasswordVerify = document.getElementById('current-password-verify').value.trim();
+        if (!currentPasswordVerify) {
+          showMessage('Please enter your current password', 'error');
+          return;
+        }
+      } else {
+        const securityAnswer = document.getElementById('security-answer').value.trim();
+        if (!securityAnswer) {
+          showMessage('Please enter your security answer', 'error');
+          return;
+        }
+      }
+
+      if (!updateOptions.username && !updateOptions.password) {
+        showMessage('Please select at least one option to update', 'error');
+        return;
+      }
+
+      if (updateOptions.username && !newUsername) {
+        showMessage('Please enter a new username', 'error');
+        return;
+      }
+
+      if (updateOptions.password && (!newPassword || !confirmPassword)) {
+        showMessage('Please enter and confirm your new password', 'error');
+        return;
+      }
+
+      if (updateOptions.password && newPassword !== confirmPassword) {
+        showMessage('Passwords do not match', 'error');
+        return;
+      }
+
+      if (updateOptions.password && newPassword.length < 8) {
+        showMessage('Password must be at least 8 characters long', 'error');
+        return;
+      }
+
+      showLoading(true);
+      
+      try {
+        let requestData, endpoint;
+        
+        if (usePasswordAuth) {
+          // Use password-based authentication
+          endpoint = '/api/account-update/verify-password';
+          requestData = {
+            currentUsername,
+            currentPassword: document.getElementById('current-password-verify').value.trim(),
+            newUsername,
+            newPassword,
+            confirmPassword
+          };
+        } else {
+          // Use security question authentication
+          endpoint = '/api/account-update/verify-user';
+          requestData = {
+            currentUsername,
+            securityAnswer: document.getElementById('security-answer').value.trim(),
+            newUsername,
+            newPassword,
+            confirmPassword
+          };
+        }
+
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(requestData)
+        });
+
+        const data = await response.json();
+        showLoading(false);
+
+        if (data.success) {
+          showMessage(data.message, 'success');
+          
+          // Clear form
+          document.getElementById('account-update-form').reset();
+          updateOptions = { username: false, password: false };
+          
+          // Hide form sections
+          document.getElementById('security-question-display').style.display = 'none';
+          document.getElementById('current-password-display').style.display = 'none';
+          document.getElementById('update-options').style.display = 'none';
+          document.getElementById('new-username-group').style.display = 'none';
+          document.getElementById('new-password-group').style.display = 'none';
+          document.getElementById('confirm-password-group').style.display = 'none';
+          document.getElementById('verify-btn').style.display = 'block';
+          document.getElementById('update-btn').style.display = 'none';
+          
+          // Redirect to login after 3 seconds
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 3000);
+        } else {
+          showMessage(data.message, 'error');
+        }
+      } catch (error) {
+        showLoading(false);
+        showMessage('Network error. Please try again.', 'error');
+      }
+    });
+  </script>
+</body>
+</html>

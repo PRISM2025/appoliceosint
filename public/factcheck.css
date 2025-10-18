@@ -286,17 +286,7 @@ marquee h3 {
     color: brown;
 }
 
-/* Unified Container Styles */
-.unified-container {
-    flex: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: #f8f9fa;
-}
+
 
 .unified-header {
     text-align: center;
@@ -452,7 +442,10 @@ marquee h3 {
 
 /* Unified Container Styles */
 .unified-container {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background-image: url('gradient-navy-blue-digital-grid-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa;
     border: 3px solid #3e2727;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 3px 10px rgba(0, 0, 0, 0.1);

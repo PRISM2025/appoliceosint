@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - PRISM OSINT</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .login-container {
+      max-width: 500px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    .login-header h2 {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      background: white;
+      color: #333;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .security-notice {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+      margin-bottom: 20px;
+      color: #856404;
+      font-size: 0.9em;
+    }
+    
+    .message {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .back-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .login-container {
+        margin: 50px auto;
+        padding: 20px;
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+    <h2>(Open Source Intelligence Tools Platform)</h2>
+    <marquee behavior="scroll" direction="left" style="color: #fff; font-size: 1em;">
+      <h3><strong>Administrative Access - Authorized Personnel Only</strong></h3>
+    </marquee>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <div class="login-header">
+        <h2>🛡️ Admin Login</h2>
+        <p>Secure Access for Authorized Personnel</p>
+      </div>
+
+      <div class="security-notice">
+        <strong>⚠️ Security Notice:</strong> This area is restricted to authorized police department personnel only. 
+        Unauthorized access is prohibited and monitored. All login attempts are logged.
+      </div>
+
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="admin-id">Admin ID:</label>
+          <input type="text" id="admin-id" name="adminId" placeholder="Enter your admin ID" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department:</label>
+          <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option value="admin">PRISM</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">🔐 Secure Login</button>
+      </form>
+
+      <div id="message-container"></div>
+
+      <div class="back-link">
+        <a href="index.html">← Back to Main Site</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <address>
+      Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+      Contact: +91-8523817999.<br>
+      Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+    </address>
+    <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Show message function
+    function showMessage(message, type = 'info') {
+      const container = document.getElementById('message-container');
+      container.innerHTML = `<div class="message ${type}">${message}</div>`;
+      
+      setTimeout(() => {
+        container.innerHTML = '';
+      }, 5000);
+    }
+
+    // Handle admin login
+    document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const loginData = Object.fromEntries(formData.entries());
+      
+      try {
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(loginData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Store admin session
+          sessionStorage.setItem('adminAuth', data.token);
+          sessionStorage.setItem('adminUsername', loginData.adminId);
+          
+          showMessage('Login successful! Redirecting...', 'success');
+          
+          // Redirect to admin panel
+          setTimeout(() => {
+            window.location.href = 'admin-panel.html';
+          }, 1500);
+        } else {
+          showMessage(data.message, 'error');
+        }
+      } catch (error) {
+        showMessage('Login error: ' + error.message, 'error');
+      }
+    });
+
+    // Check if already logged in
+    document.addEventListener('DOMContentLoaded', () => {
+      const adminAuth = sessionStorage.getItem('adminAuth');
+      const adminUsername = sessionStorage.getItem('adminUsername');
+      
+      // Only redirect if both auth token and username exist
+      if (adminAuth && adminUsername) {
+        showMessage('Already logged in. Redirecting to admin panel...', 'success');
+        setTimeout(() => {
+          window.location.href = 'admin-panel.html';
+        }, 1000);
+      } else {
+        // Clear any partial session data
+        sessionStorage.clear();
+        localStorage.clear();
+      }
+    });
+  </script>
+</body>
+</html>

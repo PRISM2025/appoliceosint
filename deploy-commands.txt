@@ -1,0 +1,27 @@
+# Google Cloud Deployment Commands for OSINT Website
+# Project Location: D:\Websites\OSINT WEBSITE
+
+# 1. Open PowerShell as Administrator and navigate to project
+cd "D:\Websites\OSINT WEBSITE"
+
+# 2. Initialize gcloud (run once)
+gcloud init
+
+# 3. Set your project
+gcloud config set project appoliceosint-a2fa9
+
+# 4. Enable required APIs
+gcloud services enable appengine.googleapis.com
+
+# 5. Deploy to App Engine
+gcloud app deploy
+
+# 6. View your app
+gcloud app browse
+
+# Alternative: Deploy to Cloud Run (if you prefer containers)
+# gcloud run deploy osint-website --source . --region=us-central1 --allow-unauthenticated
+
+# To update the app later, just run:
+# cd "D:\Websites\OSINT WEBSITE"
+# gcloud app deploy

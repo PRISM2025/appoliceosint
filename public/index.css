@@ -82,6 +82,8 @@ label {
   margin-bottom: 8px;
   font-weight: bold;
   color: #111;
+  font-size: 1.2rem;
+  transition: font-size 0.3s ease;
 }
 
 input[type="text"],
@@ -141,6 +143,23 @@ input[type="password"] {
   font-size: 0.9rem;
 }
 
+.forgot-password-link {
+  color: #667eea !important;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 8px 15px;
+  border: 1px solid #667eea;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.forgot-password-link:hover {
+  background: #667eea !important;
+  color: white !important;
+}
+
 footer {
   padding: 18px 10px 14px 10px;
   background-color: #100e2c;
@@ -198,41 +217,95 @@ footer address {
 
 /* Mobile (up to 600px) */
 @media (max-width: 600px) {
+  header {
+    padding: 15px 8px;
+  }
+  
   header h1 {
-    font-size: 1rem;   /* ✅ smaller */
+    font-size: 1.1rem !important;
+    line-height: 1.2;
   }
 
   header h2 {
     font-size: 0.9rem;
   }
+  
+  header h3 {
+    font-size: 0.8rem;
+  }
 
   .login-heading {
-    font-size: 1rem;  /* ✅ properly scaled */
+    font-size: 1rem !important;
+    line-height: 1.2;
+  }
+  
+  label {
+    font-size: 1rem !important;
+    margin-bottom: 6px;
   }
 
   .logo-container {
-    gap: 8px;
+    gap: 6px;
+    margin-bottom: 15px;
   }
 
   .logo-left,
   .logo-right {
-    width: 50px;
+    width: 45px;
   }
 
   form {
-    padding: 12px;
+    padding: 15px;
     font-size: 0.9rem;
+    width: 98%;
+    margin: 0 auto;
   }
 
   input[type="text"],
   input[type="password"] {
-    font-size: 0.9rem;
-    padding: 8px;
+    font-size: 0.95rem;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .button-group {
+    gap: 10px;
+    margin: 15px 0;
   }
 
   .login-btn, .reset-btn {
     font-size: 0.9rem;
-    min-width: 100px;
+    min-width: 90px;
+    padding: 10px 8px;
+  }
+  
+  /* Forgot password link mobile styling */
+  .forgot-password-link {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+  }
+  
+  /* Visitor counter mobile adjustments for 600px */
+  footer .visitor-counter {
+    margin: 12px 0 !important;
+    padding: 12px !important;
+  }
+  
+  footer .visitor-counter h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  footer .visitor-counter > div > div {
+    min-width: 90px !important;
+    padding: 8px !important;
+  }
+  
+  footer .visitor-counter > div > div > div:first-child {
+    font-size: 1.4em !important;
+  }
+  
+  footer .visitor-counter > div > div > div:last-child {
+    font-size: 0.8em !important;
   }
 }
 
@@ -280,6 +353,115 @@ footer address {
   }
 }
 
+/* Very small mobile (up to 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 5px;
+  }
+  
+  header h1 {
+    font-size: 1rem !important;
+    line-height: 1.1;
+  }
+
+  header h2 {
+    font-size: 0.8rem;
+  }
+  
+  header h3 {
+    font-size: 0.7rem;
+  }
+
+  .login-heading {
+    font-size: 0.9rem !important;
+    line-height: 1.1;
+  }
+  
+  label {
+    font-size: 0.9rem !important;
+    margin-bottom: 5px;
+  }
+
+  .logo-container {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .logo-left,
+  .logo-right {
+    width: 35px;
+  }
+
+  form {
+    padding: 12px;
+    width: 99%;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.9rem;
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+
+  .button-group {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .login-btn, .reset-btn {
+    font-size: 0.85rem;
+    min-width: auto;
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .forgot-password-link {
+    font-size: 0.8rem !important;
+    padding: 5px 10px !important;
+    margin-top: 10px;
+  }
+  
+  /* Visitor counter mobile adjustments */
+  footer .visitor-counter {
+    margin: 10px 0 !important;
+    padding: 10px !important;
+  }
+  
+  footer .visitor-counter h3 {
+    font-size: 1rem !important;
+  }
+  
+  footer .visitor-counter > div {
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+  
+  footer .visitor-counter > div > div {
+    min-width: 70px !important;
+    padding: 6px !important;
+    flex: 1 1 45% !important;
+  }
+  
+  footer .visitor-counter > div > div > div:first-child {
+    font-size: 1.1em !important;
+  }
+  
+  footer .visitor-counter > div > div > div:last-child {
+    font-size: 0.7em !important;
+  }
+  
+  footer {
+    padding: 10px 5px 8px 5px;
+    font-size: 0.8rem;
+  }
+  
+  footer address {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+}
+
 /* Desktops (1201px and above) */
 @media (min-width: 1201px) {
   header h1 {
@@ -292,6 +474,10 @@ footer address {
 
   .login-heading {
     font-size: 1.4rem;
+  }
+  
+  label {
+    font-size: 1.2rem;
   }
 
   form {

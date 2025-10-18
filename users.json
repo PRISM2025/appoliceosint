@@ -1,32 +1,126 @@
 [
-  { "username": "ap_dgp", "password": "#Ap_DGP_2025"},
-  { "username": "adgp_l&o", "password": "#ADGP_L&0_2025"},	
-  { "username": "dig_l&o", "password": "#Dig_L&0_2025"},
-  { "username": "prism", "password": "#Prism_2025"},
-  { "username": "sp_nandyal", "password": "#SP_N@ndy@l_2025"},
-  { "username": "sp_kurnool", "password": "#SP_Kurn00l_2025"},
-  { "username": "sp_ananthapuram", "password": "#SP_Anth@puram_2025"},
-  { "username": "sp_sss", "password": "#SP_SSS_2025"},
-  { "username": "sp_kadapa", "password": "#SP_K@d@p@_2025"},
-  { "username": "sp_tirupati", "password": "#SP_Tirup@ti_2025"},
-  { "username": "sp_chittor", "password": "#SP_Chitt0r_2025"},
-  { "username": "sp_annamayya", "password": "#SP_Ann@m@yy@_2025"},
-  { "username": "sp_nellore", "password": "#SP_Nell0re_2025"},
-  { "username": "sp_ongole", "password": "#SP_0ng0le_2025"},
-  { "username": "sp_guntur", "password": "#SP_Guntur_2205"},
-  { "username": "sp_bapatla", "password": "#SP_B@p@tl@_2025"},
-  { "username": "sp_palnadu", "password": "#SP_P@ln@du_2025"},
-  { "username": "sp_krishna", "password": "#SP_Krishn@_2025"},
-  { "username": "sp_ntr", "password": "#SP_NTR_2025"},
-  { "username": "sp_eluru", "password": "#SP_Elur_2025"},
-  { "username": "sp_rajamundry", "password": "#SP_R@jamundry_2025"},
-  { "username": "sp_kakinada", "password": "#SP_K@kin@d@_2025"},
-  { "username": "sp_paderu", "password": "#SP_P@deru_2025"},
-  { "username": "sp_anakapalli", "password": "#SP_Anak@p@lli_2025"},
-  { "username": "sp_vizag", "password": "#SP_V1z@g_2025"},
-  { "username": "sp_vizianagaram", "password": "#SP_Viz@y@n@g@r@m_2025"},
-  { "username": "sp_parvathipuram", "password": "#SP_P@rv@thipuram_2025" },
-  { "username": "sp_srikakulam", "password": "#SP_Srik@kul@m_2025" },
-  { "username": "sp_westgodavari", "password": "#SP_WestG0d@v@ri_2025" },
-  { "username": "sp_konaseema", "password": "#SP_K0naseema_2025" }
+  {
+    "username": "ap_dgp",
+    "password": "#Ap_DGP_2025"
+  },
+  {
+    "username": "adgp_l&o",
+    "password": "#ADGP_L&0_2025"
+  },
+  {
+    "username": "dig_l&o",
+    "password": "#Dig_L&0_2025"
+  },
+  {
+    "username": "prism",
+    "password": "#Prism_2025"
+  },
+  {
+    "username": "sp_nandyal",
+    "password": "#SP_N@ndy@l_2025"
+  },
+  {
+    "username": "sp_kurnool",
+    "password": "#SP_Kurn00l_2025"
+  },
+  {
+    "username": "sp_ananthapuram",
+    "password": "#SP_Anth@puram_2025"
+  },
+  {
+    "username": "sp_sss",
+    "password": "#SP_SSS_2025"
+  },
+  {
+    "username": "sp_kadapa",
+    "password": "#SP_K@d@p@_2025"
+  },
+  {
+    "username": "sp_tirupati",
+    "password": "#SP_Tirup@ti_2025"
+  },
+  {
+    "username": "sp_chittor",
+    "password": "#SP_Chitt0r_2025"
+  },
+  {
+    "username": "sp_annamayya",
+    "password": "#SP_Ann@m@yy@_2025"
+  },
+  {
+    "username": "sp_nellore",
+    "password": "#SP_Nell0re_2025"
+  },
+  {
+    "username": "sp_ongole",
+    "password": "#SP_0ng0le_2025"
+  },
+  {
+    "username": "sp_guntur",
+    "password": "#SP_Guntur_2205"
+  },
+  {
+    "username": "sp_bapatla",
+    "password": "#SP_B@p@tl@_2025"
+  },
+  {
+    "username": "sp_palnadu",
+    "password": "#SP_P@ln@du_2025"
+  },
+  {
+    "username": "sp_krishna",
+    "password": "#SP_Krishn@_2025"
+  },
+  {
+    "username": "sp_ntr",
+    "password": "#SP_NTR_2025"
+  },
+  {
+    "username": "sp_eluru",
+    "password": "#SP_Elur_2025"
+  },
+  {
+    "username": "sp_rajamundry",
+    "password": "#SP_R@jamundry_2025"
+  },
+  {
+    "username": "sp_kakinada",
+    "password": "#SP_K@kin@d@_2025"
+  },
+  {
+    "username": "sp_paderu",
+    "password": "#SP_P@deru_2025"
+  },
+  {
+    "username": "sp_anakapalli",
+    "password": "#SP_Anak@p@lli_2025"
+  },
+  {
+    "username": "sp_vizag",
+    "password": "#SP_V1z@g_2025"
+  },
+  {
+    "username": "sp_vizianagaram",
+    "password": "#SP_Viz@y@n@g@r@m_2025"
+  },
+  {
+    "username": "sp_parvathipuram",
+    "password": "#SP_P@rv@thipuram_2025"
+  },
+  {
+    "username": "sp_srikakulam",
+    "password": "#SP_Srik@kul@m_2025"
+  },
+  {
+    "username": "sp_westgodavari",
+    "password": "#SP_WestG0d@v@ri_2025"
+  },
+  {
+    "username": "sp_konaseema",
+    "password": "#SP_K0naseema_2025"
+  },
+  {
+    "username": "battini_raju",
+    "password": "Mummy@1212"
+  }
 ]

@@ -19,14 +19,10 @@
       <div class="marquee-container">
     <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
 </div>
-  <div class="profile-container" style="position: absolute; top: 10px; right:20px">
-  <div class="profile-wrapper" onclick="toggleDropdown(event)">
+  
+<div class="profile-container" style="position: absolute; top: 10px; right:20px">
   <div class="profile-icon">
   <img src="Appolice-Logo.png" alt="profile">
-  </div>
-  <div class="dropdown" id="dropdownMenu">
-  <a href="index.html" onclick="logout()">Logout</a>
-  </div>
   </div>
 </div>
 </header>
@@ -52,6 +48,9 @@
           </li>
           <li class="nav-item">
             <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
           </li>
         </ul>
         <div class="hamburger">
