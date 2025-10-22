@@ -384,6 +384,24 @@ header {
     transform: translateY(-9px) rotate(-45deg);
 }
 
+/* Mobile menu backdrop overlay */
+.menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.menu-backdrop.active {
+    display: block;
+    opacity: 1;
+}
+
 /* Unified Container Styles */
 .unified-container {
     flex: 1;
@@ -1089,15 +1107,19 @@ footer address {
         top: 100%;
         flex-direction: column; /* default vertical layout */
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-        width: 100%;
-        text-align: center;
-        transition: opacity 0.2s ease;
+        width: auto;
+        min-width: 190px;
+        max-width: 55vw;
+        text-align: left;
+        transition: all 0.3s ease;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         border-top: 3px solid #8B0000;
+        border-radius: 0 0 12px 0;
         z-index: 2000;
         max-height: calc(100vh - 200px);
         overflow-y: auto;
         opacity: 0;
+        transform: translateX(-20px);
     }
     .nav-menu.active {
         display: flex;
@@ -1105,25 +1127,29 @@ footer address {
         align-items: stretch;
         gap: 0;
         opacity: 1;
+        transform: translateX(0);
     }
     /* Full-width, easy-to-tap links on mobile */
     .nav-menu .nav-link {
         display: block;
         width: 100%;
         text-align: left;
-        padding: 12px 16px;
-        font-size: 1rem;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        line-height: 1.3;
     }
     .nav-item {
         margin: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     .nav-link {
-        padding: 15px;
-        font-size: 1rem;
+        padding: 8px 12px;
+        font-size: 0.9rem;
         border-bottom: none;
         display: block;
         width: 100%;
+        line-height: 1.3;
     }
     .nav-link:hover {
         transform: none;
@@ -1146,10 +1172,15 @@ footer address {
 /* Very small mobile devices */
 @media (max-width: 480px) {
     .nav-link {
-        padding: 12px 15px;
-        font-size: 0.9rem;
+        padding: 7px 10px;
+        font-size: 0.85rem;
+        line-height: 1.3;
     }
     
+    .nav-menu {
+        min-width: 170px;
+        max-width: 50vw;
+    }
 
 }
 

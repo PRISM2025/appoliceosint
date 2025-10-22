@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Responsiveness Test - PRISM OSINT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #2a5298;
+      margin-bottom: 10px;
+    }
+    
+    .info {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    
+    .device-selector {
+      text-align: center;
+      margin-bottom: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .device-selector h2 {
+      color: #2a5298;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    
+    .device-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .device-btn {
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .device-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .device-btn.active {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+    }
+    
+    .page-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .page-btn {
+      padding: 10px 16px;
+      background: #fff;
+      color: #2a5298;
+      border: 2px solid #2a5298;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .page-btn:hover {
+      background: #2a5298;
+      color: white;
+    }
+    
+    .page-btn.active {
+      background: #2a5298;
+      color: white;
+    }
+    
+    .preview-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .device-frame {
+      background: #333;
+      border-radius: 30px;
+      padding: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    
+    .device-screen {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .device-info {
+      text-align: center;
+      margin-top: 15px;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+    iframe {
+      border: none;
+      display: block;
+    }
+    
+    .notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 25px;
+      background: #333;
+      border-radius: 0 0 15px 15px;
+      z-index: 10;
+    }
+    
+    .status-bar {
+      background: rgba(0,0,0,0.05);
+      padding: 8px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+    
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    
+    .controls button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #2a5298;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .controls button:hover {
+      background: #1e3c72;
+    }
+    
+    .rotate-btn {
+      background: #FF9800 !important;
+    }
+    
+    .rotate-btn:hover {
+      background: #F57C00 !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>📱 Mobile Responsiveness Test Suite</h1>
+  <p class="info">Test all OSINT platform pages on different mobile device sizes</p>
+  
+  <div class="device-selector">
+    <h2>Select Device Size</h2>
+    <div class="device-buttons">
+      <button class="device-btn active" data-device="iphone-se">iPhone SE (375x667)</button>
+      <button class="device-btn" data-device="iphone-14">iPhone 14 (390x844)</button>
+      <button class="device-btn" data-device="iphone-14-pro-max">iPhone 14 Pro Max (430x932)</button>
+      <button class="device-btn" data-device="galaxy-s20">Galaxy S20 (360x800)</button>
+      <button class="device-btn" data-device="pixel-5">Pixel 5 (393x851)</button>
+      <button class="device-btn" data-device="ipad-mini">iPad Mini (768x1024)</button>
+    </div>
+    
+    <h2 style="margin-top: 20px;">Select Page to Test</h2>
+    <div class="page-buttons">
+      <button class="page-btn active" data-page="dashboard.html">Dashboard</button>
+      <button class="page-btn" data-page="osinttools.html">OSINT Tools</button>
+      <button class="page-btn" data-page="factcheck.html">Fact Check</button>
+      <button class="page-btn" data-page="darkweb-tools.html">Dark Web</button>
+      <button class="page-btn" data-page="blockchain-tools.html">Blockchain</button>
+      <button class="page-btn" data-page="social-media.html">Social Media</button>
+      <button class="page-btn" data-page="domain-intel.html">Domain Intel</button>
+      <button class="page-btn" data-page="breach-data.html">Breach Data</button>
+      <button class="page-btn" data-page="learning.html">Learning</button>
+    </div>
+  </div>
+  
+  <div class="preview-container">
+    <div class="device-frame" id="deviceFrame">
+      <div class="notch" id="notch" style="display: none;"></div>
+      <div class="device-screen" id="deviceScreen">
+        <div class="status-bar">📶 5G | 12:30 | 🔋 85%</div>
+        <iframe id="previewFrame" src="dashboard.html"></iframe>
+      </div>
+      <div class="device-info" id="deviceInfo">iPhone SE - 375x667px</div>
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button onclick="rotateDevice()" class="rotate-btn">🔄 Rotate</button>
+    <button onclick="scrollToTop()">⬆️ Scroll Top</button>
+    <button onclick="reloadFrame()">🔃 Reload</button>
+  </div>
+  
+  <script>
+    const devices = {
+      'iphone-se': { width: 375, height: 667, name: 'iPhone SE', hasNotch: false },
+      'iphone-14': { width: 390, height: 844, name: 'iPhone 14', hasNotch: true },
+      'iphone-14-pro-max': { width: 430, height: 932, name: 'iPhone 14 Pro Max', hasNotch: true },
+      'galaxy-s20': { width: 360, height: 800, name: 'Galaxy S20', hasNotch: false },
+      'pixel-5': { width: 393, height: 851, name: 'Pixel 5', hasNotch: false },
+      'ipad-mini': { width: 768, height: 1024, name: 'iPad Mini', hasNotch: false }
+    };
+    
+    let currentDevice = 'iphone-se';
+    let currentPage = 'dashboard.html';
+    let isRotated = false;
+    
+    // Device button handlers
+    document.querySelectorAll('.device-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentDevice = this.dataset.device;
+        isRotated = false;
+        updatePreview();
+      });
+    });
+    
+    // Page button handlers
+    document.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentPage = this.dataset.page;
+        document.getElementById('previewFrame').src = currentPage;
+      });
+    });
+    
+    function updatePreview() {
+      const device = devices[currentDevice];
+      const frame = document.getElementById('deviceFrame');
+      const screen = document.getElementById('deviceScreen');
+      const iframe = document.getElementById('previewFrame');
+      const info = document.getElementById('deviceInfo');
+      const notch = document.getElementById('notch');
+      
+      let width = device.width;
+      let height = device.height;
+      
+      if (isRotated) {
+        [width, height] = [height, width];
+      }
+      
+      screen.style.width = width + 'px';
+      screen.style.height = height + 'px';
+      iframe.style.width = width + 'px';
+      iframe.style.height = (height - 30) + 'px'; // Subtract status bar
+      
+      info.textContent = `${device.name} - ${width}x${height}px ${isRotated ? '(Landscape)' : '(Portrait)'}`;
+      
+      notch.style.display = device.hasNotch && !isRotated ? 'block' : 'none';
+    }
+    
+    function rotateDevice() {
+      isRotated = !isRotated;
+      updatePreview();
+    }
+    
+    function scrollToTop() {
+      const iframe = document.getElementById('previewFrame');
+      iframe.contentWindow.scrollTo(0, 0);
+    }
+    
+    function reloadFrame() {
+      const iframe = document.getElementById('previewFrame');
+      iframe.src = iframe.src;
+    }
+    
+    // Initial load
+    updatePreview();
+  </script>
+</body>
+</html>

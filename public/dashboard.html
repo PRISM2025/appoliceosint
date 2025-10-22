@@ -75,6 +75,9 @@
       </div>
     </nav>
 
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
     <main>
       <div class="container">
         <div class="unified-container">
@@ -310,24 +313,35 @@
     // Mobile hamburger menu functionality
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const menuBackdrop = document.getElementById('menuBackdrop');
 
     console.log('Hamburger found:', hamburger);
     console.log('Nav menu found:', navMenu);
 
-    if (hamburger && navMenu) {
+    if (hamburger && navMenu && menuBackdrop) {
       hamburger.addEventListener('click', function() {
         const wasActive = navMenu.classList.contains('active');
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        menuBackdrop.classList.toggle('active');
         console.log('Menu toggled. Active:', !wasActive);
         console.log('Nav menu classes:', navMenu.className);
         console.log('Hamburger classes:', hamburger.className);
+      });
+
+      // Close menu when clicking backdrop
+      menuBackdrop.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuBackdrop.classList.remove('active');
+        console.log('Menu closed via backdrop click');
       });
 
       // Close mobile menu when clicking on a link
       document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        menuBackdrop.classList.remove('active');
         console.log('Menu closed via link click');
       }));
     } else {
