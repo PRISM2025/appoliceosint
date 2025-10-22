@@ -18,6 +18,7 @@ img, video {
 
 html, body {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -28,7 +29,8 @@ html, body {
     background-attachment: fixed;
     max-width: 100%;
     overflow-x: hidden;
-    padding-top: 0; /* remove top gap so header touches the top */
+    padding: 0;
+    margin: 0;
 }
 
 header.header-row {
@@ -44,6 +46,9 @@ header.header-row {
     position: relative;
     z-index: 1100; /* ensure header (and marquee) is above navbar */
     margin-bottom: 0;                 /* no gap below header */
+    width: 100%;                      /* ensure full width */
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Add a consistent white strip with red border under the header */
@@ -107,18 +112,28 @@ marquee {
 
 /* Marquee Container Styles */
 .marquee-container {
-    width: 100%;                      /* full width edge to edge */
-    margin: 0;                        /* no centering; spans viewport */
+    width: 100vw;                     /* full viewport width */
+    max-width: none;                  /* no max-width constraint */
+    margin-left: calc(-50vw + 50%);   /* center it to span full viewport */
+    margin-right: calc(-50vw + 50%);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;                  /* no left padding */
+    padding-right: 0;                 /* no right padding */
     overflow: hidden;
     white-space: nowrap;
     position: relative;               /* stacking context for z-index */
-    padding: 8px 0;                   /* height for the strip */
+    padding-top: 8px;                 /* height for the strip */
+    padding-bottom: 8px;
     text-align: center;
     background: #ffffff;              /* white strip full width */
     z-index: 2500;                    /* keep above navbar and images */
     border-bottom: 2px solid #8B0000;
     display: block;                   /* ensure visibility */
     min-height: 36px;                 /* minimum height to ensure visibility */
+    box-sizing: border-box;           /* include padding in width */
+    left: 0;
+    right: 0;
 }
 
 .marquee-text {
@@ -144,31 +159,58 @@ marquee {
 /* Responsive adjustments for marquee */
 @media (max-width: 768px) {
     .marquee-container {
-        width: 100%;
-        margin: 8px auto;
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        left: 0;
+        right: 0;
     }
     
     .marquee-text {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 600px) {
     .marquee-container {
-        width: 100%;
-        margin: 5px auto;
-        padding: 2px 0;
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        left: 0;
+        right: 0;
     }
     
     .marquee-text {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .marquee-container {
-        width: 100%;
-        margin: 3px auto;
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 3px;
+        padding-bottom: 3px;
     }
     
     .marquee-text {
@@ -195,30 +237,88 @@ header.header-row .profile-icon {
     width: 84px;
     height: 84px;
 }
+
+/* Responsive logo sizing based on screen width */
+@media (max-width: 1200px) {
+    header.header-row .profile-icon { 
+        width: 70px; 
+        height: 70px; 
+    }
+}
+
+@media (max-width: 992px) {
+    header.header-row .profile-icon { 
+        width: 60px; 
+        height: 60px; 
+    }
+}
+
 @media (max-width: 768px) {
     header.header-row {
-        min-height: 72px;
+        min-height: 60px;
         display: flex !important;
         flex-direction: row !important;   /* prevent column stack on mobile */
         align-items: center !important;
         justify-content: space-between !important;
         flex-wrap: nowrap !important;
+        padding: 6px 8px;
     }
     header.header-row .header-center { flex: 1 1 auto; min-width: 0; }
-    header.header-row .profile-icon { width: 64px; height: 64px; }
+    header.header-row .profile-icon { 
+        width: clamp(45px, 12vw, 55px); 
+        height: clamp(45px, 12vw, 55px); 
+    }
+    header.header-row h1 { 
+        font-size: 1.3rem !important;
+        margin: 4px 0 2px 0 !important;
+    }
+    header.header-row h2 { 
+        font-size: 0.85rem !important;
+        margin: 0 !important;
+    }
 }
+
+@media (max-width: 600px) {
+    header.header-row .profile-icon { 
+        width: clamp(40px, 11vw, 50px); 
+        height: clamp(40px, 11vw, 50px); 
+    }
+}
+
 @media (max-width: 479px) {
     header.header-row {
-        min-height: 64px;
+        min-height: 52px;
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: space-between !important;
         flex-wrap: nowrap !important;
+        padding: 5px 6px;
     }
-    header.header-row .profile-icon { width: 48px; height: 48px; }
-    header.header-row h1 { padding: 0 !important; }
-    header.header-row h2 { padding: 0 !important; }
+    header.header-row .profile-icon { 
+        width: clamp(35px, 10vw, 45px); 
+        height: clamp(35px, 10vw, 45px); 
+    }
+    header.header-row h1 { 
+        font-size: 1.1rem !important;
+        margin: 3px 0 2px 0 !important;
+        padding: 0 !important;
+    }
+    header.header-row h2 { 
+        font-size: 0.75rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    header.header-row .profile-icon { 
+        width: clamp(32px, 9vw, 40px); 
+        height: clamp(32px, 9vw, 40px); 
+    }
+    header.header-row {
+        padding: 4px 5px;
+    }
 }
 
 /* Profile containers behave as flex items so logos don't jump */
@@ -244,7 +344,7 @@ header {
     cursor: pointer;
     margin-top: 0; /* keep logos fully within the header area; avoid overlapping marquee */
     padding: 0; /* no inner gap */
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* .profile-icon:hover {
@@ -258,6 +358,8 @@ header {
     height: 100%;
     max-width: 100%;   /* ✅ prevent overflow */
     object-fit: contain; /* show full logo without cutting */
+    display: block;
+    transition: all 0.3s ease-in-out;
     object-position: center;
 }
 
@@ -1051,8 +1153,9 @@ footer address {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 8px 10px;
+        padding: 6px 8px;
         flex-wrap: nowrap;
+        min-height: 60px;
     }
     /* Ensure both logos appear on mobile */
     .profile-container {
@@ -1067,15 +1170,15 @@ footer address {
         margin: 0;
     }
     .profile-icon {
-        width: 64px;
-        height: 64px;
+        width: 50px;
+        height: 50px;
         border-width: 2px;
     }
     .navbar { /* allow dropdown to overlay content on mobile */
         overflow: visible;
     }
     .header-center {
-        margin: 0 8px;
+        margin: 0 6px;
         padding: 0;
         min-width: 0; /* prevent overflow pushing logos */
     }
@@ -1085,8 +1188,8 @@ footer address {
     }
     .navbar {
         position: relative;
-        padding: 2px 0 0 0;  /* keep a little space from header line */
-        margin-top: 10px;    /* ensure separation on mobile too */
+        padding: 0;
+        margin-top: 0;
     }
     .nav-container {
         position: relative;
@@ -1116,11 +1219,31 @@ footer address {
         border-top: 3px solid #8B0000;
         border-radius: 0 0 12px 0;
         z-index: 2000;
-        max-height: calc(100vh - 200px);
+        max-height: calc(100vh - 120px);
         overflow-y: auto;
+        overflow-x: hidden;
         opacity: 0;
         transform: translateX(-20px);
+        /* Smooth scrolling */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
     }
+    
+    /* Custom scrollbar for webkit browsers */
+    .nav-menu::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .nav-menu::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+    }
+    
     .nav-menu.active {
         display: flex;
         flex-direction: column; /* enforce vertical when open */
@@ -1184,10 +1307,93 @@ footer address {
 
 }
 
+/* Landscape mode optimizations for mobile devices */
+@media (max-width: 900px) and (orientation: landscape) {
+    header.header-row {
+        min-height: 48px;
+        padding: 4px 6px;
+    }
+    
+    header.header-row .profile-icon { 
+        width: clamp(35px, 8vw, 45px); 
+        height: clamp(35px, 8vw, 45px); 
+    }
+    
+    header.header-row h1 { 
+        font-size: 1rem !important;
+        margin: 2px 0 1px 0 !important;
+    }
+    
+    header.header-row h2 { 
+        font-size: 0.7rem !important;
+    }
+    
+    .marquee-container {
+        padding: 2px 0;
+    }
+    
+    .marquee-text {
+        font-size: 0.7rem;
+    }
+    
+    .nav-menu {
+        max-height: calc(100vh - 80px);
+        max-width: 40vw;
+        min-width: 200px;
+    }
+    
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small landscape (like iPhone SE landscape) */
+@media (max-width: 667px) and (max-height: 400px) and (orientation: landscape) {
+    header.header-row {
+        min-height: 40px;
+        padding: 3px 5px;
+    }
+    
+    header.header-row .profile-icon { 
+        width: 32px; 
+        height: 32px; 
+    }
+    
+    header.header-row h1 { 
+        font-size: 0.85rem !important;
+        margin: 1px 0 !important;
+    }
+    
+    header.header-row h2 { 
+        font-size: 0.6rem !important;
+    }
+    
+    .marquee-container {
+        padding: 1px 0;
+    }
+    
+    .marquee-text {
+        font-size: 0.6rem;
+    }
+    
+    .nav-menu {
+        max-height: calc(100vh - 50px);
+        max-width: 35vw;
+        min-width: 180px;
+    }
+    
+    .nav-link {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+}
+
 /* Unified Container Responsive Styles */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 10px;
     }
     
     .unified-container {
@@ -1195,33 +1401,37 @@ footer address {
     }
     
     .container-header {
-        padding: 15px;
+        padding: 10px;
     }
     
     .container-header h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .container-content {
-        padding: 20px;
+        padding: 12px;
     }
     
     .container-content h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 10px;
+        padding: 8px;
+    }
+    
+    .container-header {
+        padding: 8px;
     }
     
     .container-header h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .container-content {
-        padding: 15px;
+        padding: 10px;
     }
     
     .container-content h2 {
