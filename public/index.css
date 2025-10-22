@@ -21,7 +21,9 @@ header {
   padding: 20px;
   color: #fff;
   border-bottom: 2px solid #8B0000;
-  max-height: 150px;
+  min-height: 150px; /* ensure enough height; allow marquee to be visible */
+  position: relative; /* create stacking context for marquee */
+  z-index: 1000;
 }
 
 header h1,
@@ -46,6 +48,31 @@ header h3 {
   font-size: 1.2rem;
   color: rgb(250, 6, 6);
   font-weight: bold;
+}
+
+/* ================= Marquee (Home page) ================= */
+/* Make the scrolling notice visible above images with a white strip */
+header marquee {
+  display: block;
+  width: 100%;
+  background: #ffffff;              /* white background strip */
+  color: #d00000;                   /* base text color if not overridden */
+  padding: 6px 0;                   /* strip height */
+  margin-top: 8px;
+  border-top: 2px solid #8B0000;
+  border-bottom: 2px solid #8B0000;
+  position: relative;               /* enable z-index */
+  z-index: 2000;                    /* sit above any images/content */
+  white-space: nowrap;              /* keep text on one line */
+  overflow: hidden;                 /* hide overflow during scroll */
+}
+
+/* Ensure marquee text is readable and not overridden by ancestor color */
+header marquee h3 {
+  color: #d00000;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 /* ================= Main ================= */

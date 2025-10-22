@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prismappolice.com</title>
+  <link rel="icon" href="Appolice-Logo.png" type="image/png">
   <link rel="stylesheet" href="dashboard.css">
 </head>
 
@@ -17,9 +18,6 @@
       <div class="header-center">
         <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
         <h2>(Open Source Intelligence Tools Platform)</h2>
-        <div class="marquee-container">
-          <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
-        </div>
       </div>
       <div class="profile-container right">
         <div class="profile-icon">
@@ -27,6 +25,11 @@
         </div>
       </div>
     </header>
+
+    <!-- Full-width marquee bar below header -->
+    <div class="marquee-container">
+      <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -78,81 +81,98 @@
           <div class="container-header">
             <h1>WELCOME TO OSINT WEBSITE</h1>
           </div>
-          <div class="container-content">
-            <!-- DGP Section -->
-            <div class="dgp-section">
-              <div class="dgp-info">
-                <h2>SRI K.HARISH KUMAR GUPTA, IPS</h2>
-                <h3>Director General of Police</h3>
-                <h4>Andhra Pradesh Police</h4>
+          <div class="container-content" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: space-evenly; padding: 0 20px;">
+            <!-- Left: Welcome Note -->
+            <div style="flex: 1 1 380px; min-width: 320px; max-width: 450px; align-self: flex-start;">
+              <p class="welcome-text" style="font-size: 1.15em; background: #f0f8ff; padding: 22px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); text-align: justify; line-height: 1.6;">
+                <span class="welcome-highlight" style="font-weight: bold; color: #2a5298;">Welcome to the OSINT Tools Platform of the Andhra Pradesh Police Department.</span><br><br>
+                This platform provides a suite of open-source intelligence tools designed to assist law enforcement and investigative agencies in gathering, analyzing, and utilizing publicly available information for various purposes.
+              </p>
+            </div>
+            <!-- Center: DGP Photo and Info -->
+            <div style="flex: 1 1 300px; min-width: 280px; max-width: 340px; text-align: center;">
+              <div class="dgp-photo" style="margin-bottom: 18px;">
+                <img src="dgpsir.jpg" alt="Director General of Police" class="dgp-image" style="width: 220px; height: auto; border-radius: 12px; box-shadow: 0 4px 18px rgba(44,62,80,0.13);">
               </div>
-              <div class="dgp-photo">
-                <img src="dgpsir.jpg" alt="Director General of Police" class="dgp-image">
+              <div class="dgp-info" style="margin-top: 0; text-align: center;">
+                <h2 style="margin-bottom: 8px; color: #2a5298; font-size: 1.2em; font-weight: bold;">SRI K.HARISH KUMAR GUPTA, IPS</h2>
+                <h3 style="margin-bottom: 4px; font-size: 1.05em; color: #333; font-weight: 600;">Director General of Police</h3>
+                <h4 style="margin-bottom: 0; font-size: 0.95em; color: #555;">Andhra Pradesh State</h4>
               </div>
             </div>
+          </div>
 
-            <!-- Project Overview -->
-            <div class="project-overview">
-              <p class="welcome-text"><span class="welcome-highlight">Welcome to the OSINT Tools Platform of the Andhra Pradesh Police Department.</span> This platform provides a suite of open-source intelligence tools designed to assist law enforcement and investigative agencies in gathering, analyzing, and utilizing publicly available information for various purposes.</p>
-              
-              <div class="feature-list">
-                <div class="feature-item">
-  <!-- ...existing code... -->
-                  <div class="feature-content">
-                    <h3>Comprehensive OSINT Platform Features:</h3>
-                    <ul class="feature-sublist">
-                      <li><strong>Comprehensive Toolset:</strong> Access a wide range of OSINT tools covering social media analysis, domain intelligence, breach data investigation, and more.</li>
-                      <li><strong>User-Friendly Interface:</strong> Navigate through an intuitive interface that simplifies the process of using complex OSINT tools.</li>
-                      <li><strong>Secure Access:</strong> Ensure that only authorized personnel can access sensitive tools and data through robust authentication mechanisms.</li>
-                      <li><strong>Regular Updates:</strong> Stay informed with the latest updates and enhancements to the tools, ensuring you have access to cutting-edge capabilities.</li>
-                    </ul>
+                    <!-- Responsive Card Grid -->
+                    <div class="dashboard-card-grid" style="margin: 40px 0 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+                      <a href="osinttools.html" class="dashboard-card" style="background: linear-gradient(135deg,#e0eafc,#cfdef3); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🔍</div>
+                        <h3 style="margin-bottom: 8px;">OSINT Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Open Source Intelligence Toolkit</p>
+                      </a>
+                      <a href="factcheck.html" class="dashboard-card" style="background: linear-gradient(135deg,#fceabb,#f8b500); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">✅</div>
+                        <h3 style="margin-bottom: 8px;">Fact Check Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Verify and validate information</p>
+                      </a>
+                      <a href="darkweb-tools.html" class="dashboard-card" style="background: linear-gradient(135deg,#c2e9fb,#81a4fd); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🕵️</div>
+                        <h3 style="margin-bottom: 8px;">Dark Web OSINT</h3>
+                        <p style="font-size: 0.95em; color: #555;">Investigate dark web activities</p>
+                      </a>
+                      <a href="blockchain-tools.html" class="dashboard-card" style="background: linear-gradient(135deg,#f8ffae,#43c6ac); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">⛓️</div>
+                        <h3 style="margin-bottom: 8px;">Blockchain Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Crypto & blockchain investigations</p>
+                      </a>
+                      <a href="social-media.html" class="dashboard-card" style="background: linear-gradient(135deg,#fbc2eb,#a6c1ee); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">📱</div>
+                        <h3 style="margin-bottom: 8px;">Social Media Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Analyze social media intelligence</p>
+                      </a>
+                      <a href="domain-intel.html" class="dashboard-card" style="background: linear-gradient(135deg,#d4fc79,#96e6a1); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🌐</div>
+                        <h3 style="margin-bottom: 8px;">Domain Intel Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Domain and web intelligence</p>
+                      </a>
+                      <a href="breach-data.html" class="dashboard-card" style="background: linear-gradient(135deg,#f9d423,#ff4e50); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">🔒</div>
+                        <h3 style="margin-bottom: 8px;">Breach Data Tools</h3>
+                        <p style="font-size: 0.95em; color: #555;">Check for data breaches</p>
+                      </a>
+                      <a href="learning.html" class="dashboard-card" style="background: linear-gradient(135deg,#fbc2eb,#f8b500); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s;">
+                        <div style="font-size: 2.2em; margin-bottom: 10px;">📚</div>
+                        <h3 style="margin-bottom: 8px;">Learning</h3>
+                        <p style="font-size: 0.95em; color: #555;">OSINT training & tutorials</p>
+                      </a>
+                    </div>
+
+                    <!-- Visitor Statistics Section -->
+                    <div class="visitor-stats-section" style="margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+                      <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📊 Live Visitor Analytics</h3>
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                          <div style="font-size: 2.2em; font-weight: bold; color: #4CAF50; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="total-visitors-dashboard">Loading...</div>
+                          <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Total Site Visits</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                          <div style="font-size: 2.2em; font-weight: bold; color: #2196F3; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="unique-visitors-dashboard">Loading...</div>
+                          <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                          <div style="font-size: 2.2em; font-weight: bold; color: #FF9800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-visitors-dashboard">Loading...</div>
+                          <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
+                          <div style="font-size: 2.2em; font-weight: bold; color: #E91E63; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-unique-dashboard">Loading...</div>
+                          <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+                        </div>
+                      </div>
+                      <div style="text-align: center; margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                        🔄 Auto-refreshes every 30 seconds
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <!-- Visitor Statistics Section -->
-            <div class="visitor-stats-section" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
-              <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📊 Live Visitor Analytics</h3>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
-                  <div style="font-size: 2.2em; font-weight: bold; color: #4CAF50; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="total-visitors-dashboard">Loading...</div>
-                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Total Site Visits</div>
-                </div>
-                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
-                  <div style="font-size: 2.2em; font-weight: bold; color: #2196F3; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="unique-visitors-dashboard">Loading...</div>
-                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
-                </div>
-                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
-                  <div style="font-size: 2.2em; font-weight: bold; color: #FF9800; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-visitors-dashboard">Loading...</div>
-                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
-                </div>
-                <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18);">
-                  <div style="font-size: 2.2em; font-weight: bold; color: #E91E63; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" id="today-unique-dashboard">Loading...</div>
-                  <div style="font-size: 1em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
-                </div>
-              </div>
-              <div style="text-align: center; margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                🔄 Auto-refreshes every 30 seconds
-              </div>
-            </div>
-
-            <div class="mission-statement">
-                <p><strong>Whether you're conducting investigations, performing background checks, or gathering intelligence, our OSINT Tools Platform is here to support your efforts in maintaining public safety and security.</strong></p>
-              </div>
-
-          </div>
-        </div>
-      </div>
-    </main>
-
-<footer>
-  <address>
-    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
-    Contact: +91-8523817999.<br>
-    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
-  </address>
-  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
-</footer>
 
 <script>
   window.onload = function () {
@@ -291,21 +311,41 @@
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    console.log('Hamburger found:', hamburger);
+    console.log('Nav menu found:', navMenu);
+
     if (hamburger && navMenu) {
       hamburger.addEventListener('click', function() {
+        const wasActive = navMenu.classList.contains('active');
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        console.log('Menu toggled. Active:', !wasActive);
+        console.log('Nav menu classes:', navMenu.className);
+        console.log('Hamburger classes:', hamburger.className);
       });
 
       // Close mobile menu when clicking on a link
       document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        console.log('Menu closed via link click');
       }));
+    } else {
+      console.error('Hamburger or nav menu not found!');
     }
 
 
   };
 </script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>

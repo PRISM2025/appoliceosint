@@ -4,6 +4,18 @@
     padding: 0;
 }
 
+/* Global responsive media */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent long URLs from overflowing on small screens */
+.container-content a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
 html, body {
     height: 100%;
     display: flex;
@@ -14,34 +26,46 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-top: 0; /* remove top gap so header touches the top */
 }
 
 header.header-row {
     display: flex;
-    align-items: center;
+    align-items: center;              /* keep logos vertically centered */
     justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #100e2c;
-    border-bottom: 2px solid #8B0000;
+    padding: 16px 20px 16px; /* inner top/bottom breathing room */
+    background: #ffffff; /* solid white header with no bleed-through */
+    border-bottom: 0; /* remove red divider below header */
     color: #fff;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;                /* prevent unintended wrapping/jumps */
+    min-height: 84px;                 /* stable header height to avoid bounce */
+    position: relative;
+    z-index: 1100; /* ensure header (and marquee) is above navbar */
+    margin-bottom: 0;                 /* no gap below header */
 }
+
+/* Add a consistent white strip with red border under the header */
+/* The marquee below now provides the white strip, so no extra pseudo bar here. */
 .header-center {
     flex: 1;
     text-align: center;
 }
 header.header-row h1 {
     font-size: 2.2rem;
-    margin: 0;
+    margin: 10px 0 0 0; /* push heading a bit down for visual comfort */
     font-weight: bold;
-    color: #fff;
-    word-wrap: break-word;
+    color: rgba(12, 15, 158, 0.772);
+    background: #ffffff; /* solid white header with no bleed-through */
     overflow-wrap: break-word;
 }
 header.header-row h2 {
     font-size: 1.4rem;
+    position: relative;               /* establish stacking context for marquee */
+    z-index: 1100;                    /* keep header (incl. marquee) above navbar */
     font-weight: bold;
-    color: #fff;
+    color: rgba(12, 15, 158, 0.772);
     text-decoration: underline;
     margin: 0;
 }
@@ -83,22 +107,29 @@ marquee {
 
 /* Marquee Container Styles */
 .marquee-container {
-    width: calc(100% - 240px);
-    margin: 0 auto;
+    width: 100%;                      /* full width edge to edge */
+    margin: 0;                        /* no centering; spans viewport */
     overflow: hidden;
     white-space: nowrap;
-    position: relative;
-    padding: 5px 0;
+    position: relative;               /* stacking context for z-index */
+    padding: 8px 0;                   /* height for the strip */
     text-align: center;
+    background: #ffffff;              /* white strip full width */
+    z-index: 2500;                    /* keep above navbar and images */
+    border-bottom: 2px solid #8B0000;
+    display: block;                   /* ensure visibility */
+    min-height: 36px;                 /* minimum height to ensure visibility */
 }
 
 .marquee-text {
     display: inline-block;
     font-size: 1.1rem;
     font-weight: bold;
-    color: red;
+    color: #8B0000;                   /* dark red for better visibility */
     animation: scroll-marquee 15s linear infinite;
     white-space: nowrap;
+    padding: 2px 0;                   /* add some padding for visibility */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* subtle shadow for readability */
 }
 
 @keyframes scroll-marquee {
@@ -113,7 +144,7 @@ marquee {
 /* Responsive adjustments for marquee */
 @media (max-width: 768px) {
     .marquee-container {
-        width: calc(100% - 140px);
+        width: 100%;
         margin: 8px auto;
     }
     
@@ -124,7 +155,7 @@ marquee {
 
 @media (max-width: 600px) {
     .marquee-container {
-        width: calc(100% - 100px);
+        width: 100%;
         margin: 5px auto;
         padding: 2px 0;
     }
@@ -136,7 +167,7 @@ marquee {
 
 @media (max-width: 480px) {
     .marquee-container {
-        width: calc(100% - 90px);
+        width: 100%;
         margin: 3px auto;
     }
     
@@ -145,47 +176,89 @@ marquee {
     }
 }
 
-/* Default profile container (right side) */
+/* ===============================
+   🔧 Logo alignment hard overrides
+   Ensure both side logos don't jump
+   =============================== */
+header.header-row .profile-container {
+    position: static !important;   /* override earlier absolute rules */
+    margin: 0 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header.header-row .profile-container.left,
+header.header-row .profile-container.right {
+    margin: 0 10px !important;
+}
+header.header-row .profile-icon {
+    width: 84px;
+    height: 84px;
+}
+@media (max-width: 768px) {
+    header.header-row {
+        min-height: 72px;
+        display: flex !important;
+        flex-direction: row !important;   /* prevent column stack on mobile */
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+    }
+    header.header-row .header-center { flex: 1 1 auto; min-width: 0; }
+    header.header-row .profile-icon { width: 64px; height: 64px; }
+}
+@media (max-width: 479px) {
+    header.header-row {
+        min-height: 64px;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+    }
+    header.header-row .profile-icon { width: 48px; height: 48px; }
+    header.header-row h1 { padding: 0 !important; }
+    header.header-row h2 { padding: 0 !important; }
+}
+
+/* Profile containers behave as flex items so logos don't jump */
 .profile-container {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 9997;
+    position: static;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
 }
 
-/* Left profile container specific styling */
-.profile-container:first-of-type {
-    left: 20px;
-    right: auto;
-}
-
-/* Ensure profile containers don't interfere with text */
+/* Ensure header can stack context if ever needed */
 header {
     position: relative;
-    overflow: visible;
 }
 
 .profile-icon {
-    width: 100px;
-    height: 100px;
+    position: relative;
+    z-index: 1000;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    border: 3px solid #f3efef;
+    margin-top: 0; /* keep logos fully within the header area; avoid overlapping marquee */
+    padding: 0; /* no inner gap */
     transition: transform 0.2s ease-in-out;
 }
 
-.profile-icon:hover {
+/* .profile-icon:hover {
     transform: scale(1.08);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
     border-color: #cbf72d;
-}
+} */
 
 .profile-icon img {
     width: 100%;
     height: 100%;
     max-width: 100%;   /* ✅ prevent overflow */
-    object-fit: cover;
+    object-fit: contain; /* show full logo without cutting */
+    object-position: center;
 }
 
 
@@ -194,18 +267,19 @@ header {
    📊 NAVIGATION BAR STYLES
    ============================== */
 
+/* Navbar sits below header marquee for visibility */
 .navbar {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     padding: 0;
-    border-bottom: 3px solid #8B0000;
+    border-bottom: 0; /* remove red line under navbar */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1000;
-    overflow-x: auto;
-    display: block !important;
-    width: 100% !important;
+    overflow-x: hidden; /* prevent horizontal page scroll */
+    display: block;
+    width: 100%;
     min-height: 50px;
-    visibility: visible !important;
+    margin-top: 0; /* navbar immediately after marquee */
     /* Hide scrollbars but keep functionality */
     -ms-overflow-style: none; /* IE/old Edge */
     scrollbar-width: none; /* Firefox */
@@ -221,8 +295,8 @@ header {
 .nav-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 5px;
-    display: flex !important;
+    padding: 2px 5px 0 5px; /* add slight top padding inside the navbar */
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50px;
@@ -230,7 +304,7 @@ header {
 }
 
 .nav-menu {
-    display: flex !important;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 2px;
@@ -238,21 +312,19 @@ header {
     margin: 0;
     padding: 0;
     flex-wrap: nowrap;
-    visibility: visible !important;
-    white-space: nowrap;
+    white-space: normal; /* allow wrapping to avoid overflow */
 }
 
 .nav-item {
     margin: 0;
     padding: 0;
-    display: list-item !important;
-    visibility: visible !important;
+    display: list-item;
 }
 
 .nav-link {
-    display: block !important;
+    display: block;
     padding: 8px 10px;
-    color: #fff !important;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.85rem;
@@ -266,7 +338,7 @@ header {
 .nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #cbf72d;
-    transform: translateY(-2px);
+    /* remove vertical shift to avoid overlapping header */
 }
 
 .nav-link.active {
@@ -282,7 +354,7 @@ header {
 .nav-link.logout-link:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #cbf72d !important;
-    transform: translateY(-2px);
+    /* remove vertical shift to avoid overlapping header */
     border-bottom: 3px solid #cbf72d;
 }
 
@@ -833,7 +905,7 @@ footer address {
 /* Tablets & Small Laptops */
 @media (max-width: 1024px) {
     .unified-container {
-        padding: 20px;
+    min-height: 72px;
     }
     
     .unified-header h1 {
@@ -912,8 +984,8 @@ footer address {
     }
     
     .profile-icon {
-        width: 60px !important;
-        height: 60px !important;
+        width: 20px !important;
+        height: 20px !important;
         border: 2px solid #fff !important;
     }
     
@@ -958,45 +1030,89 @@ footer address {
 /* Navbar Mobile Styles */
 @media (max-width: 768px) {
     header.header-row {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 8px 4px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px;
+        flex-wrap: nowrap;
     }
-    .header-center {
+    /* Ensure both logos appear on mobile */
+    .profile-container {
+        position: static;
+        top: auto; right: auto; left: auto;
         margin: 0;
-        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .profile-container.left, .profile-container.right {
-        margin: 0 0 8px 0;
+        margin: 0;
+    }
+    .profile-icon {
+        width: 64px;
+        height: 64px;
+        border-width: 2px;
+    }
+    .navbar { /* allow dropdown to overlay content on mobile */
+        overflow: visible;
+    }
+    .header-center {
+        margin: 0 8px;
+        padding: 0;
+        min-width: 0; /* prevent overflow pushing logos */
+    }
+    .profile-container.left, .profile-container.right {
+        margin: 0;
         justify-content: center;
     }
     .navbar {
         position: relative;
-        padding: 0;
+        padding: 2px 0 0 0;  /* keep a little space from header line */
+        margin-top: 10px;    /* ensure separation on mobile too */
     }
     .nav-container {
         position: relative;
         padding: 0 10px;
         justify-content: space-between;
+        overflow: visible;
     }
     .hamburger {
         display: flex;
+        position: relative;
+        z-index: 1001;
     }
+    /* Mobile menu hidden by default, opens when .active */
     .nav-menu {
+        display: none;
         position: absolute;
-        left: -100%;
+        left: 0;
         top: 100%;
-        flex-direction: column;
+        flex-direction: column; /* default vertical layout */
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: opacity 0.2s ease;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         border-top: 3px solid #8B0000;
-        z-index: 1000;
+        z-index: 2000;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+        opacity: 0;
     }
     .nav-menu.active {
-        left: 0;
+        display: flex;
+        flex-direction: column; /* enforce vertical when open */
+        align-items: stretch;
+        gap: 0;
+        opacity: 1;
+    }
+    /* Full-width, easy-to-tap links on mobile */
+    .nav-menu .nav-link {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 12px 16px;
+        font-size: 1rem;
     }
     .nav-item {
         margin: 0;
@@ -1139,10 +1255,10 @@ footer address {
     }
     
     .profile-icon {
-        width: 45px !important;
-        height: 45px !important;
+        width: 20px !important;
+        height: 20px !important;
         margin: 0 !important;
-        border: 2px solid #fff !important;
+        /* border: 2px solid #fff !important; */
     }
     
     /* Marquee container mobile */
@@ -1232,6 +1348,8 @@ footer address {
     margin-bottom: 8px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 1.2;
+    white-space: nowrap;      /* keep name and IPS together */
+    word-break: keep-all;
 }
 
 .dgp-info h3 {
@@ -1655,6 +1773,8 @@ footer address {
         padding: 8px 3px !important;
         min-height: 140px !important;
     }
+    /* On very small screens, allow wrap to avoid overflow */
+    .dgp-info h2 { white-space: normal; }
     
     header h1 {
         font-size: 1rem !important;
@@ -1672,7 +1792,7 @@ footer address {
     .profile-icon {
         width: 40px !important;
         height: 40px !important;
-        border: 1px solid #fff !important;
+        /* border: 1px solid #fff !important; */
     }
     
     .profile-container:first-of-type {
@@ -1796,12 +1916,15 @@ footer address {
 /* Additional responsive improvements for all pages */
 @media (max-width: 768px) {
     .unified-container {
-        max-width: 95%;
-        margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 12px;
     }
     
     .container {
-        padding: 15px 10px;
+    padding: 12px 8px;
+    max-width: 100%;
+    overflow-x: hidden;
     }
     
     .nav-link {
@@ -1810,28 +1933,32 @@ footer address {
     }
     
     .nav-menu {
-        gap: 1px;
+    gap: 0;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-menu {
-        flex-direction: row;
+    .container {
+        padding: 8px 6px;
+    }
+    /* Show menu vertically when active */
+    .nav-menu.active {
+        flex-direction: column;
         flex-wrap: nowrap;
-        gap: 1px;
-        justify-content: center;
+        gap: 0;
+        justify-content: flex-start;
+        align-items: stretch;
     }
-    
     .nav-link {
-        padding: 5px 6px;
-        font-size: 0.7rem;
-        text-align: center;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        text-align: left;
+        width: 100%;
+        display: block;
     }
-    
     .unified-container {
         max-width: 98%;
     }
-    
     .container {
         padding: 10px 5px;
     }

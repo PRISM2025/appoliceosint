@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prismappolice.com</title>
+  <link rel="icon" href="Appolice-Logo.png" type="image/png">
   <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
-    <header class="header-row">
+ <header class="header-row">
       <div class="profile-container left">
         <div class="profile-icon">
           <img src="Prism-Logo.jpeg" alt="profile">
@@ -17,9 +18,6 @@
       <div class="header-center">
         <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
         <h2>(Open Source Intelligence Tools Platform)</h2>
-        <div class="marquee-container">
-          <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
-        </div>
       </div>
       <div class="profile-container right">
         <div class="profile-icon">
@@ -27,6 +25,11 @@
         </div>
       </div>
     </header>
+
+    <!-- Full-width marquee bar below header -->
+    <div class="marquee-container">
+      <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -409,17 +412,26 @@
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    console.log('[OSINT] Hamburger found:', !!hamburger);
+    console.log('[OSINT] Nav menu found:', !!navMenu);
+
     if (hamburger && navMenu) {
       hamburger.addEventListener('click', function() {
+        const wasActive = navMenu.classList.contains('active');
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        console.log('[OSINT] Menu toggled. Now active:', !wasActive);
+        console.log('[OSINT] Nav menu classes:', navMenu.className);
       });
 
       // Close mobile menu when clicking on a link
       document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        console.log('[OSINT] Menu closed via link click');
       }));
+    } else {
+      console.error('[OSINT] Hamburger or nav menu not found!');
     }
 
 

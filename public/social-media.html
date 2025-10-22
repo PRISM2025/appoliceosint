@@ -8,40 +8,15 @@
 </head>
 
 <body>
-    <header class="header-row">
+ <header class="header-row">
       <div class="profile-container left">
         <div class="profile-icon">
           <img src="Prism-Logo.jpeg" alt="profile">
-        </div>
-        <!-- Visitor Counter -->
-        <div class="visitor-counter" style="background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 15px; margin: 20px 0; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-          <h3 style="margin: 0 0 10px 0; font-size: 1.2em; color: #fff;">🌐 Visitor Statistics</h3>
-          <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
-            <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
-              <div style="font-size: 1.8em; font-weight: bold; color: #4CAF50;" id="total-visitors-social">Loading...</div>
-              <div style="font-size: 0.9em; opacity: 0.9;">Total Visits</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
-              <div style="font-size: 1.8em; font-weight: bold; color: #2196F3;" id="unique-visitors-social">Loading...</div>
-              <div style="font-size: 0.9em; opacity: 0.9;">Unique Visitors</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
-              <div style="font-size: 1.8em; font-weight: bold; color: #FF9800;" id="today-visitors-social">Loading...</div>
-              <div style="font-size: 0.9em; opacity: 0.9;">Today's Visits</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
-              <div style="font-size: 1.8em; font-weight: bold; color: #E91E63;" id="today-unique-social">Loading...</div>
-              <div style="font-size: 0.9em; opacity: 0.9;">Today's Unique</div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="header-center">
         <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
         <h2>(Open Source Intelligence Tools Platform)</h2>
-        <div class="marquee-container">
-          <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
-        </div>
       </div>
       <div class="profile-container right">
         <div class="profile-icon">
@@ -49,6 +24,11 @@
         </div>
       </div>
     </header>
+
+    <!-- Full-width marquee bar below header -->
+    <div class="marquee-container">
+      <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -169,6 +149,33 @@
               <li><a href="https://mentions.net/">Mentions</a></li>
             </ol>
           </div>
+          
+          <!-- Visitor Statistics Section (moved to bottom) -->
+          <div class="visitor-stats-section" style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+            <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-social">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-social">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-social">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-social">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+              🔄 Auto-refreshes every 30 seconds
+            </div>
+          </div>
+
         </div>
       </div>
     </main>
