@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Tools - PRISM OSINT</title>
+  <meta name="description" content="Professional Blockchain Investigation Tools for cryptocurrency tracking and on-chain analysis">
+  <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+
+<header class="header-row">
+  <div class="profile-container left">
+    <div class="profile-icon">
+      <img src="Prism-Logo.jpeg" alt="profile">
+    </div>
+  </div>
+  <div class="header-center">
+    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+    <h2>(Open Source Intelligence Tools Platform)</h2>
+    <div class="marquee-container">
+      <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+    </div>
+  </div>
+  <div class="profile-container right">
+    <div class="profile-icon">
+      <img src="Appolice-Logo.png" alt="profile">
+    </div>
+  </div>
+</header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link active" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main> 
+    <div class="container">
+      <div class="unified-container">
+        <div class="container-header">
+          <h1>BLOCKCHAIN INVESTIGATION TOOLS</h1>
+        </div>
+        <div class="container-content">
+
+          <h2>1. BLOCKCHAIN EXPLORERS - BITCOIN & MULTI-CHAIN</h2>
+          <p><strong>USES:</strong> Track Bitcoin and multi-chain cryptocurrency transactions for forensic investigations.</p>
+          <ol>
+            <li><a href="https://www.blockchain.com/explorer" target="_blank">Bitcoin Explorer - Blockchain.com</a></li>
+            <li><a href="https://blockchair.com" target="_blank">Blockchair (Multi-chain Explorer)</a></li>
+            <li><a href="https://oklink.com" target="_blank">OKLink Explorer (Multi-chain)</a></li>
+            <li><a href="https://explorer.bitquery.io" target="_blank">Bitquery Explorer (Advanced Analytics)</a></li>
+          </ol>
+
+          <h2>2. ETHEREUM & EVM CHAIN EXPLORERS</h2>
+          <p><strong>USES:</strong> Investigate Ethereum and EVM-compatible blockchain transactions and smart contracts.</p>
+          <ol>
+            <li><a href="https://etherscan.io" target="_blank">Etherscan (Ethereum)</a></li>
+            <li><a href="https://bscscan.com" target="_blank">BscScan (BNB Chain)</a></li>
+            <li><a href="https://polygonscan.com" target="_blank">PolygonScan (Polygon)</a></li>
+            <li><a href="https://arbiscan.io" target="_blank">Arbiscan (Arbitrum)</a></li>
+            <li><a href="https://optimistic.etherscan.io" target="_blank">Optimism Explorer</a></li>
+            <li><a href="https://basescan.org" target="_blank">BaseScan (Coinbase Base)</a></li>
+          </ol>
+
+          <h2>3. ALTERNATIVE BLOCKCHAIN EXPLORERS</h2>
+          <p><strong>USES:</strong> Track transactions on alternative blockchain networks.</p>
+          <ol>
+            <li><a href="https://avascan.info" target="_blank">AvaScan (Avalanche)</a></li>
+            <li><a href="https://tronscan.org" target="_blank">TRONScan (TRON)</a></li>
+            <li><a href="https://solscan.io" target="_blank">Solscan (Solana)</a></li>
+            <li><a href="https://cardanoscan.io" target="_blank">Cardanoscan (Cardano)</a></li>
+            <li><a href="https://xrpscan.com" target="_blank">XRPScan (Ripple)</a></li>
+            <li><a href="https://tonviewer.com" target="_blank">TONViewer (TON)</a></li>
+            <li><a href="https://mintscan.io" target="_blank">Mintscan (Cosmos)</a></li>
+            <li><a href="https://explorer.near.org" target="_blank">Near Explorer</a></li>
+          </ol>
+
+          <h2>4. ADVANCED INVESTIGATION PLATFORMS</h2>
+          <p><strong>USES:</strong> Professional-grade blockchain investigation tools with AI-powered analysis and entity attribution.</p>
+          <ol>
+            <li>
+              <a href="https://platform.arkhamintelligence.com" target="_blank">Arkham Intelligence</a>
+              <p style="margin-left: 20px; font-size: 0.95em; color: #666;">
+                <strong>Features:</strong> AI-powered deanonymization engine, wallet clustering, real-time entity attribution across Bitcoin, Ethereum, BNB, Tron. Includes "Arkham Intel Exchange" for bounty-based intelligence sharing.
+              </p>
+            </li>
+            <li>
+              <a href="https://www.breadcrumbs.app" target="_blank">Breadcrumbs</a>
+              <p style="margin-left: 20px; font-size: 0.95em; color: #666;">
+                <strong>Features:</strong> Interactive transaction visualization, graph mapping for tracing stolen/laundered crypto, node labeling, flow tracking, exportable case reports. Widely used in cyber-fraud investigations.
+              </p>
+            </li>
+            <li>
+              <a href="https://metasleuth.io" target="_blank">MetaSleuth (by BlockSec)</a>
+              <p style="margin-left: 20px; font-size: 0.95em; color: #666;">
+                <strong>Features:</strong> Multi-chain investigation tool tracking fund flows across Ethereum, BNB, Arbitrum, Base, Polygon. Auto-labels wallets (CEX, DeFi, bridges, mixers), generates transaction graphs and profit breakdowns.
+              </p>
+            </li>
+          </ol>
+
+          <h2>5. MONITORING & ALERT SYSTEMS</h2>
+          <p><strong>USES:</strong> Real-time monitoring of large cryptocurrency transfers and suspicious activities.</p>
+          <ol>
+            <li><a href="https://whale-alert.io" target="_blank">Whale Alert (Large Transfer Tracking)</a></li>
+          </ol>
+
+          <h2>6. DECENTRALIZED EXCHANGE (DEX) TOOLS</h2>
+          <p><strong>USES:</strong> Track and analyze decentralized exchange token transactions and trading activities.</p>
+          <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #ff9800;">
+            <p style="margin: 0;"><strong>⚠️ Note:</strong> DexTools link may require manual navigation. If the link doesn't work, copy and paste this URL directly into your browser: <strong>https://www.dextools.io</strong></p>
+          </div>
+          <ol>
+            <li>
+              <strong>DexTools (DEX Token Analytics)</strong><br>
+              <span style="color: #666; font-size: 0.95em;">Direct URL: </span><code style="background: #f4f4f4; padding: 2px 6px; border-radius: 3px;">https://www.dextools.io</code><br>
+              <a href="https://www.dextools.io" target="_blank" style="font-size: 0.9em;">Try Link</a>
+            </li>
+          </ol>
+
+                    <h2>7. INVESTIGATION WORKFLOW TIPS</h2>
+          <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <h3 style="color: #2a5298;">Best Practices for Blockchain Investigations:</h3>
+            <ul style="line-height: 1.8;">
+              <li><strong>Start with the Transaction Hash:</strong> Begin your investigation with the transaction ID (TXID) or wallet address.</li>
+              <li><strong>Use Multiple Explorers:</strong> Cross-reference data across different blockchain explorers for accuracy.</li>
+              <li><strong>Track Fund Flow:</strong> Use visualization tools like Breadcrumbs or MetaSleuth to map transaction paths.</li>
+              <li><strong>Identify Entities:</strong> Use Arkham Intelligence to link wallets to known entities, exchanges, or criminal groups.</li>
+              <li><strong>Monitor Mixers/Tumblers:</strong> Watch for transactions through mixing services that attempt to obscure the trail.</li>
+              <li><strong>Document Everything:</strong> Export transaction graphs, screenshots, and reports for case documentation.</li>
+              <li><strong>Check Exchange Deposits:</strong> Track funds to centralized exchanges where KYC may reveal identities.</li>
+              <li><strong>Multi-Chain Tracking:</strong> Follow cross-chain bridges and wrapped tokens across different blockchains.</li>
+            </ul>
+          </div>
+
+          <h2>⚠️ IMPORTANT NOTES FOR LAW ENFORCEMENT</h2>
+
+          <h2>⚠️ IMPORTANT NOTES FOR LAW ENFORCEMENT</h2>
+          <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #ff9800;">
+            <ul style="line-height: 1.8;">
+              <li><strong>Chain of Custody:</strong> Maintain proper documentation of all blockchain evidence collected.</li>
+              <li><strong>Timestamps:</strong> All blockchain transactions are timestamped - use this for timeline reconstruction.</li>
+              <li><strong>Immutability:</strong> Blockchain data cannot be altered, making it excellent forensic evidence.</li>
+              <li><strong>Privacy Coins:</strong> Some cryptocurrencies (Monero, Zcash) offer enhanced privacy features that complicate tracking.</li>
+              <li><strong>Legal Considerations:</strong> Ensure all investigation methods comply with local cybercrime laws and regulations.</li>
+              <li><strong>Expert Consultation:</strong> For complex cases, consider consulting blockchain forensics experts or companies like Chainalysis, Elliptic, or CipherTrace.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </main>
+      <!-- Visitor Counter -->
+      <div class="visitor-counter" style="background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 15px; margin: 20px 0; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; color: #fff;">🌐 Visitor Statistics</h3>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px;">
+          <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <div style="font-size: 1.8em; font-weight: bold; color: #4CAF50;" id="total-visitors-blockchain">Loading...</div>
+            <div style="font-size: 0.9em; opacity: 0.9;">Total Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <div style="font-size: 1.8em; font-weight: bold; color: #2196F3;" id="unique-visitors-blockchain">Loading...</div>
+            <div style="font-size: 0.9em; opacity: 0.9;">Unique Visitors</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <div style="font-size: 1.8em; font-weight: bold; color: #FF9800;" id="today-visitors-blockchain">Loading...</div>
+            <div style="font-size: 0.9em; opacity: 0.9;">Today's Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; min-width: 120px;">
+            <div style="font-size: 1.8em; font-weight: bold; color: #E91E63;" id="today-unique-blockchain">Loading...</div>
+            <div style="font-size: 0.9em; opacity: 0.9;">Today's Unique</div>
+          </div>
+        </div>
+      </div>
+    
+      <script>
+        // Visitor Counter Script
+        async function loadBlockchainVisitorStats() {
+          try {
+            const response = await fetch('/api/visitor-stats');
+            const stats = await response.json();
+            document.getElementById('total-visitors-blockchain').textContent = stats.totalVisitors.toLocaleString();
+            document.getElementById('unique-visitors-blockchain').textContent = stats.uniqueVisitors.toLocaleString();
+            document.getElementById('today-visitors-blockchain').textContent = stats.todayVisitors ? stats.todayVisitors.toLocaleString() : 'N/A';
+            document.getElementById('today-unique-blockchain').textContent = stats.todayUniqueVisitors ? stats.todayUniqueVisitors.toLocaleString() : 'N/A';
+          } catch (error) {
+            document.getElementById('total-visitors-blockchain').textContent = 'N/A';
+            document.getElementById('unique-visitors-blockchain').textContent = 'N/A';
+            document.getElementById('today-visitors-blockchain').textContent = 'N/A';
+            document.getElementById('today-unique-blockchain').textContent = 'N/A';
+          }
+        }
+        loadBlockchainVisitorStats();
+        setInterval(loadBlockchainVisitorStats, 30000);
+      </script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.onload = function () {
+    // Session check (matching other pages)
+    if (!sessionStorage.getItem("loggedIn") && !localStorage.getItem("loggedIn")) {
+      window.location.href = "index.html";
+      return;
+    }
+
+    // Logout function
+    window.logout = function () {
+      if (confirm('Are you sure you want to logout?')) {
+        sessionStorage.removeItem("loggedIn");
+        localStorage.removeItem("loggedIn");
+        console.log("User logged out - cleared all storage");
+        window.location.href = "index.html";
+      }
+    };
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for blockchain tools page
+    setActiveNavLink('blockchain');
+
+    // Mobile hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+  };
+</script>
+
+</body>
+</html>
