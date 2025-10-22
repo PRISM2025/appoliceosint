@@ -8,30 +8,37 @@
 </head>
 
 <body>
-    <header>
-  <div class="profile-container" style="position: absolute; top: 10px; left: 20px;">
-    <div class="profile-icon">
-      <img src="Prism-Logo.jpeg" alt="profile">
-    </div>
-  </div>
-      <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
-      <h2>(Open Source Intelligence Tools Platform)</h2>
-      <div class="marquee-container">
-    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
-</div>
-  <div class="profile-container" style="position: absolute; top: 10px; right:20px">
-  <div class="profile-icon">
-  <img src="Appolice-Logo.png" alt="profile">
-  </div>
-</div>
-</header>
+ <header class="header-row">
+      <div class="profile-container left">
+        <div class="profile-icon">
+          <img src="Prism-Logo.jpeg" alt="profile">
+        </div>
+      </div>
+      <div class="header-center">
+        <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+        <h2>(Open Source Intelligence Tools Platform)</h2>
+        <div class="marquee-container">
+          <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+        </div>
+      </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+    </header>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="dashboard.html" class="nav-link active" data-section="home">🏠 Home</a>
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
           </li>
           <li class="nav-item">
             <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
@@ -40,10 +47,13 @@
             <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
           </li>
           <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web OSINT</a>
+          </li>
+          <li class="nav-item">
             <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
           </li>
           <li class="nav-item">
-            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
+            <a href="domain-intel.html" class="nav-link active" data-section="domain-intel">🌐 Domain Intel Tools</a>
           </li>
           <li class="nav-item">
             <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
@@ -52,11 +62,7 @@
             <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
           </li>
         </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+
       </div>
     </nav>
 
@@ -85,6 +91,7 @@
               
               <div class="feature-list">
                 <div class="feature-item">
+  <!-- ...existing code... -->
                   <div class="feature-content">
                     <h3>Comprehensive OSINT Platform Features:</h3>
                     <ul class="feature-sublist">
@@ -149,7 +156,6 @@
       
       // Skip navbar links, internal navigation, and logout links
       if (link.closest('.navbar') || 
-          link.classList.contains('nav-link') ||
           href.includes('dashboard.html') || 
           href.includes('factcheck.html') || 
           href.includes('index.html') ||
@@ -205,6 +211,7 @@
     }
     
     // Ensure both storage methods are set
+          <!-- ...existing code... -->
     if (!sessionLogin) sessionStorage.setItem("loggedIn", "true");
     if (!localLogin) localStorage.setItem("loggedIn", "true");
     
@@ -235,11 +242,6 @@
     loadDashboardVisitorStats();
     setInterval(loadDashboardVisitorStats, 30000);
 
-    // Strong back navigation block
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-      history.pushState(null, null, location.href);
-    };
 
     // Logout clears session and allows login page access
     window.logout = function () {
@@ -295,6 +297,8 @@
         navMenu.classList.remove('active');
       }));
     }
+
+
   };
 </script>
 </body>

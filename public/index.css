@@ -107,32 +107,38 @@ input[type="password"] {
 .reset-btn {
   padding: 10px;
   font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   flex: 1;
   min-width: 120px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 .login-btn {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: white;
-  border: 1px solid #181b1f;
+  border: none;
+  height: 44px;
+  line-height: 24px;
 }
 
 .reset-btn {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
-  border: 1px solid #181b1f;
+  border: none;
+  height: 44px;
+  line-height: 24px;
 }
 
 .login-btn:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
 }
 
 .reset-btn:hover {
-  background-color: #c82333;
+  background: linear-gradient(135deg, #c82333 0%, #a91e2c 100%);
 }
 
 .error-message {
@@ -158,6 +164,21 @@ input[type="password"] {
 .forgot-password-link:hover {
   background: #667eea !important;
   color: white !important;
+}
+
+/* Standard button styling to match Login/Reset buttons */
+.standard-button {
+  padding: 10px !important;
+  font-size: 1rem !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  min-width: 120px !important;
+  transition: all 0.3s ease !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  text-align: center !important;
+  display: block !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
 }
 
 footer {
@@ -277,6 +298,13 @@ footer address {
     font-size: 0.9rem;
     min-width: 90px;
     padding: 10px 8px;
+  }
+  
+  /* Standard button mobile styling */
+  .standard-button {
+    font-size: 0.9rem !important;
+    min-width: 90px !important;
+    padding: 10px 8px !important;
   }
   
   /* Forgot password link mobile styling */
@@ -414,6 +442,13 @@ footer address {
     min-width: auto;
     width: 100%;
     padding: 12px;
+  }
+  
+  /* Standard button very small mobile styling */
+  .standard-button {
+    font-size: 0.85rem !important;
+    min-width: auto !important;
+    padding: 10px !important;
   }
   
   .forgot-password-link {

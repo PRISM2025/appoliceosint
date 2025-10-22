@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>prismappolice.com</title>
+  <title>PRISM OSINT - Andhra Pradesh Police Intelligence Portal | Open Source Intelligence Tools</title>
+  <meta name="description" content="Official OSINT platform for Andhra Pradesh Police. Access advanced open source intelligence tools, domain analysis, breach data, fact-checking, and social media intelligence for law enforcement.">
+  <meta name="keywords" content="OSINT, Open Source Intelligence, Andhra Pradesh Police, PRISM, cybersecurity, digital forensics, law enforcement, intelligence analysis, threat investigation">
+  <meta name="author" content="Andhra Pradesh Police - PRISM Unit">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="PRISM OSINT - AP Police Intelligence Portal">
+  <meta property="og:description" content="Advanced OSINT tools for law enforcement intelligence gathering and digital investigations">
+  <meta property="og:url" content="https://appoliceosint.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://appoliceosint.com/Appolice-Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PRISM OSINT - AP Police Intelligence Portal">
+  <meta name="twitter:description" content="Professional OSINT tools for law enforcement">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
+  <link rel="canonical" href="https://appoliceosint.com">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_TRACKING_ID');
+  </script>
 </head>
 
 <body>
@@ -33,72 +55,11 @@
     <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
     <div class="button-group">
-      <button type="submit" class="login-btn">Login</button>
-      <button type="reset" class="reset-btn">Reset</button>
+      <button type="submit" class="login-btn">🔐 Login</button>
+      <button type="reset" class="reset-btn">🔄 Reset</button>
     </div>
 
-    <!-- Account Management Links -->
-    <div style="text-align: center; margin-top: 20px;">
-      <!-- Top Row: Create Account and Reset side by side -->
-      <div style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 15px;">
-        <a href="create-user.html" class="forgot-password-link" style="
-          flex: 1; 
-          display: block; 
-          padding: 12px 15px; 
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-          color: #ffffff !important; 
-          text-decoration: none; 
-          border-radius: 8px; 
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
-          font-weight: 600;
-          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'" 
-           onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 10px rgba(102, 126, 234, 0.3)'">
-          👤 Create New Account?
-        </a>
-        
-        <a href="password-reset.html" class="forgot-password-link" style="
-          flex: 1; 
-          display: block; 
-          padding: 12px 15px; 
-          background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); 
-          color: #ffffff !important; 
-          text-decoration: none; 
-          border-radius: 8px; 
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 10px rgba(54, 209, 220, 0.3);
-          font-weight: 600;
-          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(54, 209, 220, 0.4)'" 
-           onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 2px 10px rgba(54, 209, 220, 0.3)'">
-          🔄 Reset? (Username/Password)
-        </a>
-      </div>
-      
-      <!-- Bottom Row: Admin Login centered -->
-      <div style="display: flex; justify-content: center;">
-        <a href="admin-login.html" class="forgot-password-link" style="
-          display: block; 
-          padding: 15px 30px; 
-          background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); 
-          color: #ffffff !important; 
-          text-decoration: none; 
-          border-radius: 10px; 
-          transition: all 0.3s ease;
-          box-shadow: 0 3px 15px rgba(255, 107, 107, 0.4);
-          font-weight: 700;
-          font-size: 1.1em;
-          min-width: 200px;
-          text-align: center;
-          text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(255, 107, 107, 0.5)'" 
-           onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 3px 15px rgba(255, 107, 107, 0.4)'">
-          🛡️ Admin Login
-        </a>
-      </div>
-    </div>
-
+    
     <!-- ✅ Error message -->
     <div id="error-message" class="error-message" style="color:red; display:none;"></div>
   </form>
