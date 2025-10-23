@@ -157,6 +157,16 @@
   
   // Refresh stats every 30 seconds
   setInterval(loadVisitorStats, 30000);
+
+  // Non-blocking pageview beacon to ensure a visit is recorded even via CDN
+  window.addEventListener('load', () => {
+    try {
+      navigator.sendBeacon && navigator.sendBeacon('/api/pageview');
+    } catch (e) {
+      // fall back silently
+      fetch('/api/pageview', { method: 'POST', keepalive: true }).catch(()=>{});
+    }
+  });
 </script>
 </body>
 </html>

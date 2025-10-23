@@ -328,6 +328,14 @@
 
 
   };
+  // Ensure a visit is recorded on dashboard load
+  window.addEventListener('load', () => {
+    try {
+      navigator.sendBeacon && navigator.sendBeacon('/api/pageview');
+    } catch (e) {
+      fetch('/api/pageview', { method: 'POST', keepalive: true }).catch(()=>{});
+    }
+  });
 </script>
 
 <footer>

@@ -188,6 +188,20 @@ app.get("/api/visitor-stats", (_req, res) => {
   }
 });
 
+// ---------- API: explicit page view beacon ----------
+// Some CDNs or proxies may alter Accept headers; this endpoint lets the client
+// explicitly record a page view once per page load. It is idempotent per visit
+// only in the sense of IP+UA within the same request; multiple calls will count
+// multiple views. Use sparingly (once on load).
+app.post("/api/pageview", (req, res) => {
+  try {
+    recordVisit(req);
+    res.status(204).end();
+  } catch (e) {
+    console.error("pageview error:", e);
+    res.status(500).json({ error: "Failed to record page view" });
+  }
+});
 // ---------- API: users ----------
 app.get("/api/users", (_req, res) => {
   try {
