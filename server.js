@@ -167,6 +167,10 @@ app.get("/healthz", (_req, res) => {
 // ---------- API: visitor stats ----------
 app.get("/api/visitor-stats", (_req, res) => {
   try {
+  // Prevent caching so dashboard always sees fresh numbers
+  res.set("Cache-Control", "no-store, no-cache, must-revalidate, private");
+  res.set("Pragma", "no-cache");
+  res.set("Expires", "0");
   const today = ymd();
     // dailyStats[today] is stored as { visits: number, uniques: number }
     const todayStats = state.dailyStats[today] || { visits: 0, uniques: 0 };
