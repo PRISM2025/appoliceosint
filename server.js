@@ -142,12 +142,13 @@ app.get("/healthz", (_req, res) => {
 app.get("/api/visitor-stats", (_req, res) => {
   try {
     const today = new Date().toISOString().slice(0, 10);
-    const todayStats = state.dailyStats[today] || { visitors: 0, uniqueVisitors: [] };
+    // dailyStats[today] is stored as { visits: number, uniques: number }
+    const todayStats = state.dailyStats[today] || { visits: 0, uniques: 0 };
     res.json({
       totalVisitors: state.totalVisitors,
       uniqueVisitors: state.uniqueVisitors.size,
-      todayVisitors: todayStats.visitors || 0,
-      todayUniqueVisitors: Array.isArray(todayStats.uniqueVisitors) ? todayStats.uniqueVisitors.length : 0,
+      todayVisitors: Number(todayStats.visits) || 0,
+      todayUniqueVisitors: Number(todayStats.uniques) || 0,
       dailyStats: state.dailyStats,
       lastUpdated: state.lastUpdated,
     });
