@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prismappolice.com</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+ <header class="header-row">
+      <div class="profile-container left">
+        <div class="profile-icon">
+          <img src="Prism-Logo.jpeg" alt="profile">
+        </div>
+      </div>
+      <div class="header-center">
+        <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+        <h2>(Open Source Intelligence Tools Platform)</h2>
+      </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+  </header>
+
+  <!-- Full-width marquee bar below header -->
+  <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+  </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link active" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <main>
+      <div class="container">
+        <div class="unified-container">
+          <div class="container-header">
+            <h1>BREACH DATA & CYBERSECURITY TOOLS</h1>
+          </div>
+          <div class="container-content">
+            <h2>1. CREDENTIAL BREACH DATABASES</h2>
+            <p><strong>USES:</strong> Credential breach databases help law enforcement identify compromised accounts, leaked passwords, and data breaches for cybercrime investigations.</p>
+            <ol>
+              <li><a href="https://haveibeenpwned.com/">Have I Been Pwned</a></li>
+              <li><a href="https://breachdirectory.org/">Breach Directory</a></li>
+              <li><a href="https://www.dehashed.com/">DeHashed</a></li>
+              <li><a href="https://leakcheck.io/">LeakCheck</a></li>
+            </ol>
+
+            <h2>2. HASH CRACKING TOOLS</h2>
+            <p><strong>USES:</strong> Hash cracking tools help law enforcement decrypt passwords and analyze compromised credentials for digital forensics investigations.</p>
+            <ol>
+              <li><a href="https://hashmob.net/">HashMob</a></li>
+              <li><a href="https://crackstation.net/">CrackStation</a></li>
+              <li><a href="https://md5decrypt.net/">MD5 Decrypt</a></li>
+              <li><a href="https://www.onlinehashcrack.com/">Online Hash Crack</a></li>
+            </ol>
+
+            <h2>3. DATA LEAK MONITORING</h2>
+            <p><strong>USES:</strong> Data leak monitoring tools help track new breaches, monitor dark web marketplaces, and alert on compromised data for proactive security.</p>
+            <ol>
+              <li><a href="https://monitor.firefox.com/">Firefox Monitor</a></li>
+              <li><a href="https://www.google.com/landing/2step/">Google Password Checkup</a></li>
+              <li><a href="https://www.experian.com/blogs/ask-experian/identity-monitoring/">Experian Dark Web Scan</a></li>
+              <li><a href="https://www.avast.com/hackcheck">Avast Hack Check</a></li>
+            </ol>
+
+            <h2>4. RANSOMWARE TRACKING</h2>
+            <p><strong>USES:</strong> Ransomware tracking tools help law enforcement monitor ransomware groups, track payments, and analyze attack patterns for cybercrime investigations.</p>
+            <ol>
+              <li><a href="https://www.nomoreransom.org/">No More Ransom</a></li>
+              <li><a href="https://www.ransomwhere.org/">RansomWhere</a></li>
+              <li><a href="https://ransomwaretracker.abuse.ch/">Ransomware Tracker</a></li>
+              <li><a href="https://www.id-ransomware.com/">ID Ransomware</a></li>
+            </ol>
+
+            <h2>5. CRYPTOCURRENCY INVESTIGATIONS</h2>
+            <p><strong>USES:</strong> Cryptocurrency investigation tools help trace blockchain transactions, identify wallet addresses, and track illicit financial activities.</p>
+            <ol>
+              <li><a href="https://www.blockchain.com/explorer">Blockchain Explorer</a></li>
+              <li><a href="https://oxt.me/">OXT</a></li>
+              <li><a href="https://www.walletexplorer.com/">Wallet Explorer</a></li>
+              <li><a href="https://crystal.sh/">Crystal Blockchain</a></li>
+            </ol>
+
+            <h2>6. MALWARE ANALYSIS</h2>
+            <p><strong>USES:</strong> Malware analysis tools help law enforcement examine malicious software, analyze attack vectors, and understand cybercriminal techniques.</p>
+            <ol>
+              <li><a href="https://www.virustotal.com/">VirusTotal</a></li>
+              <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a></li>
+              <li><a href="https://malwr.com/">Malwr</a></li>
+              <li><a href="https://www.joesandbox.com/">Joe Sandbox</a></li>
+            </ol>
+
+            <h2>7. THREAT INTELLIGENCE</h2>
+            <p><strong>USES:</strong> Threat intelligence tools help gather information on cyber threats, attack patterns, and criminal infrastructure for proactive defense.</p>
+            <ol>
+              <li><a href="https://otx.alienvault.com/">AlienVault OTX</a></li>
+              <li><a href="https://www.threatminer.org/">ThreatMiner</a></li>
+              <li><a href="https://www.abuse.ch/">Abuse.ch</a></li>
+              <li><a href="https://www.circl.lu/">CIRCL</a></li>
+            </ol>
+
+            <h2>8. DARK WEB MONITORING</h2>
+            <p><strong>USES:</strong> Dark web monitoring tools help law enforcement track illegal marketplaces, monitor criminal activities, and gather intelligence from hidden networks.</p>
+            <ol>
+              <li><a href="https://www.tordex.net/">Tor Dex</a></li>
+              <li><a href="https://darkwebdaily.live/">Dark Web Daily</a></li>
+              <li><a href="https://www.deepdotweb.com/">Deep Dot Web</a></li>
+              <li><a href="https://darknetlive.com/">Darknet Live</a></li>
+            </ol>
+
+            <h2>9. CYBERSECURITY DATABASES</h2>
+            <p><strong>USES:</strong> Cybersecurity databases provide comprehensive information on vulnerabilities, exploits, and security advisories for threat assessment.</p>
+            <ol>
+              <li><a href="https://cve.mitre.org/">CVE Database</a></li>
+              <li><a href="https://nvd.nist.gov/">NVD</a></li>
+              <li><a href="https://www.exploit-db.com/">Exploit Database</a></li>
+              <li><a href="https://www.securityfocus.com/">SecurityFocus</a></li>
+            </ol>
+
+            <h2>10. DIGITAL FORENSICS</h2>
+            <p><strong>USES:</strong> Digital forensics tools help law enforcement analyze digital evidence, recover deleted data, and investigate cybercrime incidents.</p>
+            <ol>
+              <li><a href="https://www.autopsy.com/">Autopsy</a></li>
+              <li><a href="https://www.sleuthkit.org/">The Sleuth Kit</a></li>
+              <li><a href="https://www.volatilityfoundation.org/">Volatility</a></li>
+              <li><a href="https://www.wireshark.org/">Wireshark</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </main>
+        <!-- Visitor Counter -->
+        <div class="visitor-stats-section" style="margin: 30px 20px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+          <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+              <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-breach">Loading...</div>
+              <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+              <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-breach">Loading...</div>
+              <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+              <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-breach">Loading...</div>
+              <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+              <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-breach">Loading...</div>
+              <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+            🔄 Auto-refreshes every 30 seconds
+          </div>
+        </div>
+        <script>
+          // Visitor Counter Script
+          async function loadBreachVisitorStats() {
+            try {
+              const response = await fetch('/api/visitor-stats');
+              const stats = await response.json();
+              document.getElementById('total-visitors-breach').textContent = stats.totalVisitors.toLocaleString();
+              document.getElementById('unique-visitors-breach').textContent = stats.uniqueVisitors.toLocaleString();
+              document.getElementById('today-visitors-breach').textContent = stats.todayVisitors ? stats.todayVisitors.toLocaleString() : 'N/A';
+              document.getElementById('today-unique-breach').textContent = stats.todayUniqueVisitors ? stats.todayUniqueVisitors.toLocaleString() : 'N/A';
+            } catch (error) {
+              document.getElementById('total-visitors-breach').textContent = 'N/A';
+              document.getElementById('unique-visitors-breach').textContent = 'N/A';
+              document.getElementById('today-visitors-breach').textContent = 'N/A';
+              document.getElementById('today-unique-breach').textContent = 'N/A';
+            }
+          }
+          loadBreachVisitorStats();
+          setInterval(loadBreachVisitorStats, 30000);
+        </script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.onload = function () {
+    // Only external tool links should open in new tab, not navbar/navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.href.toLowerCase();
+      
+      // Skip navbar links, internal navigation, and logout links
+      if (link.closest('.navbar') || 
+          link.classList.contains('nav-link') ||
+          href.includes('dashboard.html') || 
+          href.includes('factcheck.html') || 
+          href.includes('social-media.html') ||
+          href.includes('domain-intel.html') ||
+          href.includes('breach-data.html') ||
+          href.includes('index.html') ||
+          href.includes('localhost:3000') ||
+          link.getAttribute('onclick') ||
+          href.startsWith('#') ||
+          href === '' ||
+          href === window.location.href) {
+        // These should open in same tab - remove any existing target
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        console.log('Internal link (same tab):', href);
+        return;
+      }
+      
+      // External tool links should open in new tab
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      console.log('External link (new tab):', href);
+    });
+
+    // Check login status — block access if not logged in
+    const urlParams = new URLSearchParams(window.location.search);
+    const authParam = urlParams.get('auth');
+    const sessionLogin = sessionStorage.getItem("loggedIn");
+    const localLogin = localStorage.getItem("loggedIn");
+    
+    console.log("Breach Data - Auth param:", authParam);
+    console.log("Breach Data - Session login:", sessionLogin);
+    console.log("Breach Data - Local login:", localLogin);
+    
+    let isAuthenticated = false;
+    
+    // Allow access via URL parameter
+    if (authParam === "factcheck") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", "true");
+      console.log("Breach Data - Authenticated via URL parameter");
+    }
+    
+    // Allow access via storage
+    if (sessionLogin === "true" || localLogin === "true") {
+      isAuthenticated = true;
+      console.log("Breach Data - Authenticated via storage");
+    }
+    
+    if (!isAuthenticated) {
+      console.log("Breach Data - Access denied");
+      alert("❌ Access Denied. Please login first.");
+      window.location.href = "index.html";
+      return;
+    }
+    
+    // Ensure both storage methods are set
+    if (!sessionLogin) sessionStorage.setItem("loggedIn", "true");
+    if (!localLogin) localStorage.setItem("loggedIn", "true");
+    
+    console.log("Breach Data - Access granted");
+
+
+    // Logout clears session and allows login page access
+    window.logout = function () {
+      sessionStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedIn");
+      console.log("User logged out - cleared all storage");
+      window.location.href = "index.html";
+    };
+
+    // Toggle dropdown function
+    window.toggleDropdown = function (event) {
+      event.stopPropagation();
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    };
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function () {
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.style.display = 'none';
+    });
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for breach data page
+    setActiveNavLink('breach-data');
+
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+
+  };
+</script>
+
+</body>
+</html>

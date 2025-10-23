@@ -1,0 +1,13 @@
+runtime: python310
+
+handlers:
+  - url: /(.*)
+    static_files: public/\1
+    upload: public/(.*)
+    http_headers:
+      Cache-Control: 'no-cache, max-age=0, must-revalidate'
+  - url: /
+    static_files: public/index.html
+    upload: public/index.html
+    http_headers:
+      Cache-Control: 'no-cache, max-age=0, must-revalidate'

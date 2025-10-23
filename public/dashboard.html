@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prismappolice.com</title>
+  <link rel="icon" href="Appolice-Logo.png" type="image/png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+ <header class="header-row">
+      <div class="profile-container left">
+        <div class="profile-icon">
+          <img src="Prism-Logo.jpeg" alt="profile">
+        </div>
+      </div>
+      <div class="header-center">
+        <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+        <h2>(Open Source Intelligence Tools Platform)</h2>
+      </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+  </header>
+
+  <!-- Full-width marquee bar below header -->
+  <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+  </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web OSINT</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link active" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <main>
+      <div class="container">
+        <div class="unified-container">
+          <div class="container-header">
+            <h1>WELCOME TO OSINT WEBSITE</h1>
+          </div>
+          <div class="container-content" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: space-evenly; padding: 0 20px;">
+            <!-- Left: Welcome Note -->
+            <div style="flex: 1 1 380px; min-width: 320px; max-width: 450px; align-self: flex-start;">
+              <p class="welcome-text" style="font-size: 1.15em; background: #f0f8ff; padding: 22px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); text-align: justify; line-height: 1.6;">
+                <span class="welcome-highlight" style="font-weight: bold; color: #2a5298;">Welcome to the OSINT Tools Platform of the Andhra Pradesh Police Department.</span><br><br>
+                This platform provides a suite of open-source intelligence tools designed to assist law enforcement and investigative agencies in gathering, analyzing, and utilizing publicly available information for various purposes.
+              </p>
+            </div>
+            <!-- Center: DGP Photo and Info -->
+            <div style="flex: 1 1 300px; min-width: 280px; max-width: 340px; text-align: center;">
+              <div class="dgp-photo" style="margin-bottom: 18px;">
+                <img src="dgpsir.jpg" alt="Director General of Police" class="dgp-image" style="width: 220px; height: auto; border-radius: 12px; box-shadow: 0 4px 18px rgba(44,62,80,0.13);">
+              </div>
+              <div class="dgp-info" style="margin-top: 0; text-align: center;">
+                <h2 style="margin-bottom: 8px; color: #2a5298; font-size: 1.2em; font-weight: bold;">SRI K.HARISH KUMAR GUPTA, IPS</h2>
+                <h3 style="margin-bottom: 4px; font-size: 1.05em; color: #333; font-weight: 600;">Director General of Police</h3>
+                <h4 style="margin-bottom: 0; font-size: 0.95em; color: #555;">Andhra Pradesh State</h4>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Responsive Card Grid -->
+                    <div class="dashboard-card-grid" style="margin: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+                      <a href="osinttools.html" class="dashboard-card" style="background: linear-gradient(135deg,#e0eafc,#cfdef3); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🔍</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">OSINT Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Open Source Intelligence Toolkit</p>
+                      </a>
+                      <a href="factcheck.html" class="dashboard-card" style="background: linear-gradient(135deg,#fceabb,#f8b500); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">✅</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Fact Check Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Verify and validate information</p>
+                      </a>
+                      <a href="darkweb-tools.html" class="dashboard-card" style="background: linear-gradient(135deg,#c2e9fb,#81a4fd); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🕵️</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Dark Web OSINT</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Investigate dark web activities</p>
+                      </a>
+                      <a href="blockchain-tools.html" class="dashboard-card" style="background: linear-gradient(135deg,#f8ffae,#43c6ac); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">⛓️</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Blockchain Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Cryptocurrency investigations</p>
+                      </a>
+                      <a href="social-media.html" class="dashboard-card" style="background: linear-gradient(135deg,#fbc2eb,#a6c1ee); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">📱</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Social Media Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Analyze social media intelligence</p>
+                      </a>
+                      <a href="domain-intel.html" class="dashboard-card" style="background: linear-gradient(135deg,#d4fc79,#96e6a1); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🌐</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Domain Intel Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Domain and web intelligence</p>
+                      </a>
+                      <a href="breach-data.html" class="dashboard-card" style="background: linear-gradient(135deg,#f9d423,#ff4e50); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🔒</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Breach Data Tools</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">Check for data breaches</p>
+                      </a>
+                      <a href="learning.html" class="dashboard-card" style="background: linear-gradient(135deg,#fbc2eb,#f8b500); border-radius: 14px; box-shadow: 0 2px 10px rgba(44,62,80,0.09); padding: 32px 18px; text-align: center; text-decoration: none; color: #222; transition: box-shadow 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">📚</div>
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.2em; font-weight: 600;">Learning</h3>
+                        <p style="font-size: 0.95em; color: #555; margin: 0; line-height: 1.4;">OSINT training & tutorials</p>
+                      </a>
+                    </div>
+
+                    <!-- Visitor Statistics Section -->
+          <div class="visitor-stats-section" style="margin: 30px 20px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+            <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-dashboard">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-dashboard">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-dashboard">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+                <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-dashboard">Loading...</div>
+                <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+              🔄 Auto-refreshes every 30 seconds
+            </div>
+          </div>
+            </div>
+            </div>
+        </div>
+
+<script>
+  window.onload = function () {
+    // Only external tool links should open in new tab, not navbar/navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.href.toLowerCase();
+      
+      // Skip navbar links, internal navigation, and logout links
+      if (link.closest('.navbar') || 
+          href.includes('dashboard.html') || 
+          href.includes('factcheck.html') || 
+          href.includes('index.html') ||
+          href.includes('localhost:3000') ||
+          link.getAttribute('onclick') ||
+          href.startsWith('#') ||
+          href === '' ||
+          href === window.location.href) {
+        // These should open in same tab - remove any existing target
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        console.log('Internal link (same tab):', href);
+        return;
+      }
+      
+      // External tool links should open in new tab
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      console.log('External link (new tab):', href);
+    });
+
+    // Check login status — block access if not logged in
+    const urlParams = new URLSearchParams(window.location.search);
+    const authParam = urlParams.get('auth');
+    const sessionLogin = sessionStorage.getItem("loggedIn");
+    const localLogin = localStorage.getItem("loggedIn");
+    
+    console.log("Dashboard - Auth param:", authParam);
+    console.log("Dashboard - Session login:", sessionLogin);
+    console.log("Dashboard - Local login:", localLogin);
+    
+    let isAuthenticated = false;
+    
+    // Allow access via URL parameter
+    if (authParam === "factcheck") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", "true");
+      console.log("Dashboard - Authenticated via URL parameter");
+    }
+    
+    // Allow access via storage
+    if (sessionLogin === "true" || localLogin === "true") {
+      isAuthenticated = true;
+      console.log("Dashboard - Authenticated via storage");
+    }
+    
+    if (!isAuthenticated) {
+      console.log("Dashboard - Access denied");
+      alert("❌ Access Denied. Please login first.");
+      window.location.href = "index.html";
+      return;
+    }
+    
+  // Ensure both storage methods are set
+    if (!sessionLogin) sessionStorage.setItem("loggedIn", "true");
+    if (!localLogin) localStorage.setItem("loggedIn", "true");
+    
+    console.log("Dashboard - Access granted");
+
+    // Load visitor statistics for dashboard
+    async function loadDashboardVisitorStats() {
+      try {
+        const response = await fetch('/api/visitor-stats');
+        const stats = await response.json();
+        
+        // Update the dashboard display elements
+        document.getElementById('total-visitors-dashboard').textContent = stats.totalVisitors.toLocaleString();
+        document.getElementById('unique-visitors-dashboard').textContent = stats.uniqueVisitors.toLocaleString();
+        document.getElementById('today-visitors-dashboard').textContent = stats.todayVisitors.toLocaleString();
+        document.getElementById('today-unique-dashboard').textContent = stats.todayUniqueVisitors.toLocaleString();
+      } catch (error) {
+        console.error('Error loading visitor stats:', error);
+        // Show fallback values
+        document.getElementById('total-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('unique-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('today-visitors-dashboard').textContent = 'N/A';
+        document.getElementById('today-unique-dashboard').textContent = 'N/A';
+      }
+    }
+
+    // Load stats immediately and then refresh every 30 seconds
+    loadDashboardVisitorStats();
+    setInterval(loadDashboardVisitorStats, 30000);
+
+
+    // Logout clears session and allows login page access
+    window.logout = function () {
+      sessionStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedIn");
+      console.log("User logged out - cleared all storage");
+      window.location.href = "index.html";
+    };
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set default active state based on stored preference or default to 'osint'
+    const storedSection = localStorage.getItem('activeNavSection');
+    const defaultSection = storedSection || 'osint';
+    setActiveNavLink(defaultSection);
+
+    // Hamburger menu functionality (aligned with other pages)
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+
+  };
+</script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

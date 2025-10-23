@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prismappolice.com</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+ <header class="header-row">
+      <div class="profile-container left">
+        <div class="profile-icon">
+          <img src="Prism-Logo.jpeg" alt="profile">
+        </div>
+      </div>
+      <div class="header-center">
+        <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+        <h2>(Open Source Intelligence Tools Platform)</h2>
+      </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+  </header>
+
+  <!-- Full-width marquee bar below header -->
+  <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+  </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link active" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <main> 
+    <div class="container">
+      <div class="unified-container">
+        <div class="container-header">
+          <h1>FACT CHECK TOOLS</h1>
+        </div>
+        <div class="container-content">
+          <h2>1. MONITORING MISINFORMATION TOOLS</h2>
+          <p><strong>USES:</strong> These tools help monitor and identify misinformation, fake news, and false narratives across digital platforms.</p>
+          <ol>
+            <li><a href="https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en">Google Fact Check Explorer</a></li>
+            <li><a href="https://pro.x.com/i/premium_sign_up?referring_page=pro">Tweetdeck/(X-Twitter)</a></li>
+          </ol>
+
+          <h2>2. FACIAL RECOGNITION TOOLS</h2>
+          <p><strong>USES:</strong> Facial recognition tools help identify individuals in images and verify identity claims in fact-checking investigations.</p>
+          <ol>
+            <li><a href="https://facecheck.id/">Facecheck</a></li>
+            <li><a href="https://pimeyes.com/en">Pimeyes</a></li>
+          </ol>
+
+          <h2>3. ERROR LEVEL ANALYSIS TOOLS</h2>
+          <p><strong>USES:</strong> Error level analysis tools help detect image manipulation and editing by analyzing compression artifacts and inconsistencies.</p>
+          <ol>
+            <li><a href="https://29a.ch/photo-forensics/#error-level-analysis">Forensically</a></li>
+            <li><a href="https://fotoforensics.com/">Fotoforensics</a></li>
+          </ol>
+
+          <h2>4. CHRONOLOCATION TOOLS</h2>
+          <p><strong>USES:</strong> Chronolocation tools help verify when images or videos were taken by analyzing shadows, sun position, and time-based data.</p>
+          <ol>
+            <li><a href="https://www.timeanddate.com/worldclock/">Time and Date</a></li>
+            <li><a href="https://shademap.app/@34.19922,77.31836,17.71507z,1759376344763t,0b,0p,0m!1759366015562!1759408547446,qMzQuMTk5OTAzODA5MDEwNzU2LCA3Ny4zMTkwNzc5MDYwNDcx!34.1999!77.31908">Shadow Map</a></li>
+            <li><a href="https://www.suncalc.org/#/34.1998,77.3191,3/2025.10.02/01:46/1/1">Suncalc</a></li>
+          </ol>
+
+          <h2>5. METADATA EXTRACTION TOOLS</h2>
+          <p><strong>USES:</strong> Metadata extraction tools help analyze hidden data in images and files to verify authenticity and gather investigative evidence.</p>
+          <ol>
+            <li><a href="https://exifeditor.io/#google_vignette/">Exifeditor</a></li>
+            <li><a href="https://exif.tools/">Exif.tool</a></li>
+            <li><a href="https://www.metadata2go.com/">Metadata2go</a></li>
+          </ol>
+
+          <h2>6. RECOVER DELETED CONTENT</h2>
+          <p><strong>USES:</strong> Content recovery tools help access deleted or modified web content to track changes and verify historical information.</p>
+          <ol>
+            <li><a href="https://archive.is/">Archive.is</a></li>
+            <li><a href="https://www.cachedview.com/">CachedView</a></li>
+            <li><a href="https://ghostarchive.org/">Ghostarchive</a></li>
+          </ol>
+
+          <h2>7. AI CONTENT GENERATION TOOLS</h2>
+          <p><strong>USES:</strong> AI content generation tools help create test content and analyze patterns to better understand how AI-generated content appears.</p>
+          <ol>
+            <li><a href="https://aistudio.google.com/?model=gemini-2.5-flash-image-preview">Gemini-2.5</a></li>
+            <li><a href="https://gemini.google.com/app">Gemini</a></li>
+            <li><a href="https://notebooklm.google.com/?pli=1">NotebookLM</a></li>
+            <li><a href="https://chat.openai.com/chat">ChatGPT</a></li>
+            <li><a href="https://www.perplexity.ai/">Perplexity AI</a></li>
+          </ol>
+
+          <h2>8. VISUAL VERIFICATION TOOLS</h2>
+          <p><strong>USES:</strong> Visual verification tools help authenticate images and videos, detect manipulation, and verify the authenticity of visual content.</p>
+          <ol>
+            <li><a href="https://www.invid-project.eu/tools-and-services/invid-verification-plugin/">InVid Verification Plugin</a></li>
+            <li><a href="https://www.amnesty.org/en/latest/research/2019/03/introducing-youtube-data-viewer-a-new-tool-to-help-verify-user-generated-videos/">YouTube Data Viewer</a></li>
+            <li><a href="https://lens.google/#cta-section">Google Lens</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en">Search by Image</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/sider-chat-with-all-ai-gp/difoiogjjojoaoomphldepapgpbgkhkb">Sider-Chat</a></li>
+          </ol>
+
+          <h2>9. QUICK HELP TOOLS</h2>
+          <p><strong>USES:</strong> Quick help tools provide utilities for downloading, editing, and processing content for verification purposes.</p>
+          <ol>
+            <li><a href="https://fdown.net/">Facebook Video Downloader</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/x-twitter-video-downloade/akmdionenlnfcipmdhbhcnkighafmdha?utm_source=item-share-cb">X Video Downloader</a></li>
+            <li><a href="https://chromewebstore.google.com/detail/turbo-downloader-for-inst/cpgaheeihidjmolbakklolchdplenjai?hl=en">Instagram Video Downloader</a></li>
+            <li><a href="https://findyoutubevideo.thetechrobo.ca/">YouTube Video Finder</a></li>
+            <li><a href="https://www.remove.bg/">Remove Bg</a></li>
+            <li><a href="https://cleanup.pictures/">Cleanup Pictures</a></li>
+            <li><a href="https://www.awesomescreenshot.com/">Screen Recorder</a></li>
+          </ol>
+
+          <h2>10. GEOLOCATION TOOLS</h2>
+          <p><strong>USES:</strong> Geolocation tools help verify the location where images or videos were taken to confirm or debunk location-based claims.</p>
+          <ol>
+            <li><a href="https://www.google.com/intl/en_in/earth/about/versions/">Google Earth Pro</a></li>
+            <li><a href="https://www.google.com/maps">Google Maps</a></li>
+            <li><a href="https://www.bing.com/maps">Bing Maps</a></li>
+            <li><a href="https://www.openstreetmap.org">OpenStreetMap</a></li>
+            <li><a href="https://www.instantstreetview.com/">Instant Street View</a></li>
+            <li><a href="https://inteltechniques.com/tools/Location.html">Maps Search Tool</a></li>
+            <li><a href="https://wikimapia.org/#lang=en&lat=13.083300&lon=80.283300&z=12&m=w">Wiki Maps</a></li>
+            <li><a href="https://picarta.ai/">Picarta</a></li>
+          </ol>
+
+          <h2>11. SOCIAL MEDIA SEARCH TOOLS</h2>
+          <p><strong>USES:</strong> Social media search tools help track the origin and spread of content across different platforms for verification purposes.</p>
+          <ol>
+            <li><a href="https://graph.tips/beta/">Graph</a></li>
+            <li><a href="https://whopostedwhat.com/">Whopostedwhat</a></li>
+            <li><a href="https://findidfb.com/">FindMyFbID</a></li>
+            <li><a href="https://webmii.com/">Webmii</a></li>
+            <li><a href="https://www.mention.com/en/">Mention</a></li>
+            <li><a href="https://mattw.io/youtube-geofind/location?location=48.2100,2.2800&doSearch=true/">MW Geofind</a></li>
+            <li><a href="https://www.tofler.in/">Tofler</a></li>
+            <li><a href="https://www.zaubacorp.com/">Zaubacorp</a></li>
+            <li><a href="https://instahunt.huntintel.io/">Instahunt</a></li>
+          </ol>
+
+          <h2>12. AI DETECTION TOOLS</h2>
+          <p><strong>USES:</strong> AI detection tools help identify artificially generated content including deepfakes, AI-generated images, and synthetic media.</p>
+          <ol>
+            <li><a href="https://hivemoderation.com/ai-generated-content-detection">Hive Moderation</a></li>
+            <li><a href="https://isitai.com/">IsitAI?</a></li>
+            <li><a href="https://wasitai.com/">WasitAI?</a></li>
+            <li><a href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/login?next=%2Fubmdfl%2Fdeep-o-meter%2Fhome_login/">DEEPFAKE-O-METER</a></li>
+            <li><a href="https://sightengine.com/detect-ai-generated-images">SightengineAI</a></li>
+            <li><a href="https://www.aiornot.com/">Optic AI or NOT</a></li>
+            <li><a href="https://www.hiya.com/products/deepfake-voice-detector">Deepfake Voice Detector</a></li>
+            <li><a href="https://detect.resemble.ai/">ResembleAI</a></li>
+            <li><a href="https://lenso.ai/en">Lenso.ai</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </main>
+      <!-- Visitor Counter -->
+      <div class="visitor-stats-section" style="margin: 30px 20px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+        <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-factcheck">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-factcheck">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-factcheck">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-factcheck">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+          🔄 Auto-refreshes every 30 seconds
+        </div>
+      </div>
+      <script>
+        // Visitor Counter Script
+        async function loadFactcheckVisitorStats() {
+          try {
+            const response = await fetch('/api/visitor-stats');
+            const stats = await response.json();
+            document.getElementById('total-visitors-factcheck').textContent = stats.totalVisitors.toLocaleString();
+            document.getElementById('unique-visitors-factcheck').textContent = stats.uniqueVisitors.toLocaleString();
+            document.getElementById('today-visitors-factcheck').textContent = stats.todayVisitors ? stats.todayVisitors.toLocaleString() : 'N/A';
+            document.getElementById('today-unique-factcheck').textContent = stats.todayUniqueVisitors ? stats.todayUniqueVisitors.toLocaleString() : 'N/A';
+          } catch (error) {
+            document.getElementById('total-visitors-factcheck').textContent = 'N/A';
+            document.getElementById('unique-visitors-factcheck').textContent = 'N/A';
+            document.getElementById('today-visitors-factcheck').textContent = 'N/A';
+            document.getElementById('today-unique-factcheck').textContent = 'N/A';
+          }
+        }
+        loadFactcheckVisitorStats();
+        setInterval(loadFactcheckVisitorStats, 30000);
+      </script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.onload = function () {
+    console.log("=== FACTCHECK PAGE LOADED ===");
+    
+    // Simple authentication check with multiple fallbacks
+    const urlParams = new URLSearchParams(window.location.search);
+    const authParam = urlParams.get('auth');
+    const testParam = urlParams.get('test');
+    const sessionLogin = sessionStorage.getItem("loggedIn");
+    const localLogin = localStorage.getItem("loggedIn");
+    
+    console.log("URL Auth Parameter:", authParam);
+    console.log("Session Storage:", sessionLogin);
+    console.log("Local Storage:", localLogin);
+    
+    // Multiple ways to be authenticated:
+    let isAuthenticated = false;
+    
+    // Method 0: Test parameter (for debugging)
+    if (testParam === "true") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", "true");
+      console.log("Authenticated via test parameter");
+    }
+    
+    // Method 1: URL parameter from dashboard
+    if (authParam === "dashboard") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", "true");
+      console.log("Authenticated via URL parameter");
+    }
+    
+    // Method 2: Valid session storage
+    if (sessionLogin === "true") {
+      isAuthenticated = true;
+      console.log("Authenticated via session storage");
+    }
+    
+    // Method 3: Valid local storage
+    if (localLogin === "true") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true"); // Restore session
+      console.log("Authenticated via local storage");
+    }
+    
+    // If not authenticated by any method, redirect
+    if (!isAuthenticated) {
+      console.log("No authentication found - redirecting");
+      alert("❌ Access Denied. Please login first.");
+      window.location.href = "index.html";
+      return;
+    }
+    
+    console.log("✅ Authentication successful - proceeding to load page");
+    
+    // Debug: Check all sessionStorage contents
+    console.log("All sessionStorage items:");
+    for (let i = 0; i < sessionStorage.length; i++) {
+      const key = sessionStorage.key(i);
+      console.log(`${key}: ${sessionStorage.getItem(key)}`);
+    }
+
+    // Only external tool links should open in new tab, not navbar/navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.href.toLowerCase();
+      
+      // Skip navbar links, internal navigation, and logout links
+      if (link.closest('.navbar') || 
+          link.classList.contains('nav-link') ||
+          href.includes('dashboard.html') || 
+          href.includes('factcheck.html') || 
+          href.includes('index.html') ||
+          href.includes('localhost:3000') ||
+          link.getAttribute('onclick') ||
+          href.startsWith('#') ||
+          href === '' ||
+          href === window.location.href) {
+        // These should open in same tab - remove any existing target
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        console.log('Internal link (same tab):', href);
+        return;
+      }
+      
+      // External tool links should open in new tab
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      console.log('External link (new tab):', href);
+    });
+
+
+
+
+    // Logout clears session and allows login page access
+    window.logout = function () {
+      sessionStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedIn");
+      console.log("User logged out - cleared all storage");
+      window.location.href = "index.html";
+    };
+
+    // Toggle dropdown function
+    window.toggleDropdown = function (event) {
+      event.stopPropagation();
+      console.log("Toggle dropdown clicked");
+      const dropdown = document.getElementById("dropdownMenu");
+      console.log("Dropdown element:", dropdown);
+      
+      if (dropdown) {
+        const currentDisplay = dropdown.style.display;
+        const newDisplay = currentDisplay === "block" ? "none" : "block";
+        dropdown.style.display = newDisplay;
+        console.log("Changed dropdown display from", currentDisplay, "to", newDisplay);
+      } else {
+        console.error("Dropdown element not found!");
+      }
+    };
+
+    // Close dropdown on any other click
+    window.addEventListener("click", function () {
+      const dropdown = document.getElementById("dropdownMenu");
+      if (dropdown) dropdown.style.display = "none";
+    });
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for fact check page
+    setActiveNavLink('factcheck');
+
+    // Mobile hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+
+  };
+</script>
+</body>
+</html>

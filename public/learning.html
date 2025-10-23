@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSINT Learning Resources - PRISM OSINT</title>
+  <meta name="description" content="Comprehensive OSINT training videos and tutorials for law enforcement professionals">
+  <link rel="stylesheet" href="dashboard.css">
+  <style>
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    @media (max-width: 1200px) {
+      .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      background: #000;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+    .video-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .video-title {
+      color: #2a5298;
+      margin-bottom: 10px;
+      font-size: 1em;
+      min-height: 45px;
+    }
+    .video-description {
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 0.85em;
+    }
+    .instructor-name {
+      color: #1e3c72;
+      font-weight: bold;
+    }
+    .fullscreen-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+    .fullscreen-btn:hover {
+      background: rgba(0,0,0,0.9);
+    }
+    .info-section {
+      grid-column: 1 / -1;
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<header class="header-row">
+  <div class="profile-container left">
+    <div class="profile-icon">
+      <img src="Prism-Logo.jpeg" alt="profile">
+    </div>
+  </div>
+  <div class="header-center">
+    <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+    <h2>(Open Source Intelligence Tools Platform)</h2>
+  </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+  </header>
+
+  <!-- Full-width marquee bar below header -->
+  <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+  </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link active" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <main> 
+    <div class="container">
+      <div class="unified-container">
+        <div class="container-header">
+          <h1>OSINT LEARNING RESOURCES</h1>
+          <p style="text-align: center; color: #666; margin-top: 10px;">Comprehensive training videos and tutorials to master Open Source Intelligence techniques</p>
+        </div>
+        <div class="container-content">
+
+          <!-- Videos Grid -->
+          <div class="videos-grid">
+            
+            <!-- Video 1 -->
+            <div class="video-section">
+              <h2 class="video-title">📖 Learn OSINT in 4.5 Hours</h2>
+              <p class="video-description">
+                <span class="instructor-name">Heath Adams</span><br>
+                Complete beginner course covering fundamentals and practical techniques.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/qwA6MmbeGNo" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-section">
+              <h2 class="video-title">🏠 OSINT At Home Series</h2>
+              <p class="video-description">
+                <span class="instructor-name">Benjamin Strick</span><br>
+                Detailed playlist with real-world examples and demonstrations.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLrFPX1Vfqk3ehZKSFeb9pVIHqxqrNW8Sy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-section">
+              <h2 class="video-title">⏱️ 10 Minute OSINT Tips</h2>
+              <p class="video-description">
+                <span class="instructor-name">OSINT Curious Project</span><br>
+                Quick, actionable OSINT tips in bite-sized videos.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PL423I_gHbWUUOs09899rex4t2l5py9YIk" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-section">
+              <h2 class="video-title">🎯 Complete OSINT Exercises</h2>
+              <p class="video-description">
+                <span class="instructor-name">Sofia Santos</span><br>
+                Step-by-step walkthroughs of practical OSINT exercises.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PL423I_gHbWUUOs09899rex4t2l5py9YIk" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-section">
+              <h2 class="video-title">🎓 OSINT Training Course</h2>
+              <p class="video-description">
+                <span class="instructor-name">Motasem Hamdan</span><br>
+                Structured OSINT training covering tools and methodologies.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLqM63j87R5p6dZeq1l_EIPP6NkJi51wET" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-section">
+              <h2 class="video-title">� OSINT Course</h2>
+              <p class="video-description">
+                <span class="instructor-name">David Pereira</span><br>
+                Comprehensive OSINT course for investigators.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PL1Kv5m-HTbQzxQd--mDXRjsR1ddqRk0aE" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="video-section">
+              <h2 class="video-title">� Complete OSINT Course</h2>
+              <p class="video-description">
+                <span class="instructor-name">Irfan Shakeel</span><br>
+                Extensive course covering advanced techniques.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/opLD4zFB5z0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="video-section">
+              <h2 class="video-title">💻 OSINT Tutorials</h2>
+              <p class="video-description">
+                <span class="instructor-name">TechChip</span><br>
+                Technical tutorials on OSINT tools and techniques.
+              </p>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PL0fjgIGwLMWQDNiizQiN3GDh7Uxcttntf" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+            </div>
+
+            <!-- Video 9 - Null Byte Channel Link -->
+            <div class="video-section">
+              <h2 class="video-title">🔓 Null Byte OSINT Channel</h2>
+              <p class="video-description">
+                <span class="instructor-name">Null Byte</span><br>
+                Channel with various OSINT and hacking tutorials.
+              </p>
+              <div style="background: #f0f8ff; padding: 30px; border-radius: 8px; text-align: center; min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <p style="margin: 10px 0; color: #666;">
+                  <strong>📺 Visit Null Byte YouTube Channel</strong>
+                </p>
+                <a href="https://www.youtube.com/@nullbytewht" target="_blank" style="display: inline-block; background: #2a5298; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; margin-top: 10px; font-weight: bold; transition: background 0.3s;">
+                  Open Channel →
+                </a>
+                <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
+                  Channel links cannot be embedded directly
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Learning Tips -->
+          <div class="info-section" style="background: #f0f8ff; border-left: 4px solid #2a5298;">
+            <h2 style="color: #2a5298; margin-bottom: 15px;">💡 Tips for Effective OSINT Learning</h2>
+            <ul style="line-height: 1.8; color: #333;">
+              <li><strong>Start with Basics:</strong> Begin with the beginner courses before moving to advanced topics.</li>
+              <li><strong>Practice Regularly:</strong> Apply what you learn through practical exercises and real-world scenarios.</li>
+              <li><strong>Take Notes:</strong> Document tools, techniques, and important concepts as you learn.</li>
+              <li><strong>Join Communities:</strong> Engage with OSINT communities on Twitter, Reddit, and Discord.</li>
+              <li><strong>Stay Updated:</strong> OSINT tools and techniques evolve rapidly - keep learning continuously.</li>
+              <li><strong>Ethics First:</strong> Always conduct OSINT activities ethically and within legal boundaries.</li>
+              <li><strong>Build a Toolkit:</strong> Create your own collection of favorite OSINT tools and resources.</li>
+              <li><strong>Document Your Process:</strong> Practice documenting your investigation process for reporting.</li>
+            </ul>
+          </div>
+
+          <!-- Additional Resources -->
+          <div class="info-section" style="background: #fff3cd; border-left: 4px solid #ff9800;">
+            <h2 style="color: #2a5298; margin-bottom: 15px;">📚 Recommended Learning Path</h2>
+            <ol style="line-height: 2; color: #333;">
+              <li><strong>Week 1-2:</strong> Watch "Learn OSINT in 4.5h" by Heath Adams for foundational knowledge</li>
+              <li><strong>Week 3-4:</strong> Follow "OSINT At Home" series by Benjamin Strick for practical skills</li>
+              <li><strong>Week 5-6:</strong> Study "Complete OSINT Course" by Irfan Shakeel for comprehensive understanding</li>
+              <li><strong>Week 7-8:</strong> Practice with "Complete OSINT Exercises" by Sofia Santos</li>
+              <li><strong>Ongoing:</strong> Watch "10 Minute OSINT Tips" regularly for continuous learning</li>
+              <li><strong>Advanced:</strong> Explore David Pereira's course and Motasem Hamdan's training</li>
+              <li><strong>Technical Skills:</strong> Use TechChip and Null Byte tutorials for tool-specific training</li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </main>
+
+      <!-- Visitor Counter -->
+      <div class="visitor-stats-section" style="margin: 30px 20px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+        <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-learning">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-learning">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-learning">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-learning">Loading...</div>
+            <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+          🔄 Auto-refreshes every 30 seconds
+        </div>
+      </div>
+    
+      <script>
+        // Visitor Counter Script
+        async function loadLearningVisitorStats() {
+          try {
+            const response = await fetch('/api/visitor-stats');
+            const stats = await response.json();
+            document.getElementById('total-visitors-learning').textContent = stats.totalVisitors.toLocaleString();
+            document.getElementById('unique-visitors-learning').textContent = stats.uniqueVisitors.toLocaleString();
+            document.getElementById('today-visitors-learning').textContent = stats.todayVisitors ? stats.todayVisitors.toLocaleString() : 'N/A';
+            document.getElementById('today-unique-learning').textContent = stats.todayUniqueVisitors ? stats.todayUniqueVisitors.toLocaleString() : 'N/A';
+          } catch (error) {
+            document.getElementById('total-visitors-learning').textContent = 'N/A';
+            document.getElementById('unique-visitors-learning').textContent = 'N/A';
+            document.getElementById('today-visitors-learning').textContent = 'N/A';
+            document.getElementById('today-unique-learning').textContent = 'N/A';
+          }
+        }
+        loadLearningVisitorStats();
+        setInterval(loadLearningVisitorStats, 30000);
+
+        // Fullscreen functionality for videos
+        document.addEventListener('DOMContentLoaded', function() {
+          const videoContainers = document.querySelectorAll('.video-container');
+          
+          videoContainers.forEach(container => {
+            const iframe = container.querySelector('iframe');
+            
+            // Add double-click to fullscreen
+            container.addEventListener('dblclick', function() {
+              if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+              } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+              } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+              } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+              }
+            });
+            
+            // Add hover tooltip
+            container.title = 'Double-click to fullscreen';
+            container.style.cursor = 'pointer';
+          });
+        });
+      </script>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.onload = function () {
+    // Session check (matching other pages)
+    if (!sessionStorage.getItem("loggedIn") && !localStorage.getItem("loggedIn")) {
+      window.location.href = "index.html";
+      return;
+    }
+
+    // Logout function
+    window.logout = function () {
+      if (confirm('Are you sure you want to logout?')) {
+        sessionStorage.removeItem("loggedIn");
+        localStorage.removeItem("loggedIn");
+        console.log("User logged out - cleared all storage");
+        window.location.href = "index.html";
+      }
+    };
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for learning page
+    setActiveNavLink('learning');
+
+    // Mobile hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+  };
+</script>
+
+</body>
+</html>

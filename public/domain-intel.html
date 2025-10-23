@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prismappolice.com</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+ <header class="header-row">
+      <div class="profile-container left">
+        <div class="profile-icon">
+          <img src="Prism-Logo.jpeg" alt="profile">
+        </div>
+      </div>
+      <div class="header-center">
+        <h1>ANDHRA PRADESH POLICE DEPARTMENT</h1>
+        <h2>(Open Source Intelligence Tools Platform)</h2>
+      </div>
+      <div class="profile-container right">
+        <div class="profile-icon">
+          <img src="Appolice-Logo.png" alt="profile">
+        </div>
+      </div>
+  </header>
+
+  <!-- Full-width marquee bar below header -->
+  <div class="marquee-container">
+    <span class="marquee-text">(PRISM - Police Research Institute for Systems Modernisation)</span>
+  </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="osinttools.html" class="nav-link" data-section="osint">🔍 OSINT Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="factcheck.html" class="nav-link" data-section="factcheck">✅ Fact Check Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="darkweb-tools.html" class="nav-link" data-section="darkweb">🕵️ Dark Web Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="blockchain-tools.html" class="nav-link" data-section="blockchain">⛓️ Blockchain Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="social-media.html" class="nav-link" data-section="social-media">📱 Social Media Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="domain-intel.html" class="nav-link active" data-section="domain-intel">🌐 Domain Intel Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="breach-data.html" class="nav-link" data-section="breach-data">🔒 Breach Data Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="learning.html" class="nav-link" data-section="learning">📚 Learning</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link logout-link" onclick="logout()">🚪 Logout</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Mobile menu backdrop overlay -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <main>
+      <div class="container">
+        <div class="unified-container">
+          <div class="container-header">
+            <h1>DOMAIN INTELLIGENCE TOOLS</h1>
+          </div>
+          <div class="container-content">
+            <h2>1. WHOIS LOOKUP TOOLS</h2>
+            <p><strong>USES:</strong> WHOIS lookup tools help law enforcement investigate domain ownership, registration details, and contact information for cybercrime investigations.</p>
+            <ol>
+              <li><a href="https://www.whois.net/">Whois.net</a></li>
+              <li><a href="https://www.whoisxmlapi.com/">WhoisXML API</a></li>
+              <li><a href="https://whois.domaintools.com/">Domain Tools</a></li>
+              <li><a href="https://www.whois.com/">Whois.com</a></li>
+            </ol>
+
+            <h2>2. DNS LOOKUP TOOLS</h2>
+            <p><strong>USES:</strong> DNS lookup tools help analyze domain name resolution, mail servers, and network infrastructure for cybercrime investigations.</p>
+            <ol>
+              <li><a href="https://dnslytics.com/">DNS Lytics</a></li>
+              <li><a href="https://www.nslookup.io/">NSLookup.io</a></li>
+              <li><a href="https://dnschecker.org/">DNS Checker</a></li>
+              <li><a href="https://www.whatsmydns.net/">What's My DNS</a></li>
+            </ol>
+
+            <h2>3. SUBDOMAIN DISCOVERY</h2>
+            <p><strong>USES:</strong> Subdomain discovery tools help law enforcement find hidden subdomains and infrastructure associated with criminal websites.</p>
+            <ol>
+              <li><a href="https://subdomainfinder.c99.nl/">Subdomain Finder</a></li>
+              <li><a href="https://dnsdumpster.com/">DNS Dumpster</a></li>
+              <li><a href="https://crt.sh/">Certificate Transparency</a></li>
+              <li><a href="https://www.virustotal.com/">VirusTotal</a></li>
+            </ol>
+
+            <h2>4. DOMAIN REPUTATION</h2>
+            <p><strong>USES:</strong> Domain reputation tools help assess website safety, detect malicious domains, and analyze threat intelligence for cybersecurity.</p>
+            <ol>
+              <li><a href="https://www.urlvoid.com/">URLVoid</a></li>
+              <li><a href="https://www.virustotal.com/">VirusTotal</a></li>
+              <li><a href="https://checkphish.ai/">CheckPhish</a></li>
+              <li><a href="https://www.abuse.ch/">Abuse.ch</a></li>
+            </ol>
+
+            <h2>5. WEB TECHNOLOGY DETECTION</h2>
+            <p><strong>USES:</strong> Web technology detection tools help identify technologies, frameworks, and vulnerabilities used by criminal websites.</p>
+            <ol>
+              <li><a href="https://builtwith.com/">BuiltWith</a></li>
+              <li><a href="https://www.wappalyzer.com/">Wappalyzer</a></li>
+              <li><a href="https://w3techs.com/">W3Techs</a></li>
+              <li><a href="https://whatweb.net/">WhatWeb</a></li>
+            </ol>
+
+            <h2>6. SSL/TLS CERTIFICATE ANALYSIS</h2>
+            <p><strong>USES:</strong> SSL certificate analysis tools help investigate website security, certificate authorities, and encryption details for cybercrime cases.</p>
+            <ol>
+              <li><a href="https://www.ssllabs.com/ssltest/">SSL Labs</a></li>
+              <li><a href="https://crt.sh/">Certificate Transparency</a></li>
+              <li><a href="https://censys.io/">Censys</a></li>
+              <li><a href="https://www.shodan.io/">Shodan</a></li>
+            </ol>
+
+            <h2>7. IP ADDRESS INVESTIGATION</h2>
+            <p><strong>USES:</strong> IP address investigation tools help track server locations, hosting providers, and network infrastructure for cybercrime investigations.</p>
+            <ol>
+              <li><a href="https://www.ip2location.com/">IP2Location</a></li>
+              <li><a href="https://ipinfo.io/">IPinfo</a></li>
+              <li><a href="https://www.maxmind.com/">MaxMind</a></li>
+              <li><a href="https://www.abuseipdb.com/">AbuseIPDB</a></li>
+            </ol>
+
+            <h2>8. WEBSITE ARCHIVING</h2>
+            <p><strong>USES:</strong> Website archiving tools help retrieve historical versions of criminal websites for evidence collection and investigation.</p>
+            <ol>
+              <li><a href="https://web.archive.org/">Wayback Machine</a></li>
+              <li><a href="https://archive.today/">Archive.today</a></li>
+              <li><a href="https://www.cachedview.com/">CachedView</a></li>
+              <li><a href="https://ghostarchive.org/">Ghost Archive</a></li>
+            </ol>
+
+            <h2>9. DOMAIN MONITORING</h2>
+            <p><strong>USES:</strong> Domain monitoring tools help track new domain registrations, typosquatting, and brand impersonation for proactive threat detection.</p>
+            <ol>
+              <li><a href="https://www.domaintools.com/">Domain Tools</a></li>
+              <li><a href="https://dnstwist.it/">DNS Twist</a></li>
+              <li><a href="https://www.brandalert.org/">Brand Alert</a></li>
+              <li><a href="https://www.whoisds.com/">WhoisDS</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Visitor Counter (moved below content like other pages) -->
+    <div class="visitor-stats-section" style="margin: 30px 20px; padding: 20px; background: linear-gradient(135deg, #1e3c72, #2a5298); border-radius: 15px; color: white; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+      <h3 style="text-align: center; margin: 0 0 20px 0; font-size: 1.3em;">🌐 Visitor Statistics</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 2em; font-weight: bold; color: #4CAF50;" id="total-visitors-domain">Loading...</div>
+          <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Total Visits</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 2em; font-weight: bold; color: #2196F3;" id="unique-visitors-domain">Loading...</div>
+          <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Unique Visitors</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 2em; font-weight: bold; color: #FF9800;" id="today-visitors-domain">Loading...</div>
+          <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Visits</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 2em; font-weight: bold; color: #E91E63;" id="today-unique-domain">Loading...</div>
+          <div style="font-size: 0.95em; opacity: 0.9; margin-top: 5px;">Today's Unique</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 12px; font-size: 0.85em; opacity: 0.85;">
+        🔄 Auto-refreshes every 30 seconds
+      </div>
+    </div>
+
+<footer>
+  <address>
+    Address: The Director General OF Police O/o The DGP, APSP 6th Battalion, Mangalagiri(V&M), Guntur District, AP-522 503.<br>
+    Contact: +91-8523817999.<br>
+    Email: prism2025@appolice.gov.in|support@appoliceosint.com</a>
+  </address>
+  <p>&copy; 2025 PRISM. All content protected under copyright law. All Rights Reserved.</p>
+</footer>
+
+<script>
+  window.onload = function () {
+    // Only external tool links should open in new tab, not navbar/navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.href.toLowerCase();
+      
+      // Skip navbar links, internal navigation, and logout links
+      if (link.closest('.navbar') || 
+          link.classList.contains('nav-link') ||
+          href.includes('dashboard.html') || 
+          href.includes('factcheck.html') || 
+          href.includes('social-media.html') ||
+          href.includes('domain-intel.html') ||
+          href.includes('breach-data.html') ||
+          href.includes('index.html') ||
+          href.includes('localhost:3000') ||
+          link.getAttribute('onclick') ||
+          href.startsWith('#') ||
+          href === '' ||
+          href === window.location.href) {
+        // These should open in same tab - remove any existing target
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        console.log('Internal link (same tab):', href);
+        return;
+      }
+      
+      // External tool links should open in new tab
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      console.log('External link (new tab):', href);
+    });
+
+    // Check login status — block access if not logged in
+    const urlParams = new URLSearchParams(window.location.search);
+    const authParam = urlParams.get('auth');
+    const sessionLogin = sessionStorage.getItem("loggedIn");
+    const localLogin = localStorage.getItem("loggedIn");
+    
+    console.log("Domain Intel - Auth param:", authParam);
+    console.log("Domain Intel - Session login:", sessionLogin);
+    console.log("Domain Intel - Local login:", localLogin);
+    
+    let isAuthenticated = false;
+    
+    // Allow access via URL parameter
+    if (authParam === "factcheck") {
+      isAuthenticated = true;
+      sessionStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", "true");
+      console.log("Domain Intel - Authenticated via URL parameter");
+    }
+    
+    // Allow access via storage
+    if (sessionLogin === "true" || localLogin === "true") {
+      isAuthenticated = true;
+      console.log("Domain Intel - Authenticated via storage");
+    }
+    
+    if (!isAuthenticated) {
+      console.log("Domain Intel - Access denied");
+      alert("❌ Access Denied. Please login first.");
+      window.location.href = "index.html";
+      return;
+    }
+    
+    // Ensure both storage methods are set
+    if (!sessionLogin) sessionStorage.setItem("loggedIn", "true");
+    if (!localLogin) localStorage.setItem("loggedIn", "true");
+    
+    console.log("Domain Intel - Access granted");
+
+    // Visitor Counter Script
+    async function loadDomainVisitorStats() {
+      try {
+        const response = await fetch('/api/visitor-stats');
+        const stats = await response.json();
+        document.getElementById('total-visitors-domain').textContent = stats.totalVisitors.toLocaleString();
+        document.getElementById('unique-visitors-domain').textContent = stats.uniqueVisitors.toLocaleString();
+        document.getElementById('today-visitors-domain').textContent = stats.todayVisitors ? stats.todayVisitors.toLocaleString() : 'N/A';
+        document.getElementById('today-unique-domain').textContent = stats.todayUniqueVisitors ? stats.todayUniqueVisitors.toLocaleString() : 'N/A';
+      } catch (error) {
+        document.getElementById('total-visitors-domain').textContent = 'N/A';
+        document.getElementById('unique-visitors-domain').textContent = 'N/A';
+        document.getElementById('today-visitors-domain').textContent = 'N/A';
+        document.getElementById('today-unique-domain').textContent = 'N/A';
+      }
+    }
+    loadDomainVisitorStats();
+    setInterval(loadDomainVisitorStats, 30000);
+
+
+    // Logout clears session and allows login page access
+    window.logout = function () {
+      sessionStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedIn");
+      console.log("User logged out - cleared all storage");
+      window.location.href = "index.html";
+    };
+
+    // Navigation active state management
+    function setActiveNavLink(section) {
+      // Remove active from all nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active to the specified section
+      const targetLink = document.querySelector(`[data-section="${section}"]`);
+      if (targetLink) {
+        targetLink.classList.add('active');
+      }
+      
+      // Store the active section for page refreshes
+      localStorage.setItem('activeNavSection', section);
+    }
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const section = this.getAttribute('data-section');
+        setActiveNavLink(section);
+      });
+    });
+
+    // Set active state for domain intel page
+    setActiveNavLink('domain-intel');
+
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }));
+    }
+
+
+  };
+</script>
+
+</body>
+</html>
