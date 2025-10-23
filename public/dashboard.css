@@ -44,7 +44,7 @@ header.header-row {
     flex-wrap: nowrap;                /* prevent unintended wrapping/jumps */
     min-height: 84px;                 /* stable header height to avoid bounce */
     position: relative;
-    z-index: 1100; /* ensure header (and marquee) is above navbar */
+    z-index: 1300; /* keep header above marquee; navbar remains higher */
     margin-bottom: 0;                 /* no gap below header */
     width: 100%;                      /* ensure full width */
     margin-left: 0;
@@ -62,7 +62,7 @@ header.header-row h1 {
     margin: 10px 0 0 0; /* push heading a bit down for visual comfort */
     font-weight: bold;
     color: rgba(12, 15, 158, 0.772);
-    background: #ffffff; /* solid white header with no bleed-through */
+    background: transparent; /* header already white */
     overflow-wrap: break-word;
 }
 header.header-row h2 {
@@ -73,6 +73,7 @@ header.header-row h2 {
     color: rgba(12, 15, 158, 0.772);
     text-decoration: underline;
     margin: 0;
+    background: transparent; /* header already white */
 }
 .profile-container.left {
     margin-right: 20px;
@@ -117,7 +118,7 @@ marquee {
     margin-left: calc(-50vw + 50%);   /* center it to span full viewport */
     margin-right: calc(-50vw + 50%);
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 6px; /* add breathing room so it doesn't touch the navbar */
     padding-left: 0;                  /* no left padding */
     padding-right: 0;                 /* no right padding */
     overflow: hidden;
@@ -127,7 +128,8 @@ marquee {
     padding-bottom: 8px;
     text-align: center;
     background: #ffffff;              /* white strip full width */
-    z-index: 2500;                    /* keep above navbar and images */
+    /* Keep marquee below header and navbar/menu to avoid overlap and intercepting clicks */
+    z-index: 900;
     border-bottom: 2px solid #8B0000;
     display: block;                   /* ensure visibility */
     min-height: 36px;                 /* minimum height to ensure visibility */
@@ -236,6 +238,25 @@ header.header-row .profile-container.right {
 header.header-row .profile-icon {
     width: 84px;
     height: 84px;
+}
+
+/* Desktop: lock header into 3-column grid (logo - title - logo) */
+@media (min-width: 992px) {
+    header.header-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        column-gap: 20px;
+    }
+    header.header-row .profile-container.left {
+        justify-self: start;
+    }
+    header.header-row .profile-container.right {
+        justify-self: end;
+    }
+    header.header-row .header-center {
+        text-align: center;
+    }
 }
 
 /* Responsive logo sizing based on screen width */
@@ -376,7 +397,8 @@ header {
     border-bottom: 0; /* remove red line under navbar */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: relative;
-    z-index: 1000;
+    /* Ensure navbar (and its dropdown) sits above the backdrop */
+    z-index: 2400;
     overflow-x: hidden; /* prevent horizontal page scroll */
     display: block;
     width: 100%;
@@ -495,7 +517,8 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1999;
+    /* Keep backdrop below navbar/dropdown but above page content */
+    z-index: 1500;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1218,7 +1241,8 @@ footer address {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         border-top: 3px solid #8B0000;
         border-radius: 0 0 12px 0;
-        z-index: 2000;
+    /* Ensure menu is above backdrop and below marquee */
+    z-index: 2450;
         max-height: calc(100vh - 120px);
         overflow-y: auto;
         overflow-x: hidden;
@@ -1251,6 +1275,7 @@ footer address {
         gap: 0;
         opacity: 1;
         transform: translateX(0);
+        z-index: 2450;
     }
     /* Full-width, easy-to-tap links on mobile */
     .nav-menu .nav-link {
@@ -1261,6 +1286,11 @@ footer address {
         font-size: 0.9rem;
         white-space: nowrap;
         line-height: 1.3;
+    /* mobile tap reliability */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.25);
+    -webkit-user-select: none;
+    user-select: none;
     }
     .nav-item {
         margin: 0;
@@ -1273,6 +1303,11 @@ footer address {
         display: block;
         width: 100%;
         line-height: 1.3;
+    /* hint to mobile browsers that this triggers navigation */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.25);
+    -webkit-user-select: none;
+    user-select: none;
     }
     .nav-link:hover {
         transform: none;
