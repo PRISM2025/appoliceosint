@@ -1,0 +1,5 @@
+# robots.txt for appoliceosint
+User-agent: *
+Allow: /
+
+Sitemap: https://appoliceosint.com/sitemap.xml

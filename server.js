@@ -19,7 +19,8 @@ if (!fs.existsSync(VISITOR_DATA_FILE)) {
   const initialData = {
     totalVisitors: 0,              // total page views (visits)
     uniqueVisitors: [],            // persisted as array; stored as Set in memory
-    dailyStats: {},                // { 'YYYY-MM-DD': { visits: n, uniques: n } }
+  dailyStats: {},                // { 'YYYY-MM-DD': { visits: n, uniques: n } }
+  dailyUniqueIds: {},            // { 'YYYY-MM-DD': [hash, hash, ...] }
     lastUpdated: new Date().toISOString(),
   };
   fs.writeFileSync(VISITOR_DATA_FILE, JSON.stringify(initialData, null, 2));
@@ -39,6 +40,7 @@ const diskData = safeReadJSON(VISITOR_DATA_FILE, {
   totalVisitors: 0,
   uniqueVisitors: [],
   dailyStats: {},
+  dailyUniqueIds: {},
   lastUpdated: new Date().toISOString(),
 });
 
@@ -46,6 +48,10 @@ const state = {
   totalVisitors: Number(diskData.totalVisitors) || 0,
   uniqueVisitors: new Set(diskData.uniqueVisitors || []),
   dailyStats: diskData.dailyStats || {},
+  // In-memory: map of day => Set of ids
+  dailyUniqueIds: Object.fromEntries(
+    Object.entries(diskData.dailyUniqueIds || {}).map(([k, arr]) => [k, new Set(arr)])
+  ),
   lastUpdated: diskData.lastUpdated || new Date().toISOString(),
 };
 
@@ -59,6 +65,9 @@ function scheduleSave() {
         totalVisitors: state.totalVisitors,
         uniqueVisitors: Array.from(state.uniqueVisitors),
         dailyStats: state.dailyStats,
+        dailyUniqueIds: Object.fromEntries(
+          Object.entries(state.dailyUniqueIds).map(([k, set]) => [k, Array.from(set)])
+        ),
         lastUpdated: new Date().toISOString(),
       };
       fs.writeFileSync(VISITOR_DATA_FILE, JSON.stringify(toSave, null, 2));
@@ -75,6 +84,9 @@ function persistSync() {
       totalVisitors: state.totalVisitors,
       uniqueVisitors: Array.from(state.uniqueVisitors),
       dailyStats: state.dailyStats,
+      dailyUniqueIds: Object.fromEntries(
+        Object.entries(state.dailyUniqueIds).map(([k, set]) => [k, Array.from(set)])
+      ),
       lastUpdated: new Date().toISOString(),
     };
     fs.writeFileSync(VISITOR_DATA_FILE, JSON.stringify(toSave, null, 2));
@@ -86,8 +98,12 @@ process.on("SIGINT", () => { persistSync(); process.exit(0); });
 process.on("SIGTERM", () => { persistSync(); process.exit(0); });
 
 // ---------- Helpers ----------
+// Date key for "today" with optional timezone offset (minutes) via env
+// Example: IST is +330 minutes. Default is 0 (UTC).
+const TZ_OFFSET_MIN = Number(process.env.TIMEZONE_OFFSET_MINUTES || 0);
 function ymd(date = new Date()) {
-  return date.toISOString().slice(0, 10); // YYYY-MM-DD
+  const shifted = new Date(date.getTime() + TZ_OFFSET_MIN * 60 * 1000);
+  return shifted.toISOString().slice(0, 10); // YYYY-MM-DD of shifted time
 }
 
 function getClientId(req) {
@@ -115,23 +131,33 @@ function recordVisit(req) {
     state.dailyStats[today] = { visits: 0, uniques: 0 };
   }
   state.dailyStats[today].visits += 1;
-  if (wasNew) state.dailyStats[today].uniques += 1;
+  // Track daily unique IDs separately (per-day uniqueness, not lifetime)
+  if (!state.dailyUniqueIds[today]) {
+    state.dailyUniqueIds[today] = new Set();
+  }
+  const todaysSet = state.dailyUniqueIds[today];
+  if (!todaysSet.has(id)) {
+    todaysSet.add(id);
+    state.dailyStats[today].uniques += 1;
+  }
 
   state.lastUpdated = new Date().toISOString();
   scheduleSave();
 }
 
-// ---------- Static files ----------
-app.use(express.static(path.join(__dirname, "public")));
-
 // ---------- Page view counter middleware ----------
-// Count only for GET requests to non-API paths (i.e., actual page views)
+// Count only for top-level HTML GET requests (non-API), before static handler
 app.use((req, res, next) => {
   if (req.method === "GET" && !req.path.startsWith("/api/")) {
-    recordVisit(req);
+    const accept = String(req.headers["accept"] || "").toLowerCase();
+    const looksHtml = req.path === "/" || req.path.endsWith(".html") || accept.includes("text/html");
+    if (looksHtml) recordVisit(req);
   }
   next();
 });
+
+// ---------- Static files ----------
+app.use(express.static(path.join(__dirname, "public")));
 
 // ---------- Health check ----------
 app.get("/healthz", (_req, res) => {
@@ -141,7 +167,7 @@ app.get("/healthz", (_req, res) => {
 // ---------- API: visitor stats ----------
 app.get("/api/visitor-stats", (_req, res) => {
   try {
-    const today = new Date().toISOString().slice(0, 10);
+  const today = ymd();
     // dailyStats[today] is stored as { visits: number, uniques: number }
     const todayStats = state.dailyStats[today] || { visits: 0, uniques: 0 };
     res.json({
