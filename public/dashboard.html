@@ -181,29 +181,31 @@
   window.onload = function () {
     // Only external tool links should open in new tab, not navbar/navigation links
     document.querySelectorAll('a[href]').forEach(link => {
-      const href = link.href.toLowerCase();
-      
-      // Skip navbar links, internal navigation, and logout links
-      if (link.closest('.navbar') || 
-          href.includes('dashboard.html') || 
-          href.includes('factcheck.html') || 
-          href.includes('index.html') ||
-          href.includes('localhost:3000') ||
-          link.getAttribute('onclick') ||
-          href.startsWith('#') ||
-          href === '' ||
-          href === window.location.href) {
-        // These should open in same tab - remove any existing target
+      const rawHref = link.getAttribute('href');
+      if (!rawHref) return;
+
+      // Anchors or JS links should stay in same tab
+      if (rawHref.startsWith('#') || rawHref.toLowerCase().startsWith('javascript:')) {
         link.removeAttribute('target');
         link.removeAttribute('rel');
-        console.log('Internal link (same tab):', href);
         return;
       }
-      
-      // External tool links should open in new tab
+
+      // Resolve absolute URL to compare origins
+      let url;
+      try { url = new URL(rawHref, window.location.href); } catch { return; }
+      const sameOrigin = url.origin === window.location.origin;
+
+      if (sameOrigin) {
+        // Internal links (same site) should open in the same tab
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+        return;
+      }
+
+      // External links (different origin) open in a new tab safely
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
-      console.log('External link (new tab):', href);
     });
 
     // Check login status — block access if not logged in
