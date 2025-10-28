@@ -105,16 +105,38 @@ function scheduleSave() {
     saveStateToDatastore().catch(e => console.error('Datastore save error:', e));
     return;
   }
-  // ...existing code for local/dev only...
+  // Local/dev only: write to disk
+  try {
+    fs.writeFileSync(VISITOR_DATA_FILE, JSON.stringify({
+      totalVisitors: state.totalVisitors,
+      uniqueVisitors: Array.from(state.uniqueVisitors),
+      dailyStats: state.dailyStats,
+      lastUpdated: state.lastUpdated,
+    }, null, 2));
+  } catch (e) {
+    console.error('Error saving visitor data locally:', e);
+  }
 }
+
 function persistSync() {
   if (IS_GAE) {
     // Save synchronously to Datastore (best effort)
     saveStateToDatastore().catch(e => console.error('Datastore save error:', e));
     return;
   }
-  // ...existing code for local/dev only...
+  // Local/dev only: write to disk
+  try {
+    fs.writeFileSync(VISITOR_DATA_FILE, JSON.stringify({
+      totalVisitors: state.totalVisitors,
+      uniqueVisitors: Array.from(state.uniqueVisitors),
+      dailyStats: state.dailyStats,
+      lastUpdated: state.lastUpdated,
+    }, null, 2));
+  } catch (e) {
+    console.error('Error saving visitor data locally:', e);
+  }
 }
+
 if (!IS_GAE) {
   process.on("SIGINT", () => { persistSync(); process.exit(0); });
   process.on("SIGTERM", () => { persistSync(); process.exit(0); });
@@ -178,12 +200,15 @@ app.get("/api/visitor-stats", async (_req, res) => {
       await loadStateFromDatastore();
     }
     const today = new Date().toISOString().slice(0, 10);
-    const todayStats = state.dailyStats[today] || { visits: 0, uniques: 0 };
+    let todayStats = state.dailyStats[today];
+    // Always provide numbers, never N/A
+    const todayVisitors = (todayStats && typeof todayStats.visits === 'number') ? todayStats.visits : 0;
+    const todayUniqueVisitors = (todayStats && typeof todayStats.uniques === 'number') ? todayStats.uniques : 0;
     res.json({
       totalVisitors: state.totalVisitors,
       uniqueVisitors: state.uniqueVisitors.size,
-      todayVisitors: todayStats.visits || 0,
-      todayUniqueVisitors: todayStats.uniques || 0,
+      todayVisitors,
+      todayUniqueVisitors,
       dailyStats: state.dailyStats,
       lastUpdated: state.lastUpdated,
     });
@@ -242,16 +267,18 @@ app.listen(PORT, () => {
 process.on('exit', (code) => {
   console.log(`Process exit event with code: ${code}`);
 });
-process.on('SIGINT', () => {
-  console.log('Received SIGINT');
-  persistSync();
-  process.exit(0);
-});
-process.on('SIGTERM', () => {
-  console.log('Received SIGTERM');
-  persistSync();
-  process.exit(0);
-});
+if (!IS_GAE) {
+  process.on('SIGINT', () => {
+    console.log('Received SIGINT');
+    persistSync();
+    process.exit(0);
+  });
+  process.on('SIGTERM', () => {
+    console.log('Received SIGTERM');
+    persistSync();
+    process.exit(0);
+  });
+}
 process.on('uncaughtException', (err) => {
   console.error('Uncaught Exception:', err);
   process.exit(1);

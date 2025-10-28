@@ -1,3 +1,41 @@
+@media (min-width: 900px) and (max-width: 1200px) {
+    .nav-menu {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        scrollbar-width: thin;
+        -ms-overflow-style: auto;
+    }
+    .nav-link {
+        min-width: 90px;
+        font-size: 0.9rem;
+    }
+}
+/* Fix navbar visibility for mobile/tablet screens */
+@media (max-width: 900px) {
+    .nav-menu {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        scrollbar-width: thin;
+        -ms-overflow-style: auto;
+    }
+    .nav-link {
+        min-width: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-menu {
+        flex-wrap: wrap;
+        white-space: normal;
+        overflow-x: auto;
+    }
+    .nav-link {
+        min-width: 100px;
+        font-size: 0.85rem;
+    }
+}
 * {
     box-sizing: border-box;
     margin: 0;
